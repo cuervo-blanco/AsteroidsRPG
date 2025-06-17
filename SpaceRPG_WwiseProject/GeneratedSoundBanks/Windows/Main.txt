@@ -1,0 +1,16 @@
+Event	ID	Name			Wwise Object Path	Notes
+	137544727	Stop_Motor01_Active			\Default Work Unit\Stop_Motor01_Active	
+	192906153	Play_Bullet_Fire			\Default Work Unit\Play_Bullet_Fire	
+	1663870953	Play_Motor01_Active			\Default Work Unit\Play_Motor01_Active	
+	3659448534	Play_Bullet_Hit_01			\Default Work Unit\Play_Bullet_Hit_01	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	383064900	Rocket_Shot_05	Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\.cache\0F\{0F0EB971-819C-D0C3-CB6B-FEEB54423376}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bullet_Fire_Random\Rocket_Shot_05		303544
+	501377398	Rocket_Shot_02	Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\.cache\9E\{9EF59922-BBA3-A00B-D4C4-66EA5B62288F}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bullet_Fire_Random\Rocket_Shot_02		344004
+	576191442	BulletsHit01	Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\.cache\B7\{B766B75C-6493-507F-8CD5-BEF2BD4477D6}.wem		\Actor-Mixer Hierarchy\Default Work Unit\BulletsHit01		46588
+	612291674	Motor01_Active	Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\.cache\EB\{EB739818-F55F-69E1-A3BA-AFC36CA5CEB8}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Motor01_Active		1700568
+	617443968	Rocket_Shot_01	Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\.cache\03\{037070E7-1870-5327-7B67-76ED8DA399F6}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bullet_Fire_Random\Rocket_Shot_01		320096
+	647458813	Rocket_Shot_04	Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\.cache\26\{26BCC6F9-D11C-68E8-D818-581FB4027350}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bullet_Fire_Random\Rocket_Shot_04		345844
+	930077654	Rocket_Shot_03	Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\.cache\73\{7383F6F6-BBDB-B0C9-C4A6-811D106274A1}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bullet_Fire_Random\Rocket_Shot_03		332968
+	1027440916	Rocket_Shot_06	Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\.cache\2F\{2FAD0145-4E05-7799-21E2-FDDF93090DD5}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bullet_Fire_Random\Rocket_Shot_06		180324
+

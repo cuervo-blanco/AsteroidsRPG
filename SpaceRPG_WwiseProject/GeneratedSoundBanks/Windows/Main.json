@@ -1,0 +1,168 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "3161908922",
+    "Type": "User",
+    "GUID": "{921BC17C-6121-420A-AE7A-F738912CDC55}",
+    "Language": "SFX",
+    "Hash": "{1CEDCAA8-B80A-9E31-F2C4-CB4B512D88C5}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
+    "ShortName": "Main",
+    "Path": "Main.bnk",
+    "Media": [
+     {
+      "Id": "383064900",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Rocket_Shots_0101.wav",
+      "CachePath": "0F/{0F0EB971-819C-D0C3-CB6B-FEEB54423376}.wem"
+     },
+     {
+      "Id": "501377398",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Rocket_Shots_0101.wav",
+      "CachePath": "9E/{9EF59922-BBA3-A00B-D4C4-66EA5B62288F}.wem"
+     },
+     {
+      "Id": "576191442",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BulletsHit01.wav",
+      "CachePath": "B7/{B766B75C-6493-507F-8CD5-BEF2BD4477D6}.wem"
+     },
+     {
+      "Id": "612291674",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Motor01.wav",
+      "CachePath": "EB/{EB739818-F55F-69E1-A3BA-AFC36CA5CEB8}.wem"
+     },
+     {
+      "Id": "617443968",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Rocket_Shots_0101.wav",
+      "CachePath": "03/{037070E7-1870-5327-7B67-76ED8DA399F6}.wem"
+     },
+     {
+      "Id": "647458813",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Rocket_Shots_0101.wav",
+      "CachePath": "26/{26BCC6F9-D11C-68E8-D818-581FB4027350}.wem"
+     },
+     {
+      "Id": "930077654",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Rocket_Shots_0101.wav",
+      "CachePath": "73/{7383F6F6-BBDB-B0C9-C4A6-811D106274A1}.wem"
+     },
+     {
+      "Id": "1027440916",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Rocket_Shots_0101.wav",
+      "CachePath": "2F/{2FAD0145-4E05-7799-21E2-FDDF93090DD5}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "192906153",
+      "Name": "Play_Bullet_Fire",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Bullet_Fire",
+      "GUID": "{B7D2066C-9B09-4529-BA63-750CB6FB5B6B}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.87330973",
+      "DurationMax": "1.9637495",
+      "MediaRefs": [
+       {
+        "Id": "383064900"
+       },
+       {
+        "Id": "501377398"
+       },
+       {
+        "Id": "617443968"
+       },
+       {
+        "Id": "647458813"
+       },
+       {
+        "Id": "930077654"
+       },
+       {
+        "Id": "1027440916"
+       }
+      ],
+      "ActionPostEvent": [
+       {
+        "Id": "137544727",
+        "Name": "Stop_Motor01_Active",
+        "ObjectPath": "\\Events\\Default Work Unit\\Stop_Motor01_Active",
+        "GUID": "{C25677F1-57F0-4876-ABA7-19A0F7C1B04A}"
+       },
+       {
+        "Id": "1663870953",
+        "Name": "Play_Motor01_Active",
+        "ObjectPath": "\\Events\\Default Work Unit\\Play_Motor01_Active",
+        "GUID": "{44AF1694-81F7-4D73-8DD9-0A2617034849}"
+       }
+      ]
+     },
+     {
+      "Id": "3659448534",
+      "Name": "Play_Bullet_Hit_01",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Bullet_Hit_01",
+      "GUID": "{CC50D321-9D97-42CB-A436-91F97FFD333F}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.09891417",
+      "DurationMax": "0.305093",
+      "MediaRefs": [
+       {
+        "Id": "576191442"
+       }
+      ]
+     },
+     {
+      "Id": "1663870953",
+      "Name": "Play_Motor01_Active",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Motor01_Active",
+      "GUID": "{44AF1694-81F7-4D73-8DD9-0A2617034849}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "612291674"
+       }
+      ]
+     },
+     {
+      "Id": "137544727",
+      "Name": "Stop_Motor01_Active",
+      "ObjectPath": "\\Events\\Default Work Unit\\Stop_Motor01_Active",
+      "GUID": "{C25677F1-57F0-4876-ABA7-19A0F7C1B04A}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{35356788-667E-F216-F354-3BBE4754308C}"
+ }
+}

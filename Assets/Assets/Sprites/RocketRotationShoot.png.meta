@@ -1,0 +1,572 @@
+fileFormatVersion: 2
+guid: 5458fd3b302d24997acebf4efe406bfe
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8907920930419533351
+    second: RocketRotationShoot_0
+  - first:
+      213: -5078102904012211857
+    second: RocketRotationShoot_1
+  - first:
+      213: -1762683562420980405
+    second: RocketRotationShoot_2
+  - first:
+      213: 7520289416574240176
+    second: RocketRotationShoot_3
+  - first:
+      213: 2761563568373594927
+    second: RocketRotationShoot_4
+  - first:
+      213: 7287968786144989651
+    second: RocketRotationShoot_5
+  - first:
+      213: -5366551897387475431
+    second: RocketRotationShoot_6
+  - first:
+      213: -2828592745730560014
+    second: RocketRotationShoot_7
+  - first:
+      213: 6882069068035866068
+    second: RocketRotationShoot_8
+  - first:
+      213: -5443737606997855722
+    second: RocketRotationShoot_9
+  - first:
+      213: -4595843496057968814
+    second: RocketRotationShoot_10
+  - first:
+      213: -6520034482102661661
+    second: RocketRotationShoot_11
+  - first:
+      213: -5179569644556190665
+    second: RocketRotationShoot_12
+  - first:
+      213: 4694829371688314495
+    second: RocketRotationShoot_13
+  - first:
+      213: -4424915214346145043
+    second: RocketRotationShoot_14
+  - first:
+      213: 2083467006015780344
+    second: RocketRotationShoot_15
+  - first:
+      213: -1911594579921888491
+    second: RocketRotationShoot_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RocketRotationShoot_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 211
+        width: 28
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d993172c15b06480800000000000000
+      internalID: -8907920930419533351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RocketRotationShoot_1
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 211
+        width: 23
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f69f8715054f689b0800000000000000
+      internalID: -5078102904012211857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RocketRotationShoot_2
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 211
+        width: 21
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b453a7a93a0b987e0800000000000000
+      internalID: -1762683562420980405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RocketRotationShoot_3
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 211
+        width: 22
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b58903516f6d5860800000000000000
+      internalID: 7520289416574240176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RocketRotationShoot_4
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 211
+        width: 24
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2b719d1f6b035620800000000000000
+      internalID: 2761563568373594927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RocketRotationShoot_5
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 147
+        width: 23
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d19e486ff0142560800000000000000
+      internalID: 7287968786144989651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RocketRotationShoot_6
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 147
+        width: 23
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91e55878b7d2685b0800000000000000
+      internalID: -5366551897387475431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RocketRotationShoot_7
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 147
+        width: 24
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ffab7062e1deb8d0800000000000000
+      internalID: -2828592745730560014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RocketRotationShoot_8
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 147
+        width: 29
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dd3bf7ca55028f50800000000000000
+      internalID: 6882069068035866068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RocketRotationShoot_9
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 147
+        width: 25
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61235741d75f374b0800000000000000
+      internalID: -5443737606997855722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RocketRotationShoot_10
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 83
+        width: 22
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 257ec2ea0b84830c0800000000000000
+      internalID: -4595843496057968814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RocketRotationShoot_11
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 83
+        width: 21
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ed09f2ee2f2485a0800000000000000
+      internalID: -6520034482102661661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RocketRotationShoot_12
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 83
+        width: 24
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73cf4dec9d87e18b0800000000000000
+      internalID: -5179569644556190665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RocketRotationShoot_13
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 83
+        width: 22
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f766d847072672140800000000000000
+      internalID: 4694829371688314495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RocketRotationShoot_14
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 83
+        width: 21
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de23da78e0b8792c0800000000000000
+      internalID: -4424915214346145043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RocketRotationShoot_15
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 19
+        width: 24
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f531da0436f9ec10800000000000000
+      internalID: 2083467006015780344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RocketRotationShoot_16
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 19
+        width: 28
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51b913d8bd6a875e0800000000000000
+      internalID: -1911594579921888491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RocketRotationShoot_0: -8907920930419533351
+      RocketRotationShoot_1: -5078102904012211857
+      RocketRotationShoot_10: -4595843496057968814
+      RocketRotationShoot_11: -6520034482102661661
+      RocketRotationShoot_12: -5179569644556190665
+      RocketRotationShoot_13: 4694829371688314495
+      RocketRotationShoot_14: -4424915214346145043
+      RocketRotationShoot_15: 2083467006015780344
+      RocketRotationShoot_16: -1911594579921888491
+      RocketRotationShoot_2: -1762683562420980405
+      RocketRotationShoot_3: 7520289416574240176
+      RocketRotationShoot_4: 2761563568373594927
+      RocketRotationShoot_5: 7287968786144989651
+      RocketRotationShoot_6: -5366551897387475431
+      RocketRotationShoot_7: -2828592745730560014
+      RocketRotationShoot_8: 6882069068035866068
+      RocketRotationShoot_9: -5443737606997855722
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
