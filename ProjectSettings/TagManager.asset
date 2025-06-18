@@ -7,6 +7,7 @@ TagManager:
   - Bullet
   - Rock
   - Life
+  - Coin
   layers:
   - Default
   - TransparentFX

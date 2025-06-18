@@ -36,43 +36,36 @@ public class RockSpawner : MonoBehaviour
 
     Coroutine loop;
 
-    public void Begin()
-    {
+    public void Begin() {
         if (loop == null) loop = StartCoroutine(SpawnLoop());
     }
 
-    public void Stop()
-    {
-        if (loop != null)
-        {
+    public void Stop() {
+        if (loop != null) {
             StopCoroutine(loop);
             loop = null;
         }
     }
 
-    void Awake()
-    {
+    void Awake() {
         cam = Camera.main;
     }
 
-    IEnumerator SpawnLoop()
-    {
+    IEnumerator SpawnLoop() {
         float startTime = Time.time;
 
-        while (true)
-        {
+        while (true) {
             float elapsed = Time.time - startTime;
-            float t       = Mathf.Clamp01(elapsed / difficultyDuration);
-            float rate    = Mathf.Lerp(startRate, finalRate, t);
-            float wait    = 1f / rate;
+            float t = Mathf.Clamp01(elapsed / difficultyDuration);
+            float rate = Mathf.Lerp(startRate, finalRate, t);
+            float wait = 1f / rate;
 
             SpawnOneRock();
             yield return new WaitForSeconds(wait);
         }
     }
 
-    void SpawnOneRock()
-    {
+    void SpawnOneRock() {
         if (zones == null || zones.Length == 0) return;
 
         SpawnZone z = zones[Random.Range(0, zones.Length)];

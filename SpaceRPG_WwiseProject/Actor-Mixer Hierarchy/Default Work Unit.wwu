@@ -3,26 +3,31 @@
 	<AudioObjects>
 		<WorkUnit Name="Default Work Unit" ID="{BE1BDE46-1535-495D-B3E5-1726CDE1AAFC}" PersistMode="Standalone">
 			<ChildrenList>
-				<RandomSequenceContainer Name="Bullet_Fire_Random" ID="{BDE01AF2-8ACC-433A-9359-8CA14A3FF70C}" ShortID="756482973">
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A87074CA-4376-4AED-A7F7-874BCE19FD25}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{001A9098-37A9-4A65-803D-397B086C22BA}"/>
-						</Reference>
-					</ReferenceList>
+				<Folder Name="Music" ID="{D1377660-7A96-4AB9-9F8D-49A5EDCEB40C}" ShortID="15748889"/>
+				<Folder Name="SFX" ID="{916EB905-381C-47C7-80F7-322E4D82C9E6}" ShortID="581248251">
 					<ChildrenList>
-						<Sound Name="Rocket_Shot_02" ID="{5C780834-59A5-4F21-82CD-A4CCFB10259D}" ShortID="332104329">
+						<Sound Name="BulletsHit01" ID="{9D76401F-7F09-4F15-9327-D6EA138F0EA1}" ShortID="286054862">
 							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>26</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Lowpass" Type="int16">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{D7153D03-0EF1-4015-B239-925372305F77}"/>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
 								<Property Name="Pitch" Type="int32">
 									<ModifierList>
 										<ModifierInfo>
-											<Modifier Name="" ID="{FFE0D13C-2FFA-45E5-861A-894B255B7F68}">
+											<Modifier Name="" ID="{C52D98A1-FFFC-4613-A3EA-336D5AAA4270}">
 												<PropertyList>
 													<Property Name="Enabled" Type="bool" Value="True"/>
-													<Property Name="Max" Type="Real64" Value="125"/>
-													<Property Name="Min" Type="Real64" Value="-150"/>
+													<Property Name="Max" Type="Real64" Value="1550"/>
+													<Property Name="Min" Type="Real64" Value="-400"/>
 												</PropertyList>
 											</Modifier>
 										</ModifierInfo>
@@ -30,15 +35,15 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-6</Value>
+										<Value>-8</Value>
 									</ValueList>
 									<ModifierList>
 										<ModifierInfo>
-											<Modifier Name="" ID="{54D5E8F3-BF36-4636-AB1F-7566F313F38B}">
+											<Modifier Name="" ID="{FCBBE2B8-2401-4FA5-8D3C-6A014A544AE1}">
 												<PropertyList>
 													<Property Name="Enabled" Type="bool" Value="True"/>
-													<Property Name="Max" Type="Real64" Value="12"/>
-													<Property Name="Min" Type="Real64" Value="-1"/>
+													<Property Name="Max" Type="Real64" Value="6"/>
+													<Property Name="Min" Type="Real64" Value="-3"/>
 												</PropertyList>
 											</Modifier>
 										</ModifierInfo>
@@ -54,54 +59,385 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="Rocket_Shots_0101" ID="{AB09FB47-C4B4-4A44-B4D0-27B30AB45C8C}">
+								<AudioFileSource Name="BulletsHit01" ID="{78B20BA9-104E-49D8-B6E6-B05E98D99035}">
 									<PropertyList>
 										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimBegin" Type="Real64" Value="2.1360153256705"/>
-										<Property Name="TrimEnd" Type="Real64" Value="3.9272030651341"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.726457399103139"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.968609865470853"/>
 									</PropertyList>
 									<Language>SFX</Language>
-									<AudioFile>Rocket_Shots_0101.wav</AudioFile>
+									<AudioFile>BulletsHit01.wav</AudioFile>
 									<MediaIDList>
-										<MediaID ID="501377398"/>
+										<MediaID ID="576191442"/>
 									</MediaIDList>
 								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="Rocket_Shots_0101" ID="{AB09FB47-C4B4-4A44-B4D0-27B30AB45C8C}" Platform="Linked"/>
+								<ActiveSource Name="BulletsHit01" ID="{78B20BA9-104E-49D8-B6E6-B05E98D99035}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
-						<Sound Name="Rocket_Shot_04" ID="{C5DFC0D9-96F4-45E9-B610-D169B54A41C8}" ShortID="458008635">
+						<RandomSequenceContainer Name="Bullet_Fire_Random" ID="{BDE01AF2-8ACC-433A-9359-8CA14A3FF70C}" ShortID="756482973">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A87074CA-4376-4AED-A7F7-874BCE19FD25}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{001A9098-37A9-4A65-803D-397B086C22BA}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Rocket_Shot_02" ID="{5C780834-59A5-4F21-82CD-A4CCFB10259D}" ShortID="332104329">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{FFE0D13C-2FFA-45E5-861A-894B255B7F68}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="125"/>
+															<Property Name="Min" Type="Real64" Value="-150"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-6</Value>
+											</ValueList>
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{54D5E8F3-BF36-4636-AB1F-7566F313F38B}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="12"/>
+															<Property Name="Min" Type="Real64" Value="-1"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A87074CA-4376-4AED-A7F7-874BCE19FD25}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{001A9098-37A9-4A65-803D-397B086C22BA}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Rocket_Shots_0101" ID="{AB09FB47-C4B4-4A44-B4D0-27B30AB45C8C}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="2.1360153256705"/>
+												<Property Name="TrimEnd" Type="Real64" Value="3.9272030651341"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Rocket_Shots_0101.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="501377398"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Rocket_Shots_0101" ID="{AB09FB47-C4B4-4A44-B4D0-27B30AB45C8C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Rocket_Shot_04" ID="{C5DFC0D9-96F4-45E9-B610-D169B54A41C8}" ShortID="458008635">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{9836EBC5-D534-4EA2-90AD-D0ABEE32E78F}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="125"/>
+															<Property Name="Min" Type="Real64" Value="-150"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-6</Value>
+											</ValueList>
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{60CB2B84-4B69-4B35-96B8-10F83005D74D}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="12"/>
+															<Property Name="Min" Type="Real64" Value="-1"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A87074CA-4376-4AED-A7F7-874BCE19FD25}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{001A9098-37A9-4A65-803D-397B086C22BA}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Rocket_Shots_0101" ID="{17A541C9-DDB0-407E-BB34-DCA67E8EC5DB}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="5.67049808429119"/>
+												<Property Name="TrimEnd" Type="Real64" Value="7.47126436781609"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Rocket_Shots_0101.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="647458813"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Rocket_Shots_0101" ID="{17A541C9-DDB0-407E-BB34-DCA67E8EC5DB}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Rocket_Shot_06" ID="{B6B7C786-F958-4F70-BC9D-EDEF063F8D27}" ShortID="187667752">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{E3D34CBC-D0AE-476E-AFB2-07454DCDEB09}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="125"/>
+															<Property Name="Min" Type="Real64" Value="-150"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-6</Value>
+											</ValueList>
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{374FFD8E-919B-4A83-8CE3-84262DF9FFA2}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="12"/>
+															<Property Name="Min" Type="Real64" Value="-1"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A87074CA-4376-4AED-A7F7-874BCE19FD25}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{001A9098-37A9-4A65-803D-397B086C22BA}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Rocket_Shots_0101" ID="{DCA0D66B-9E64-4045-9FC7-A03693E8A22D}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="9.06130268199234"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Rocket_Shots_0101.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1027440916"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Rocket_Shots_0101" ID="{DCA0D66B-9E64-4045-9FC7-A03693E8A22D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Rocket_Shot_01" ID="{65D94E71-18A5-4B3F-886F-9D4A19051ABC}" ShortID="829772097">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{030B643E-34F6-442C-89AC-0DA3CEF8CE07}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="125"/>
+															<Property Name="Min" Type="Real64" Value="-150"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-6</Value>
+											</ValueList>
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{87F954BC-CE3F-4192-912B-370789D2CD0F}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="12"/>
+															<Property Name="Min" Type="Real64" Value="-1"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A87074CA-4376-4AED-A7F7-874BCE19FD25}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{001A9098-37A9-4A65-803D-397B086C22BA}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Rocket_Shots_0101" ID="{1BD42F18-2238-4144-B0A0-A0311FC04B03}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.431034482758621"/>
+												<Property Name="TrimEnd" Type="Real64" Value="2.09770114942529"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Rocket_Shots_0101.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="617443968"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Rocket_Shots_0101" ID="{1BD42F18-2238-4144-B0A0-A0311FC04B03}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Rocket_Shot_05" ID="{37509F16-4784-4A33-A97D-BB4D111A471D}" ShortID="834763628">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{3638AC74-6A9D-4967-A161-5CCD0856120B}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="125"/>
+															<Property Name="Min" Type="Real64" Value="-150"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-6</Value>
+											</ValueList>
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{38ED0C75-ACC2-4C1E-9852-0E02F73CB00E}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="12"/>
+															<Property Name="Min" Type="Real64" Value="-1"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A87074CA-4376-4AED-A7F7-874BCE19FD25}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{001A9098-37A9-4A65-803D-397B086C22BA}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Rocket_Shots_0101" ID="{89FD7A30-FDC4-45D0-84CE-878578D0FD38}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="7.4712643678161"/>
+												<Property Name="TrimEnd" Type="Real64" Value="9.05172413793103"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Rocket_Shots_0101.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="383064900"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Rocket_Shots_0101" ID="{89FD7A30-FDC4-45D0-84CE-878578D0FD38}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Rocket_Shot_03" ID="{D7E38735-415A-4AF2-97AF-81B0C793861B}" ShortID="1063874871">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{990E5AEB-5850-4CA8-B010-473AE9478A4B}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="125"/>
+															<Property Name="Min" Type="Real64" Value="-150"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-6</Value>
+											</ValueList>
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{05C310B8-C774-468E-8614-8D9794382596}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="12"/>
+															<Property Name="Min" Type="Real64" Value="-1"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A87074CA-4376-4AED-A7F7-874BCE19FD25}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{001A9098-37A9-4A65-803D-397B086C22BA}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Rocket_Shots_0101" ID="{60FF807D-4192-4B80-821A-9EEB59E9A9F1}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="3.9272030651341"/>
+												<Property Name="TrimEnd" Type="Real64" Value="5.66091954022989"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Rocket_Shots_0101.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="930077654"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Rocket_Shots_0101" ID="{60FF807D-4192-4B80-821A-9EEB59E9A9F1}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<Sound Name="Motor01_Active" ID="{37978BD7-4695-402F-9903-DFA3BAF77480}" ShortID="612565414">
 							<PropertyList>
-								<Property Name="Pitch" Type="int32">
-									<ModifierList>
-										<ModifierInfo>
-											<Modifier Name="" ID="{9836EBC5-D534-4EA2-90AD-D0ABEE32E78F}">
-												<PropertyList>
-													<Property Name="Enabled" Type="bool" Value="True"/>
-													<Property Name="Max" Type="Real64" Value="125"/>
-													<Property Name="Min" Type="Real64" Value="-150"/>
-												</PropertyList>
-											</Modifier>
-										</ModifierInfo>
-									</ModifierList>
-								</Property>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-6</Value>
-									</ValueList>
-									<ModifierList>
-										<ModifierInfo>
-											<Modifier Name="" ID="{60CB2B84-4B69-4B35-96B8-10F83005D74D}">
-												<PropertyList>
-													<Property Name="Enabled" Type="bool" Value="True"/>
-													<Property Name="Max" Type="Real64" Value="12"/>
-													<Property Name="Min" Type="Real64" Value="-1"/>
-												</PropertyList>
-											</Modifier>
-										</ModifierInfo>
-									</ModifierList>
-								</Property>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -112,362 +448,31 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="Rocket_Shots_0101" ID="{17A541C9-DDB0-407E-BB34-DCA67E8EC5DB}">
+								<AudioFileSource Name="Motor01" ID="{5AE5F4A4-4221-4A75-B991-410F812BD559}">
 									<PropertyList>
+										<Property Name="CrossfadeDuration" Type="Real64" Value="468.75"/>
+										<Property Name="CrossfadeShape" Type="int16" Value="4"/>
+										<Property Name="FadeInShape" Type="int16" Value="4"/>
+										<Property Name="FadeOutShape" Type="int16" Value="2"/>
+										<Property Name="LoopBegin" Type="Real64" Value="1.37193635857292"/>
+										<Property Name="LoopEnd" Type="Real64" Value="8.53629262608397"/>
 										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimBegin" Type="Real64" Value="5.67049808429119"/>
-										<Property Name="TrimEnd" Type="Real64" Value="7.47126436781609"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.630428483788003"/>
+										<Property Name="TrimEnd" Type="Real64" Value="9.48681"/>
 									</PropertyList>
 									<Language>SFX</Language>
-									<AudioFile>Rocket_Shots_0101.wav</AudioFile>
+									<AudioFile>Motor01.wav</AudioFile>
 									<MediaIDList>
-										<MediaID ID="647458813"/>
+										<MediaID ID="612291674"/>
 									</MediaIDList>
 								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="Rocket_Shots_0101" ID="{17A541C9-DDB0-407E-BB34-DCA67E8EC5DB}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Rocket_Shot_06" ID="{B6B7C786-F958-4F70-BC9D-EDEF063F8D27}" ShortID="187667752">
-							<PropertyList>
-								<Property Name="Pitch" Type="int32">
-									<ModifierList>
-										<ModifierInfo>
-											<Modifier Name="" ID="{E3D34CBC-D0AE-476E-AFB2-07454DCDEB09}">
-												<PropertyList>
-													<Property Name="Enabled" Type="bool" Value="True"/>
-													<Property Name="Max" Type="Real64" Value="125"/>
-													<Property Name="Min" Type="Real64" Value="-150"/>
-												</PropertyList>
-											</Modifier>
-										</ModifierInfo>
-									</ModifierList>
-								</Property>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-6</Value>
-									</ValueList>
-									<ModifierList>
-										<ModifierInfo>
-											<Modifier Name="" ID="{374FFD8E-919B-4A83-8CE3-84262DF9FFA2}">
-												<PropertyList>
-													<Property Name="Enabled" Type="bool" Value="True"/>
-													<Property Name="Max" Type="Real64" Value="12"/>
-													<Property Name="Min" Type="Real64" Value="-1"/>
-												</PropertyList>
-											</Modifier>
-										</ModifierInfo>
-									</ModifierList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A87074CA-4376-4AED-A7F7-874BCE19FD25}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{001A9098-37A9-4A65-803D-397B086C22BA}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Rocket_Shots_0101" ID="{DCA0D66B-9E64-4045-9FC7-A03693E8A22D}">
-									<PropertyList>
-										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimBegin" Type="Real64" Value="9.06130268199234"/>
-									</PropertyList>
-									<Language>SFX</Language>
-									<AudioFile>Rocket_Shots_0101.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="1027440916"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Rocket_Shots_0101" ID="{DCA0D66B-9E64-4045-9FC7-A03693E8A22D}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Rocket_Shot_01" ID="{65D94E71-18A5-4B3F-886F-9D4A19051ABC}" ShortID="829772097">
-							<PropertyList>
-								<Property Name="Pitch" Type="int32">
-									<ModifierList>
-										<ModifierInfo>
-											<Modifier Name="" ID="{030B643E-34F6-442C-89AC-0DA3CEF8CE07}">
-												<PropertyList>
-													<Property Name="Enabled" Type="bool" Value="True"/>
-													<Property Name="Max" Type="Real64" Value="125"/>
-													<Property Name="Min" Type="Real64" Value="-150"/>
-												</PropertyList>
-											</Modifier>
-										</ModifierInfo>
-									</ModifierList>
-								</Property>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-6</Value>
-									</ValueList>
-									<ModifierList>
-										<ModifierInfo>
-											<Modifier Name="" ID="{87F954BC-CE3F-4192-912B-370789D2CD0F}">
-												<PropertyList>
-													<Property Name="Enabled" Type="bool" Value="True"/>
-													<Property Name="Max" Type="Real64" Value="12"/>
-													<Property Name="Min" Type="Real64" Value="-1"/>
-												</PropertyList>
-											</Modifier>
-										</ModifierInfo>
-									</ModifierList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A87074CA-4376-4AED-A7F7-874BCE19FD25}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{001A9098-37A9-4A65-803D-397B086C22BA}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Rocket_Shots_0101" ID="{1BD42F18-2238-4144-B0A0-A0311FC04B03}">
-									<PropertyList>
-										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimBegin" Type="Real64" Value="0.431034482758621"/>
-										<Property Name="TrimEnd" Type="Real64" Value="2.09770114942529"/>
-									</PropertyList>
-									<Language>SFX</Language>
-									<AudioFile>Rocket_Shots_0101.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="617443968"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Rocket_Shots_0101" ID="{1BD42F18-2238-4144-B0A0-A0311FC04B03}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Rocket_Shot_05" ID="{37509F16-4784-4A33-A97D-BB4D111A471D}" ShortID="834763628">
-							<PropertyList>
-								<Property Name="Pitch" Type="int32">
-									<ModifierList>
-										<ModifierInfo>
-											<Modifier Name="" ID="{3638AC74-6A9D-4967-A161-5CCD0856120B}">
-												<PropertyList>
-													<Property Name="Enabled" Type="bool" Value="True"/>
-													<Property Name="Max" Type="Real64" Value="125"/>
-													<Property Name="Min" Type="Real64" Value="-150"/>
-												</PropertyList>
-											</Modifier>
-										</ModifierInfo>
-									</ModifierList>
-								</Property>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-6</Value>
-									</ValueList>
-									<ModifierList>
-										<ModifierInfo>
-											<Modifier Name="" ID="{38ED0C75-ACC2-4C1E-9852-0E02F73CB00E}">
-												<PropertyList>
-													<Property Name="Enabled" Type="bool" Value="True"/>
-													<Property Name="Max" Type="Real64" Value="12"/>
-													<Property Name="Min" Type="Real64" Value="-1"/>
-												</PropertyList>
-											</Modifier>
-										</ModifierInfo>
-									</ModifierList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A87074CA-4376-4AED-A7F7-874BCE19FD25}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{001A9098-37A9-4A65-803D-397B086C22BA}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Rocket_Shots_0101" ID="{89FD7A30-FDC4-45D0-84CE-878578D0FD38}">
-									<PropertyList>
-										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimBegin" Type="Real64" Value="7.4712643678161"/>
-										<Property Name="TrimEnd" Type="Real64" Value="9.05172413793103"/>
-									</PropertyList>
-									<Language>SFX</Language>
-									<AudioFile>Rocket_Shots_0101.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="383064900"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Rocket_Shots_0101" ID="{89FD7A30-FDC4-45D0-84CE-878578D0FD38}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Rocket_Shot_03" ID="{D7E38735-415A-4AF2-97AF-81B0C793861B}" ShortID="1063874871">
-							<PropertyList>
-								<Property Name="Pitch" Type="int32">
-									<ModifierList>
-										<ModifierInfo>
-											<Modifier Name="" ID="{990E5AEB-5850-4CA8-B010-473AE9478A4B}">
-												<PropertyList>
-													<Property Name="Enabled" Type="bool" Value="True"/>
-													<Property Name="Max" Type="Real64" Value="125"/>
-													<Property Name="Min" Type="Real64" Value="-150"/>
-												</PropertyList>
-											</Modifier>
-										</ModifierInfo>
-									</ModifierList>
-								</Property>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-6</Value>
-									</ValueList>
-									<ModifierList>
-										<ModifierInfo>
-											<Modifier Name="" ID="{05C310B8-C774-468E-8614-8D9794382596}">
-												<PropertyList>
-													<Property Name="Enabled" Type="bool" Value="True"/>
-													<Property Name="Max" Type="Real64" Value="12"/>
-													<Property Name="Min" Type="Real64" Value="-1"/>
-												</PropertyList>
-											</Modifier>
-										</ModifierInfo>
-									</ModifierList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A87074CA-4376-4AED-A7F7-874BCE19FD25}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{001A9098-37A9-4A65-803D-397B086C22BA}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Rocket_Shots_0101" ID="{60FF807D-4192-4B80-821A-9EEB59E9A9F1}">
-									<PropertyList>
-										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimBegin" Type="Real64" Value="3.9272030651341"/>
-										<Property Name="TrimEnd" Type="Real64" Value="5.66091954022989"/>
-									</PropertyList>
-									<Language>SFX</Language>
-									<AudioFile>Rocket_Shots_0101.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="930077654"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Rocket_Shots_0101" ID="{60FF807D-4192-4B80-821A-9EEB59E9A9F1}" Platform="Linked"/>
+								<ActiveSource Name="Motor01" ID="{5AE5F4A4-4221-4A75-B991-410F812BD559}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
-				</RandomSequenceContainer>
-				<Sound Name="Motor01_Active" ID="{37978BD7-4695-402F-9903-DFA3BAF77480}" ShortID="612565414">
-					<PropertyList>
-						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A87074CA-4376-4AED-A7F7-874BCE19FD25}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{001A9098-37A9-4A65-803D-397B086C22BA}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="Motor01" ID="{5AE5F4A4-4221-4A75-B991-410F812BD559}">
-							<PropertyList>
-								<Property Name="CrossfadeDuration" Type="Real64" Value="468.75"/>
-								<Property Name="CrossfadeShape" Type="int16" Value="4"/>
-								<Property Name="FadeInShape" Type="int16" Value="4"/>
-								<Property Name="FadeOutShape" Type="int16" Value="2"/>
-								<Property Name="LoopBegin" Type="Real64" Value="1.37193635857292"/>
-								<Property Name="LoopEnd" Type="Real64" Value="8.53629262608397"/>
-								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-								<Property Name="TrimBegin" Type="Real64" Value="0.630428483788003"/>
-								<Property Name="TrimEnd" Type="Real64" Value="9.48681"/>
-							</PropertyList>
-							<Language>SFX</Language>
-							<AudioFile>Motor01.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="612291674"/>
-							</MediaIDList>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="Motor01" ID="{5AE5F4A4-4221-4A75-B991-410F812BD559}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
-				<Sound Name="BulletsHit01" ID="{9D76401F-7F09-4F15-9327-D6EA138F0EA1}" ShortID="286054862">
-					<PropertyList>
-						<Property Name="Highpass" Type="int16">
-							<ValueList>
-								<Value>26</Value>
-							</ValueList>
-						</Property>
-						<Property Name="Lowpass" Type="int16">
-							<ModifierList>
-								<ModifierInfo>
-									<Modifier Name="" ID="{D7153D03-0EF1-4015-B239-925372305F77}"/>
-								</ModifierInfo>
-							</ModifierList>
-						</Property>
-						<Property Name="Pitch" Type="int32">
-							<ModifierList>
-								<ModifierInfo>
-									<Modifier Name="" ID="{C52D98A1-FFFC-4613-A3EA-336D5AAA4270}">
-										<PropertyList>
-											<Property Name="Enabled" Type="bool" Value="True"/>
-											<Property Name="Max" Type="Real64" Value="1550"/>
-											<Property Name="Min" Type="Real64" Value="-400"/>
-										</PropertyList>
-									</Modifier>
-								</ModifierInfo>
-							</ModifierList>
-						</Property>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-8</Value>
-							</ValueList>
-							<ModifierList>
-								<ModifierInfo>
-									<Modifier Name="" ID="{FCBBE2B8-2401-4FA5-8D3C-6A014A544AE1}">
-										<PropertyList>
-											<Property Name="Enabled" Type="bool" Value="True"/>
-											<Property Name="Max" Type="Real64" Value="6"/>
-											<Property Name="Min" Type="Real64" Value="-3"/>
-										</PropertyList>
-									</Modifier>
-								</ModifierInfo>
-							</ModifierList>
-						</Property>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A87074CA-4376-4AED-A7F7-874BCE19FD25}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{001A9098-37A9-4A65-803D-397B086C22BA}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="BulletsHit01" ID="{78B20BA9-104E-49D8-B6E6-B05E98D99035}">
-							<PropertyList>
-								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-								<Property Name="TrimBegin" Type="Real64" Value="0.726457399103139"/>
-								<Property Name="TrimEnd" Type="Real64" Value="0.968609865470853"/>
-							</PropertyList>
-							<Language>SFX</Language>
-							<AudioFile>BulletsHit01.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="576191442"/>
-							</MediaIDList>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="BulletsHit01" ID="{78B20BA9-104E-49D8-B6E6-B05E98D99035}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

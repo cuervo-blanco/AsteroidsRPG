@@ -10,11 +10,19 @@
     "Type": "User",
     "GUID": "{921BC17C-6121-420A-AE7A-F738912CDC55}",
     "Language": "SFX",
-    "Hash": "{1CEDCAA8-B80A-9E31-F2C4-CB4B512D88C5}",
+    "Hash": "{9597FDF2-DC9D-4740-AB07-27118D64EDEE}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
     "Media": [
+     {
+      "Id": "161551668",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Maarten Schellekens - Sax and Piano (free track).wav",
+      "CachePath": "DC/{DCAD96A0-1781-7AD6-DA76-70D1AA5F529A}.wem"
+     },
      {
       "Id": "383064900",
       "Language": "SFX",
@@ -80,6 +88,18 @@
       "CachePath": "2F/{2FAD0145-4E05-7799-21E2-FDDF93090DD5}.wem"
      }
     ],
+    "Plugins": {
+     "ShareSets": [
+      {
+       "Id": "3604890626",
+       "Name": "High_Pass_60Hz",
+       "ObjectPath": "\\Effects\\Factory Effects\\Parametric EQ\\High Pass Filters\\High_Pass_60Hz",
+       "GUID": "{F9627628-0B10-4272-BC30-D4C20423CB38}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      }
+     ]
+    },
     "Events": [
      {
       "Id": "192906153",
@@ -139,6 +159,27 @@
       ]
      },
      {
+      "Id": "3009755888",
+      "Name": "Play_MainTheme",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_MainTheme",
+      "GUID": "{C7772824-A704-4529-8904-E40952ED5780}",
+      "DurationType": "OneShot",
+      "DurationMin": "94.17249",
+      "DurationMax": "94.17249",
+      "MediaRefs": [
+       {
+        "Id": "161551668"
+       }
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "3604890626"
+        }
+       ]
+      }
+     },
+     {
       "Id": "1663870953",
       "Name": "Play_Motor01_Active",
       "ObjectPath": "\\Events\\Default Work Unit\\Play_Motor01_Active",
@@ -163,6 +204,6 @@
     ]
    }
   ],
-  "FileHash": "{71D461E1-15BE-8133-6DA2-58F21F5B6C7D}"
+  "FileHash": "{F31B69FC-1332-9223-F098-30C1D8FB110C}"
  }
 }

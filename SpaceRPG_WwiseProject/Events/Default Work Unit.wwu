@@ -85,6 +85,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_MainTheme" ID="{C7772824-A704-4529-8904-E40952ED5780}">
+					<ChildrenList>
+						<Action Name="" ID="{D19826F8-3C45-41A7-A175-B57F0E281375}" ShortID="573033786">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MainTheme" ID="{8067C65D-FA9C-4E6F-95E4-933DDF15964E}" WorkUnitID="{FA564B7D-2BF4-4E8C-ACA9-6B63564D0FEC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

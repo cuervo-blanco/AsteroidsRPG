@@ -94,7 +94,7 @@ MonoBehaviour:
     ParentPath: Events/Default Work Unit
     guid: 2fde586a43ce564895dc1f2931b60c5c
     GuidInternal: 
-    m_lastTime: -8584514957161924323
+    m_lastTime: -8584514345987172119
     List:
     - name: Play_Bullet_Fire
       guid: 6c06d2b7099b2945ba63750cb6fb5b6b
@@ -130,6 +130,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.305093
       minDuration: 0.09891417
+    - name: Play_MainTheme
+      guid: 242877c704a729458904e40952ed5780
+      id: 3009755888
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 2fde586a43ce564895dc1f2931b60c5c
+      - ElementName: Play_MainTheme
+        ObjectType: 3
+        guid: 242877c704a729458904e40952ed5780
+      Path: Events/Default Work Unit/Play_MainTheme
+      maxAttenuation: 0
+      maxDuration: 94.17249
+      minDuration: 94.17249
     - name: Play_Motor01_Active
       guid: 9416af44f781734d8dd90a2617034849
       id: 1663870953

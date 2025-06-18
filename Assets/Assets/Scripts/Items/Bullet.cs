@@ -3,8 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
 
-public class Bullet : MonoBehaviour
-{
+public class Bullet : MonoBehaviour {
     public float speed = 10f;
     public float lifetime = 2f;
     public AK.Wwise.Event fireEvent;
@@ -12,37 +11,38 @@ public class Bullet : MonoBehaviour
 
     Rigidbody2D rb;
 
-    void Awake()
-    {
+    void Awake() {
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0;
         rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
     }
 
-    public void Initialise(Vector2 dir)
-    {
+    public void Initialise(Vector2 dir) {
         rb.linearVelocity = dir.normalized * speed;
         fireEvent.Post(gameObject);
     }
 
-    void Update()
-    {
+    void Update() {
         lifetime -= Time.deltaTime;
         if (lifetime <= 0f) Destroy(gameObject);
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
+    void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Rock")) {
             bulletHit.Post(gameObject);
 
-            Rocket rocket = GameObject.FindObjectOfType<Rocket>();
-
             Rock rock = other.GetComponent<Rock>();
 
-            if (rocket != null && rocket.superModeActive && rock != null) {
-                rock.TakeHit();
+            if (rock != null) {
+                Rocket rocket = GameObject.FindObjectOfType<Rocket>();
+
+                bool destroyed = rock.TakeHit();
+
+                if (rocket != null && rocket.superModeActive && !destroyed) {
+                    rock.TakeHit();
+                }
             }
+
             Destroy(gameObject);
         }
     }

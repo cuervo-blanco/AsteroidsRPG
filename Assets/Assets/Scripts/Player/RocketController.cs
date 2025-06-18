@@ -1,11 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class RocketController : MonoBehaviour
-{
-    [Header("Game Manager")]
-    public GameManager gameManager;
-
+public class RocketController : MonoBehaviour {
     [Header("Hit / Invincibility")]
     public float blinkDuration  = 1.0f;
     public float blinkInterval  = 0.05f;
@@ -14,6 +10,8 @@ public class RocketController : MonoBehaviour
     [Header("Lives / Health")]
     public int maxLives = 3;
     int currentLives;
+
+    GameManager gm;
 
     SpriteRenderer[] renderers;
     SpriteRenderer  flameRenderer;
@@ -54,6 +52,8 @@ public class RocketController : MonoBehaviour
         rb  = GetComponent<Rigidbody2D>();
         renderers = GetComponentsInChildren<SpriteRenderer>(true);
         flameRenderer = fireAnimator.GetComponent<SpriteRenderer>();
+
+        gm = GameManager.Instance;
     }
 
     void Update() {
@@ -126,7 +126,8 @@ public class RocketController : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D col) {
-        if (col.CompareTag("Rock") || invincible) {
+        if (invincible) return;
+        if (col.CompareTag("Rock")) {
             Invoke(nameof(ClearHitFlag), 0.1f);
             TakeLife();
         } else if (col.CompareTag("Life")) {
@@ -139,14 +140,13 @@ public class RocketController : MonoBehaviour
 
     void TakeLife() {
         rocketAnimator.SetTrigger("gotHit");
-        StartCoroutine(BlinkCoroutine());
 
         currentLives = Mathf.Max(0, currentLives - 1);
 
         if (blinkCR != null) StopCoroutine(blinkCR);
         blinkCR = StartCoroutine(BlinkCoroutine());
 
-        gameManager.SetLifeScore(currentLives);
+        gm?.SetLifeScore(currentLives);
 
         if (currentLives == 0) {
             StartCoroutine(ExplodeAndHide());
@@ -154,10 +154,9 @@ public class RocketController : MonoBehaviour
     }
 
     public void GiveLife() {
-        currentLives = Mathf.Max(0, currentLives + 1);
-        gameManager.SetLifeScore(currentLives);
+        currentLives = Mathf.Min(currentLives + 1, maxLives);
+        gm?.SetLifeScore(currentLives);
     }
-
 
     System.Collections.IEnumerator BlinkCoroutine() {
         invincible = true;

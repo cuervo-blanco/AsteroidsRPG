@@ -4,47 +4,47 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(SpriteRenderer))]
 
-public class Rock : MonoBehaviour
-{
+public class Rock : MonoBehaviour {
     [Header("Sprites")]
+
     public Sprite[] rockSpritesNormal;
     public Sprite[] rockSpritesGlow;
 
     [Header("Splitting")]
-    public int   generation      = 0;
-    public int   maxGenerations  = 2;
-    public float childScaleMul   = 0.6f;
-    public int   baseHitsBiggest = 20;
-    public int   hitsFalloff     = 10;
+    public int generation = 0;
+    public int maxGenerations = 2;
+    public float childScaleMul = 0.6f;
+    public int baseHitsBiggest = 20;
+    public int hitsFalloff = 10;
+    int hitsLeft;
 
     [Header("Physics")]
-    public float minSpeed   = 0.5f;
-    public float maxSpeed   = 2.0f;
-    public float maxSpin    = 100f;
+    public float minSpeed = 0.5f;
+    public float maxSpeed = 2.0f;
+    public float maxSpin = 100f;
 
     SpriteRenderer sr;
-    int hitsLeft;
+
     bool _preset = false;
 
     bool hasEnteredView = false;
+    int baseValue = 1;
 
-    void OnBecameVisible()
-    {
+    void OnBecameVisible() {
         hasEnteredView = true;
     }
 
-    void OnBecameInvisible()
-    {
+    void OnBecameInvisible() {
         if (hasEnteredView) {
             Destroy(gameObject);
         }
+        return;
     }
 
+    public void Initialize(int gen) {
+        generation = gen;
 
-    void Start()
-    {
-        if (_preset) return;
-        sr = GetComponent<SpriteRenderer>();
+        if (sr == null) sr = GetComponent<SpriteRenderer>();
 
         int spriteIndex = Random.Range(0, rockSpritesNormal.Length);
         sr.sprite = rockSpritesNormal[spriteIndex];
@@ -53,35 +53,61 @@ public class Rock : MonoBehaviour
         float scaleRandom = Random.Range(0.9f, 1.1f);
         transform.localScale = Vector3.one * genScale * scaleRandom;
 
+        hitsLeft = baseHitsBiggest - hitsFalloff * generation;
+    }
+
+    void Start() {
+        sr = GetComponent<SpriteRenderer>();
+
+        if (hitsLeft == 0) {
+            Initialize(generation);
+        }
+
         transform.Rotate(0, 0, Random.Range(0f, 360f));
 
-        hitsLeft = baseHitsBiggest - hitsFalloff * generation;
-
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        rb.linearVelocity = Random.insideUnitCircle.normalized *
-                             Random.Range(minSpeed, maxSpeed);
+        rb.linearVelocity = Random.insideUnitCircle.normalized * Random.Range(minSpeed, maxSpeed);
         rb.angularVelocity = Random.Range(-maxSpin, maxSpin);
         rb.gravityScale = 0;
         rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
 
         RebuildCollider();
+        SetupLight();
     }
 
-    public bool TakeHit()
-    {
+    void SetupLight() {
+        Transform light = transform.Find("SmallRockLight");
+        if (light && Random.value < 0.25f) {
+            if (light.TryGetComponent<UnityEngine.Rendering.Universal.Light2D>(out var light2D)) {
+                float scale = transform.localScale.x;
+
+                light2D.pointLightOuterRadius = 1.2f * scale;
+                light2D.pointLightInnerRadius = Mathf.Clamp(0.1f * scale, 0.05f, light2D.pointLightOuterRadius - 0.05f);
+                light2D.intensity = Mathf.Lerp(1f, 3f, scale);
+                light2D.color = Color.Lerp(Color.blue, Color.cyan, Random.value);
+            }
+            light.gameObject.SetActive(true);
+        }
+    }
+
+    public bool TakeHit() {
         hitsLeft--;
-        if (hitsLeft > 0)
-        {
+        if (hitsLeft > 0) {
             Glow();
             return false;
         }
 
+        AwardValue();
         Split();
         return true;
     }
 
-    public void Glow()
-    {
+    void AwardValue() {
+        int value = baseValue * (maxGenerations - generation + 1);
+        GameManager.Instance.AddRockValue(value);
+    }
+
+    public void Glow() {
         int idx = System.Array.IndexOf(rockSpritesNormal, sr.sprite);
         if (idx >= 0 && idx < rockSpritesGlow.Length)
         {
@@ -92,28 +118,21 @@ public class Rock : MonoBehaviour
     void RevertToNormal() => sr.sprite = rockSpritesNormal[
         System.Array.IndexOf(rockSpritesGlow, sr.sprite)];
 
-    void Split()
-    {
-        if (generation >= maxGenerations)
-        {
+    void Split() {
+        if (generation >= maxGenerations) {
             Destroy(gameObject);
             return;
         }
 
-        int   pieces = Random.Range(2, 5);
+        int pieces = Random.Range(2, 5);
         float parentSpd  = GetComponent<Rigidbody2D>().linearVelocity.magnitude;
         const float BOOST = 2f;
 
-        for (int i = 0; i < pieces; i++)
-        {
+        for (int i = 0; i < pieces; i++) {
             Rock child = Instantiate(gameObject, transform.position, Quaternion.identity)
                          .GetComponent<Rock>();
 
-            child._preset = true;
-            child.generation = generation + 1;
-
-            float jitter = Random.Range(0.9f, 1.05f);
-            child.transform.localScale = transform.localScale * childScaleMul * jitter;
+            child.Initialize(generation + 1);
 
             child.RebuildCollider();
 
@@ -127,15 +146,13 @@ public class Rock : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void RebuildCollider()
-    {
+    void RebuildCollider() {
         PolygonCollider2D pc = GetComponent<PolygonCollider2D>();
         if (pc) Destroy(pc);
         gameObject.AddComponent<PolygonCollider2D>();
     }
 
-    void Update()
-    {
+    void Update() {
         if (!hasEnteredView) return;
 
         Vector3 v = Camera.main.WorldToViewportPoint(transform.position);
