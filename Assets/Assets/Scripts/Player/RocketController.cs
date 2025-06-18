@@ -39,7 +39,7 @@ public class RocketController : MonoBehaviour {
     private float shootTimer = 0f;
     Coroutine blinkCR;
 
-    void start() {
+    void Start() {
         initialLocalPos = transform.localPosition;
         currentLives = maxLives;
 
@@ -85,10 +85,6 @@ public class RocketController : MonoBehaviour {
 
         fireAnimator.SetBool("isThrusting", thrust);
         previousThrust = thrust;
-
-        if (/* hit condition */ false) {
-            rocketAnimator.SetTrigger("gotHit");
-        }
 
         if (wobbleScript != null) {
             wobbleScript.inputDirection = inputDirection;
@@ -176,8 +172,7 @@ public class RocketController : MonoBehaviour {
         invincible = false;
     }
 
-    System.Collections.IEnumerator ExplodeAndGameOver()
-    {
+    System.Collections.IEnumerator ExplodeAndGameOver() {
         this.enabled = false;
         rb.linearVelocity  = Vector2.zero;
 
@@ -186,14 +181,12 @@ public class RocketController : MonoBehaviour {
         UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 
-    public void EnableControl(bool on)
-    {
+    public void EnableControl(bool on) {
         enabled = on;
         if (rb) rb.linearVelocity = Vector2.zero;
     }
 
-    public void ResetLives()
-    {
+    public void ResetLives() {
         gameObject.SetActive(true);
 
         foreach (var r in renderers) r.enabled = true;
@@ -213,8 +206,7 @@ public class RocketController : MonoBehaviour {
         thrustAccelTimer = 0f;
     }
 
-    IEnumerator ExplodeAndHide()
-    {
+    IEnumerator ExplodeAndHide() {
         fireAnimator.Rebind();
         fireAnimator.gameObject.SetActive(false);
 
