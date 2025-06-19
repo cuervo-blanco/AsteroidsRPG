@@ -1,21 +1,17 @@
 using TMPro;
 using UnityEngine;
 
-public class ScoreUI : MonoBehaviour
-{
+public class ScoreUI : MonoBehaviour {
     TMP_Text label;
 
-    void Awake()
-    {
+    void Awake() {
         label = GetComponent<TMP_Text>();
         if (label == null)
             Debug.LogWarning("ScoreUI: TMP_Text not found!");
     }
 
-    public void SetScore(int value)
-    {
-        if (label == null)
-        {
+    public void SetScore(int value) {
+        if (label == null) {
             Debug.LogWarning("ScoreUI: Cannot set score, TMP_Text is null");
             return;
         }

@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour {
     enum State { Waiting, Playing, GameOver }
     State state = State.Waiting;
 
-    private  int rockValue = 0;
+    private int rockValue = 0;
 
     float score;
     int lives;
@@ -45,16 +45,19 @@ public class GameManager : MonoBehaviour {
     }
 
     void ShowStartScreen() {
-        spawner.Stop();
         state = State.Waiting;
+        spawner.Stop();
 
         rocket.EnableControl(false);
         rocket.fireAnimator.gameObject.SetActive(false);
+        rocket.gameObject.SetActive(true);
 
         startPanel.SetActive(true);
         gameOverPanel.SetActive(false);
 
         scoreUI.SetScore(0);
+        rockValue = 0;
+        UpdateRockValueUI();
     }
 
     void Update() {
@@ -73,22 +76,41 @@ public class GameManager : MonoBehaviour {
         state = State.Playing;
 
         score = 0f;
+        rockValue = 0;
         scoreUI.SetScore(0);
-
+        UpdateRockValueUI();
         rocket.ResetLives();
+
+        Rocket rocketCore = rocket.GetComponent<Rocket>();
+        if (rocketCore != null) {
+            rocketCore.superModeCharges = 0;
+            rocketCore.superModeActive = false;
+        }
+
         rocket.EnableControl(true);
+        rocket.gameObject.SetActive(true);
+
+        foreach (var obj in GameObject.FindGameObjectsWithTag("Rock")) {
+            Destroy(obj);
+        }
+        foreach (var obj in GameObject.FindGameObjectsWithTag("Bullet")) {
+            Destroy(obj);
+        }
 
         startPanel.SetActive(false);
         gameOverPanel.SetActive(false);
+
         spawner.Begin();
     }
 
     IEnumerator GameOverRoutine() {
         spawner.Stop();
         state = State.GameOver;
+
         gameOverPanel.SetActive(true);
 
         yield return new WaitForSeconds(3f);
+
         ShowStartScreen();
     }
 

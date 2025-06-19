@@ -509,8 +509,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   magicCoinPrefab: {fileID: 6514504702411670144, guid: 1d635f0e3117948c7bbe5af1eecf66fa, type: 3}
-  minDelay: 2.1
-  maxDelay: 7.1
+  minDelay: 10
+  maxDelay: 30
   spawnMin: {x: -5, y: 5}
   spawnMax: {x: 5, y: 10}
   maxCoinsOnScreen: 1

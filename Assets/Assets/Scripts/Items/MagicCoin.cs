@@ -8,7 +8,7 @@ public class MagicCoin : MonoBehaviour {
             coinGrab.Post(gameObject);
             Rocket rocket = other.GetComponent<Rocket>();
             if (rocket != null) {
-                rocket.ActivateSuperMode();
+                rocket.AddSuperCharge();
             }
 
             Destroy(gameObject);

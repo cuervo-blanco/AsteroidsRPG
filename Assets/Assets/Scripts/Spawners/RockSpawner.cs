@@ -7,8 +7,7 @@ public class RockSpawner : MonoBehaviour
     public GameObject rockPrefab;
 
     [System.Serializable]
-    public class SpawnZone
-    {
+    public class SpawnZone {
         [Tooltip("Two corner points that define the line segment where rocks appear")]
         public Transform pointA;
         public Transform pointB;

@@ -95,6 +95,10 @@ public class RocketController : MonoBehaviour {
         Rocket rocket = GameObject.FindFirstObjectByType<Rocket>();
         shootTimer -= Time.deltaTime;
 
+        if (Input.GetKeyDown(KeyCode.Y)) {
+            rocket.TryActivateSuperMode();
+        }
+
         if (shoot && shootTimer <= 0f && !rocket.superModeActive) {
             Shoot();
             shootTimer = shootCooldown;
@@ -196,20 +200,28 @@ public class RocketController : MonoBehaviour {
         gameObject.SetActive(true);
 
         foreach (var r in renderers) r.enabled = true;
-        GetComponent<Collider2D>().enabled = true;
+        if (flameRenderer != null) {
+            flameRenderer.enabled = true;
+        }
 
+        GetComponent<Collider2D>().enabled = true;
         fireAnimator.gameObject.SetActive(true);
-        fireAnimator.Rebind();      // <— hard reset
-        fireAnimator.Update(0f);    // force first frame of Idle
+
+        fireAnimator.Rebind();
+        fireAnimator.Update(0f);
 
         rocketAnimator.Rebind();
         rocketAnimator.Update(0f);
 
-        rb.linearVelocity   = Vector2.zero;
-        currentLives  = maxLives;
-        invincible    = false;
+        rb.linearVelocity = Vector2.zero;
+        transform.localPosition = initialLocalPos;
+
+        currentLives = maxLives;
+        invincible = false;
         previousThrust = false;
         thrustAccelTimer = 0f;
+
+        shootTimer = 0f;
     }
 
     IEnumerator ExplodeAndHide() {

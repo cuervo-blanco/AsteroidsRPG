@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 3917406380387084419}
   - component: {fileID: 7659814013800849610}
   - component: {fileID: 5136971630508154401}
+  - component: {fileID: -5761974921413479406}
   m_Layer: 0
   m_Name: LifeHeart
   m_TagString: Life
@@ -135,7 +136,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 0.1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -281,3 +282,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b0cd052b6fde42339a45cee7f6b52ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-5761974921413479406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4100961786562606757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1be008de8c1da45fca375e159b2fabf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  axis: {x: 1, y: 1, z: 0}
+  amplitude: 2
+  frequency: 1
+  phaseOffset: 0
