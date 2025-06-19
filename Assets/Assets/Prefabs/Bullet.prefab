@@ -186,7 +186,7 @@ MonoBehaviour:
   bulletHit:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 7d90862f408d6459e9183d957a3f505d, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 3269cbb8710a240e1bf8a3bc0c474f60, type: 2}
 --- !u!114 &222642469084128795
 MonoBehaviour:
   m_ObjectHideFlags: 0

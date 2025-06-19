@@ -10,11 +10,19 @@
     "Type": "User",
     "GUID": "{921BC17C-6121-420A-AE7A-F738912CDC55}",
     "Language": "SFX",
-    "Hash": "{9597FDF2-DC9D-4740-AB07-27118D64EDEE}",
+    "Hash": "{4204BC43-2F8E-1D7E-CEED-A2DC5D334ED8}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
     "Media": [
+     {
+      "Id": "18020292",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "20250618-BulletHit_Attack_01.wav",
+      "CachePath": "54/{5476F11F-2911-10A8-5064-4CA3A92BE8FD}.wem"
+     },
      {
       "Id": "161551668",
       "Language": "SFX",
@@ -22,6 +30,14 @@
       "Location": "Memory",
       "ShortName": "Maarten Schellekens - Sax and Piano (free track).wav",
       "CachePath": "DC/{DCAD96A0-1781-7AD6-DA76-70D1AA5F529A}.wem"
+     },
+     {
+      "Id": "353022840",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "25Jun18-RocketExplosion_01.wav",
+      "CachePath": "59/{591DD4A6-8F43-FB81-EB23-6A1EC3C87138}.wem"
      },
      {
       "Id": "383064900",
@@ -72,6 +88,14 @@
       "CachePath": "26/{26BCC6F9-D11C-68E8-D818-581FB4027350}.wem"
      },
      {
+      "Id": "687070539",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "20250618-CoinGrab_01.wav",
+      "CachePath": "98/{98EC145A-8E51-399A-9355-5BB7D99D985F}.wem"
+     },
+     {
       "Id": "930077654",
       "Language": "SFX",
       "Streaming": "false",
@@ -104,7 +128,7 @@
      {
       "Id": "192906153",
       "Name": "Play_Bullet_Fire",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_Bullet_Fire",
+      "ObjectPath": "\\Events\\Default Work Unit\\Rocket\\Play_Bullet_Fire",
       "GUID": "{B7D2066C-9B09-4529-BA63-750CB6FB5B6B}",
       "DurationType": "OneShot",
       "DurationMin": "0.87330973",
@@ -133,13 +157,13 @@
        {
         "Id": "137544727",
         "Name": "Stop_Motor01_Active",
-        "ObjectPath": "\\Events\\Default Work Unit\\Stop_Motor01_Active",
+        "ObjectPath": "\\Events\\Default Work Unit\\Rocket\\Stop_Motor01_Active",
         "GUID": "{C25677F1-57F0-4876-ABA7-19A0F7C1B04A}"
        },
        {
         "Id": "1663870953",
         "Name": "Play_Motor01_Active",
-        "ObjectPath": "\\Events\\Default Work Unit\\Play_Motor01_Active",
+        "ObjectPath": "\\Events\\Default Work Unit\\Rocket\\Play_Motor01_Active",
         "GUID": "{44AF1694-81F7-4D73-8DD9-0A2617034849}"
        }
       ]
@@ -147,7 +171,7 @@
      {
       "Id": "3659448534",
       "Name": "Play_Bullet_Hit_01",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_Bullet_Hit_01",
+      "ObjectPath": "\\Events\\Default Work Unit\\Collisions\\Play_Bullet_Hit_01",
       "GUID": "{CC50D321-9D97-42CB-A436-91F97FFD333F}",
       "DurationType": "OneShot",
       "DurationMin": "0.09891417",
@@ -159,9 +183,40 @@
       ]
      },
      {
+      "Id": "2869939732",
+      "Name": "Play_Bullet_Hit_Rock",
+      "ObjectPath": "\\Events\\Default Work Unit\\Collisions\\Play_Bullet_Hit_Rock",
+      "GUID": "{6DFD8B8F-202A-4011-9088-F73AC70AA72E}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.5983669",
+      "DurationMax": "2.7272213",
+      "MediaRefs": [
+       {
+        "Id": "18020292"
+       },
+       {
+        "Id": "576191442"
+       }
+      ]
+     },
+     {
+      "Id": "2971359875",
+      "Name": "Play_CoinGrab_01",
+      "ObjectPath": "\\Events\\Default Work Unit\\Collisions\\Play_CoinGrab_01",
+      "GUID": "{8FF5440B-60F6-4ECF-936F-0C2C3029A8D2}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.9152067",
+      "DurationMax": "2",
+      "MediaRefs": [
+       {
+        "Id": "687070539"
+       }
+      ]
+     },
+     {
       "Id": "3009755888",
       "Name": "Play_MainTheme",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_MainTheme",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music\\Play_MainTheme",
       "GUID": "{C7772824-A704-4529-8904-E40952ED5780}",
       "DurationType": "OneShot",
       "DurationMin": "94.17249",
@@ -182,7 +237,7 @@
      {
       "Id": "1663870953",
       "Name": "Play_Motor01_Active",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_Motor01_Active",
+      "ObjectPath": "\\Events\\Default Work Unit\\Rocket\\Play_Motor01_Active",
       "GUID": "{44AF1694-81F7-4D73-8DD9-0A2617034849}",
       "DurationType": "Infinite",
       "MediaRefs": [
@@ -192,9 +247,23 @@
       ]
      },
      {
+      "Id": "3260675324",
+      "Name": "Play_Rocket_Explode",
+      "ObjectPath": "\\Events\\Default Work Unit\\Rocket\\Play_Rocket_Explode",
+      "GUID": "{8BE853B0-4F85-463F-8C73-677928DEA94A}",
+      "DurationType": "OneShot",
+      "DurationMin": "3.5119157",
+      "DurationMax": "3.5119157",
+      "MediaRefs": [
+       {
+        "Id": "353022840"
+       }
+      ]
+     },
+     {
       "Id": "137544727",
       "Name": "Stop_Motor01_Active",
-      "ObjectPath": "\\Events\\Default Work Unit\\Stop_Motor01_Active",
+      "ObjectPath": "\\Events\\Default Work Unit\\Rocket\\Stop_Motor01_Active",
       "GUID": "{C25677F1-57F0-4876-ABA7-19A0F7C1B04A}",
       "MaxAttenuation": "0",
       "DurationType": "OneShot",
@@ -204,6 +273,6 @@
     ]
    }
   ],
-  "FileHash": "{A37386DE-A56D-1630-689D-6EFC4BB042A2}"
+  "FileHash": "{9A65C3BF-FB3D-EA1A-E1C9-B481545C381B}"
  }
 }

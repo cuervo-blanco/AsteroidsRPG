@@ -12,6 +12,7 @@ public class Bullet : MonoBehaviour {
     Rigidbody2D rb;
 
     void Awake() {
+        AkUnitySoundEngine.RegisterGameObj(gameObject);
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0;
         rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
@@ -34,7 +35,7 @@ public class Bullet : MonoBehaviour {
             Rock rock = other.GetComponent<Rock>();
 
             if (rock != null) {
-                Rocket rocket = GameObject.FindObjectOfType<Rocket>();
+                Rocket rocket = GameObject.FindFirstObjectByType<Rocket>();
 
                 bool destroyed = rock.TakeHit();
 
@@ -46,6 +47,5 @@ public class Bullet : MonoBehaviour {
             Destroy(gameObject);
         }
     }
-
 }
 

@@ -3,99 +3,118 @@
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{6A58DE2F-CE43-4856-95DC-1F2931B60C5C}" PersistMode="Standalone">
 			<ChildrenList>
-				<Event Name="Play_Bullet_Fire" ID="{B7D2066C-9B09-4529-BA63-750CB6FB5B6B}">
+				<Folder Name="Rocket" ID="{9E9DE317-85EA-43A2-8200-8051CCAEAA9A}" ShortID="885296780">
 					<ChildrenList>
-						<Action Name="" ID="{BC083883-6775-44AD-B422-76AD94A68F37}" ShortID="573941407">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Bullet_Fire_Random" ID="{BDE01AF2-8ACC-433A-9359-8CA14A3FF70C}" WorkUnitID="{BE1BDE46-1535-495D-B3E5-1726CDE1AAFC}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-						<Action Name="" ID="{018F8BB7-2A9B-44BF-8DD7-BE85D14CF05D}" ShortID="455039118">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="41"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Play_Motor01_Active" ID="{44AF1694-81F7-4D73-8DD9-0A2617034849}" WorkUnitID="{6A58DE2F-CE43-4856-95DC-1F2931B60C5C}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-						<Action Name="" ID="{D8D36363-5011-4170-9C40-32E8FB541B40}" ShortID="958571594">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="41"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Stop_Motor01_Active" ID="{C25677F1-57F0-4876-ABA7-19A0F7C1B04A}" WorkUnitID="{6A58DE2F-CE43-4856-95DC-1F2931B60C5C}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
+						<Event Name="Play_Rocket_Thrust" ID="{EA15D334-4766-47AC-B643-0A7C2D6EE22A}">
+							<ChildrenList>
+								<Action Name="" ID="{535D9C81-D78E-48FC-A7DE-E46E34C8519A}" ShortID="119664728"/>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Rock_Hit" ID="{CBC16E4A-5EBC-44BE-9B50-BC8C60A2E81A}">
+							<ChildrenList>
+								<Action Name="" ID="{D2686F07-536F-4950-B403-3BC37DD65012}" ShortID="481394804"/>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Rocket_Explode" ID="{8BE853B0-4F85-463F-8C73-677928DEA94A}">
+							<ChildrenList>
+								<Action Name="" ID="{AD34CCA5-EFE5-45C2-81B8-BB09B6EAA7C7}" ShortID="808864570"/>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Bullet_Fire" ID="{B7D2066C-9B09-4529-BA63-750CB6FB5B6B}">
+							<ChildrenList>
+								<Action Name="" ID="{BC083883-6775-44AD-B422-76AD94A68F37}" ShortID="573941407">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Bullet_Fire_Random" ID="{BDE01AF2-8ACC-433A-9359-8CA14A3FF70C}" WorkUnitID="{BE1BDE46-1535-495D-B3E5-1726CDE1AAFC}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{018F8BB7-2A9B-44BF-8DD7-BE85D14CF05D}" ShortID="455039118">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="41"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Play_Motor01_Active" ID="{44AF1694-81F7-4D73-8DD9-0A2617034849}" WorkUnitID="{6A58DE2F-CE43-4856-95DC-1F2931B60C5C}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{D8D36363-5011-4170-9C40-32E8FB541B40}" ShortID="958571594">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="41"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Stop_Motor01_Active" ID="{C25677F1-57F0-4876-ABA7-19A0F7C1B04A}" WorkUnitID="{6A58DE2F-CE43-4856-95DC-1F2931B60C5C}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Bullet_Hit_01" ID="{CC50D321-9D97-42CB-A436-91F97FFD333F}">
+							<ChildrenList>
+								<Action Name="" ID="{515A932F-8461-4C6E-91A4-98FC365A3A8A}" ShortID="561550732">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="BulletsHit01" ID="{9D76401F-7F09-4F15-9327-D6EA138F0EA1}" WorkUnitID="{BE1BDE46-1535-495D-B3E5-1726CDE1AAFC}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Motor01_Active" ID="{44AF1694-81F7-4D73-8DD9-0A2617034849}">
+							<ChildrenList>
+								<Action Name="" ID="{FAFD6496-8A65-4AF8-99CB-5245F8A74427}" ShortID="92731084">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Motor01_Active" ID="{37978BD7-4695-402F-9903-DFA3BAF77480}" WorkUnitID="{BE1BDE46-1535-495D-B3E5-1726CDE1AAFC}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_Motor01_Active" ID="{C25677F1-57F0-4876-ABA7-19A0F7C1B04A}">
+							<ChildrenList>
+								<Action Name="" ID="{B4E8629C-996F-4043-A758-D4CFF75FFA98}" ShortID="965690014">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Motor01_Active" ID="{37978BD7-4695-402F-9903-DFA3BAF77480}" WorkUnitID="{BE1BDE46-1535-495D-B3E5-1726CDE1AAFC}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Explosion01" ID="{06E58794-C9C9-4F89-995A-5686051280CB}">
+							<ChildrenList>
+								<Action Name="" ID="{BEF359A2-3568-4E65-89F7-F4040A7DF601}" ShortID="968875301">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="25Jun18-RocketExplosion_01" ID="{EF59F2F6-848F-47DA-9376-BF9B4EFC00A1}" WorkUnitID="{BE1BDE46-1535-495D-B3E5-1726CDE1AAFC}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
-				</Event>
-				<Event Name="Play_Rocket_Thrust" ID="{EA15D334-4766-47AC-B643-0A7C2D6EE22A}">
+				</Folder>
+				<Folder Name="Music" ID="{CA54E1AB-A7CB-4E06-B36C-16E20B0A189E}" ShortID="895360131">
 					<ChildrenList>
-						<Action Name="" ID="{535D9C81-D78E-48FC-A7DE-E46E34C8519A}" ShortID="119664728"/>
+						<Event Name="Play_MainTheme" ID="{C7772824-A704-4529-8904-E40952ED5780}">
+							<ChildrenList>
+								<Action Name="" ID="{D19826F8-3C45-41A7-A175-B57F0E281375}" ShortID="573033786">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MainTheme" ID="{8067C65D-FA9C-4E6F-95E4-933DDF15964E}" WorkUnitID="{FA564B7D-2BF4-4E8C-ACA9-6B63564D0FEC}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
-				</Event>
-				<Event Name="Play_Rock_Hit" ID="{CBC16E4A-5EBC-44BE-9B50-BC8C60A2E81A}">
-					<ChildrenList>
-						<Action Name="" ID="{D2686F07-536F-4950-B403-3BC37DD65012}" ShortID="481394804"/>
-					</ChildrenList>
-				</Event>
-				<Event Name="Play_Rocket_Explode" ID="{8BE853B0-4F85-463F-8C73-677928DEA94A}">
-					<ChildrenList>
-						<Action Name="" ID="{AD34CCA5-EFE5-45C2-81B8-BB09B6EAA7C7}" ShortID="808864570"/>
-					</ChildrenList>
-				</Event>
-				<Event Name="Play_Motor01_Active" ID="{44AF1694-81F7-4D73-8DD9-0A2617034849}">
-					<ChildrenList>
-						<Action Name="" ID="{FAFD6496-8A65-4AF8-99CB-5245F8A74427}" ShortID="92731084">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Motor01_Active" ID="{37978BD7-4695-402F-9903-DFA3BAF77480}" WorkUnitID="{BE1BDE46-1535-495D-B3E5-1726CDE1AAFC}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="Stop_Motor01_Active" ID="{C25677F1-57F0-4876-ABA7-19A0F7C1B04A}">
-					<ChildrenList>
-						<Action Name="" ID="{B4E8629C-996F-4043-A758-D4CFF75FFA98}" ShortID="965690014">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="2"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Motor01_Active" ID="{37978BD7-4695-402F-9903-DFA3BAF77480}" WorkUnitID="{BE1BDE46-1535-495D-B3E5-1726CDE1AAFC}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="Play_Bullet_Hit_01" ID="{CC50D321-9D97-42CB-A436-91F97FFD333F}">
-					<ChildrenList>
-						<Action Name="" ID="{515A932F-8461-4C6E-91A4-98FC365A3A8A}" ShortID="561550732">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="BulletsHit01" ID="{9D76401F-7F09-4F15-9327-D6EA138F0EA1}" WorkUnitID="{BE1BDE46-1535-495D-B3E5-1726CDE1AAFC}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="Play_MainTheme" ID="{C7772824-A704-4529-8904-E40952ED5780}">
-					<ChildrenList>
-						<Action Name="" ID="{D19826F8-3C45-41A7-A175-B57F0E281375}" ShortID="573033786">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="MainTheme" ID="{8067C65D-FA9C-4E6F-95E4-933DDF15964E}" WorkUnitID="{FA564B7D-2BF4-4E8C-ACA9-6B63564D0FEC}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

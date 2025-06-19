@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System.Collections;
+using System.Globalization;
 
 public class GameManager : MonoBehaviour {
     public int pointsPerSecond = 10;
@@ -28,7 +29,7 @@ public class GameManager : MonoBehaviour {
     int lives;
 
     void Start() {
-        AkSoundEngine.PostEvent("Play_MainTheme", gameObject);
+        AkUnitySoundEngine.PostEvent("Play_MainTheme", gameObject);
     }
 
     void Awake() {
@@ -38,7 +39,7 @@ public class GameManager : MonoBehaviour {
         }
         Instance = this;
 
-        if (!rocket) rocket = FindObjectOfType<RocketController>();
+        if (!rocket) rocket = FindFirstObjectByType<RocketController>();
         startButton.onClick.AddListener(StartGame);
         ShowStartScreen();
     }
@@ -97,8 +98,10 @@ public class GameManager : MonoBehaviour {
     }
 
     void UpdateRockValueUI() {
-        if (rockValueLabel != null)
-            rockValueLabel.text = rockValue.ToString("N0");
+        if (rockValueLabel == null) return;
+
+        rockValueLabel.text = rockValue
+        .ToString("C0", CultureInfo.GetCultureInfo("en-US"));
     }
 }
 

@@ -34,7 +34,7 @@
 	<ValidationCacheItem File="Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\SpaceRPG_WwiseProject.wproj" DateLow="1750105168" DateHigh="0"/>
 	<ValidationCacheItem File="Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\SpaceRPG_WwiseProject.crossover.wsettings" DateLow="1750172287" DateHigh="0"/>
 	<ValidationCacheItem File="Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\Soundcaster Sessions\Default Work Unit.wwu" DateLow="1749946917" DateHigh="0"/>
-	<ValidationCacheItem File="Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\SoundBanks\Default Work Unit.wwu" DateLow="1750111169" DateHigh="0"/>
+	<ValidationCacheItem File="Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\SoundBanks\Default Work Unit.wwu" DateLow="1750271982" DateHigh="0"/>
 	<ValidationCacheItem File="Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\Queries\Factory Queries.wwu" DateLow="1749946917" DateHigh="0"/>
 	<ValidationCacheItem File="Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\Queries\Default Work Unit.wwu" DateLow="1749946917" DateHigh="0"/>
 	<ValidationCacheItem File="Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\Presets\Factory Spatial Audio.wwu" DateLow="1749946917" DateHigh="0"/>
@@ -43,10 +43,10 @@
 	<ValidationCacheItem File="Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\Mixing Sessions\Default Work Unit.wwu" DateLow="1749946917" DateHigh="0"/>
 	<ValidationCacheItem File="Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\Metadata\Default Work Unit.wwu" DateLow="1749946917" DateHigh="0"/>
 	<ValidationCacheItem File="Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\Master-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1749946917" DateHigh="0"/>
-	<ValidationCacheItem File="Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\Interactive Music Hierarchy\Default Work Unit.wwu" DateLow="1750171549" DateHigh="0"/>
+	<ValidationCacheItem File="Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\Interactive Music Hierarchy\Default Work Unit.wwu" DateLow="1750271982" DateHigh="0"/>
 	<ValidationCacheItem File="Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\Game Parameters\Default Work Unit.wwu" DateLow="1749946917" DateHigh="0"/>
-	<ValidationCacheItem File="Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\Events\Default Work Unit.wwu" DateLow="1750172286" DateHigh="0"/>
-	<ValidationCacheItem File="Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\Effects\Factory Effects.wwu" DateLow="1750111169" DateHigh="0"/>
+	<ValidationCacheItem File="Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\Events\Default Work Unit.wwu" DateLow="1750271982" DateHigh="0"/>
+	<ValidationCacheItem File="Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\Effects\Factory Effects.wwu" DateLow="1750271982" DateHigh="0"/>
 	<ValidationCacheItem File="Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\Effects\Default Work Unit.wwu" DateLow="1749946917" DateHigh="0"/>
 	<ValidationCacheItem File="Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\Dynamic Dialogue\Default Work Unit.wwu" DateLow="1749946917" DateHigh="0"/>
 	<ValidationCacheItem File="Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\Conversion Settings\Factory Conversion Settings.wwu" DateLow="1749946917" DateHigh="0"/>
@@ -54,5 +54,5 @@
 	<ValidationCacheItem File="Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\Control Surface Sessions\Default Work Unit.wwu" DateLow="1749946917" DateHigh="0"/>
 	<ValidationCacheItem File="Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\Audio Devices\Default Work Unit.wwu" DateLow="1749946917" DateHigh="0"/>
 	<ValidationCacheItem File="Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\Attenuations\Default Work Unit.wwu" DateLow="1749946917" DateHigh="0"/>
-	<ValidationCacheItem File="Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1750171549" DateHigh="0"/>
+	<ValidationCacheItem File="Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1750271982" DateHigh="0"/>
 </ValidationCache>

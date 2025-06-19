@@ -2,42 +2,44 @@ using UnityEngine;
 using System.Collections;
 
 public class RocketController : MonoBehaviour {
+    GameManager gm;
+
     [Header("Hit / Invincibility")]
     public float blinkDuration  = 1.0f;
     public float blinkInterval  = 0.05f;
     bool  invincible = false;
 
     [Header("Lives / Health")]
+    public AK.Wwise.Event explosionSound;
     public int maxLives = 3;
     int currentLives;
 
-    GameManager gm;
-
+    [Header("Animation")]
     SpriteRenderer[] renderers;
-    SpriteRenderer  flameRenderer;
-
-    private Vector3 initialLocalPos;
+    SpriteRenderer flameRenderer;
     public RocketWobble wobbleScript;
-
     public Animator rocketAnimator;
     public Animator fireAnimator;
+    Coroutine blinkCR;
+
+    [Header("Movement")]
     public float moveSpeed = 5f;
     public float backwardSpeedMultiplier = 0.5f;
 
     private Rigidbody2D rb;
+    private Vector3 initialLocalPos;
     private Vector2 inputDirection;
     private bool previousThrust;
 
+    public float thrustAccelerationTime = 0.2f;
     private float currentThrustMultiplier = 0f;
-    public float thrustAccelerationTime = 0.2f; // seconds
     private float thrustAccelTimer = 0f;
 
+    [Header("Bullet")]
     public GameObject bulletPrefab;
     public Transform[] shootPoints;
     public float shootCooldown = 0.2f;
-
     private float shootTimer = 0f;
-    Coroutine blinkCR;
 
     void Start() {
         initialLocalPos = transform.localPosition;
@@ -90,11 +92,15 @@ public class RocketController : MonoBehaviour {
             wobbleScript.inputDirection = inputDirection;
         }
 
+        Rocket rocket = GameObject.FindFirstObjectByType<Rocket>();
         shootTimer -= Time.deltaTime;
 
-        if (shoot && shootTimer <= 0f) {
+        if (shoot && shootTimer <= 0f && !rocket.superModeActive) {
             Shoot();
             shootTimer = shootCooldown;
+        } else if (shoot && shootTimer <= 0f && rocket.superModeActive) {
+            Shoot();
+            shootTimer = shootCooldown - (shootCooldown * 0.5f);
         }
     }
 
@@ -210,6 +216,7 @@ public class RocketController : MonoBehaviour {
         fireAnimator.Rebind();
         fireAnimator.gameObject.SetActive(false);
 
+        explosionSound.Post(gameObject);
         rocketAnimator.SetTrigger("explode");
         EnableControl(false);
         GetComponent<Collider2D>().enabled = false;

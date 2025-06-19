@@ -2219,6 +2219,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blinkDuration: 1
   blinkInterval: 0.12
+  explosionSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2fa1fdf1f12954295b7aef06b1883bea, type: 2}
   maxLives: 3
   wobbleScript: {fileID: 1222196026}
   rocketAnimator: {fileID: 723592630}
@@ -2230,7 +2234,7 @@ MonoBehaviour:
   shootPoints:
   - {fileID: 1684258388}
   - {fileID: 1845343819}
-  shootCooldown: 0.1
+  shootCooldown: 0.2
 --- !u!50 &989917669
 Rigidbody2D:
   serializedVersion: 5

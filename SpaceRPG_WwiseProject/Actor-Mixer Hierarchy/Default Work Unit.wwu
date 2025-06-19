@@ -471,6 +471,46 @@
 								<ActiveSource Name="Motor01" ID="{5AE5F4A4-4221-4A75-B991-410F812BD559}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="25Jun18-RocketExplosion_01" ID="{EF59F2F6-848F-47DA-9376-BF9B4EFC00A1}" ShortID="119265698">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-350</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{D67E142E-5113-46C0-B322-A0EBD55501B2}"/>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A87074CA-4376-4AED-A7F7-874BCE19FD25}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{001A9098-37A9-4A65-803D-397B086C22BA}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="25Jun18-RocketExplosion_01" ID="{48FAF23A-EE26-4A0D-8547-6DECF002AC4F}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.0367469184593468"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>25Jun18-RocketExplosion_01.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="353022840"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="25Jun18-RocketExplosion_01" ID="{48FAF23A-EE26-4A0D-8547-6DECF002AC4F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

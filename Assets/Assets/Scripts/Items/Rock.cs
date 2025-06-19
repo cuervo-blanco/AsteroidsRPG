@@ -25,8 +25,6 @@ public class Rock : MonoBehaviour {
 
     SpriteRenderer sr;
 
-    bool _preset = false;
-
     bool hasEnteredView = false;
     int baseValue = 1;
 
@@ -47,11 +45,16 @@ public class Rock : MonoBehaviour {
         if (sr == null) sr = GetComponent<SpriteRenderer>();
 
         int spriteIndex = Random.Range(0, rockSpritesNormal.Length);
-        sr.sprite = rockSpritesNormal[spriteIndex];
 
-        float genScale = Mathf.Pow(childScaleMul, generation);
-        float scaleRandom = Random.Range(0.9f, 1.1f);
-        transform.localScale = Vector3.one * genScale * scaleRandom;
+        // Use the blue sprite set only for the smallest shards
+        bool isFinalGen = generation == maxGenerations;   // generation 2 if maxGenerations = 2
+        sr.sprite = isFinalGen
+                    ? rockSpritesGlow[spriteIndex]        // << blue by default
+                    : rockSpritesNormal[spriteIndex];     // << grey/brown etc.
+
+        float genScale   = Mathf.Pow(childScaleMul, generation);
+        float scaleRand  = Random.Range(0.9f, 1.1f);
+        transform.localScale = Vector3.one * genScale * scaleRand;
 
         hitsLeft = baseHitsBiggest - hitsFalloff * generation;
     }
@@ -97,8 +100,12 @@ public class Rock : MonoBehaviour {
             return false;
         }
 
+        if (generation >= maxGenerations) {
         AwardValue();
-        Split();
+        Destroy(gameObject);
+        } else {
+            Split();
+        }
         return true;
     }
 

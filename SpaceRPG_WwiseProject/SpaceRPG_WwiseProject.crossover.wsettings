@@ -5,6 +5,7 @@
 			<PropertyList>
 				<Property Name="AudioFilesImporter\Path" Type="string" Value="Y:\Documents\Sprites\SpaceRPG\Music\"/>
 				<Property Name="EffectsView\MeteringObject\{E5FFEBA7-4F6F-421E-ABB7-286C011BD0C8}" Type="string" Value="{9D76401F-7F09-4F15-9327-D6EA138F0EA1}"/>
+				<Property Name="Event Action List\{3E418EED-037A-41D0-B44D-F89F42BDCFA0}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{44AF1694-81F7-4D73-8DD9-0A2617034849}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{8BE853B0-4F85-463F-8C73-677928DEA94A}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{B7D2066C-9B09-4529-BA63-750CB6FB5B6B}\x64_Expand States" Type="string" Value=""/>
@@ -37,7 +38,7 @@
 				<Property Name="GenerateSoundBanks\x64_SelectedPlatforms" Type="string" Value="k7Kzwtx6ukm1YbE3gctFqsz/URYh5mpHskcT3mXh0/o="/>
 				<Property Name="GenerateSoundBanks\x64_SelectedSoundBanks" Type="string" Value="fMEbkiFhCkKuevc4kSzcVQ=="/>
 				<Property Name="HardwareController\CurrentSession" Type="string" Value="{00000000-0000-0000-0000-000000000000}"/>
-				<Property Name="Interactive Music\x64_{8067C65D-FA9C-4E6F-95E4-933DDF15964E} - SegmentEditorZoomInfo" Type="string" Value="VzQdv2CpnT8AAAAAAADwPwAAAAAAYGhAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
+				<Property Name="Interactive Music\x64_{8067C65D-FA9C-4E6F-95E4-933DDF15964E} - SegmentEditorZoomInfo" Type="string" Value="mpmZmZmZuT8AAAAAAADwPwAAAAAAYGhAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
 				<Property Name="MeterView\LastObject1" Type="string" Value="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"/>
 				<Property Name="MeterView\MeterMode1" Type="int32" Value="1"/>
 				<Property Name="Mixing Desk\LastSession" Type="string" Value="{00000000-0000-0000-0000-000000000000}"/>
@@ -99,12 +100,12 @@
 				<Property Name="PropertyEditor\SelectionChannel_0\ValueColumnWidth" Type="int32" Value="140"/>
 				<Property Name="PropertyEditor\SelectionChannel_0\VisualOptions" Type="int32" Value="2"/>
 				<Property Name="PropertyEditor\SelectionChannel_0\x64_CollapsedGroups" Type="string" Value="AQAAAAAAAABFZmZlY3RzL0VmZmVjdHMvRWZmZWN0cyAtIGNvdW50OiAwAA=="/>
-				<Property Name="PropertyEditor\SelectionChannel_0\x64_CollapsedGroupsAllMode" Type="string" Value="AQAAAAAAAABGYXZvcml0ZXMA"/>
+				<Property Name="PropertyEditor\SelectionChannel_0\x64_CollapsedGroupsAllMode" Type="string" Value="AgAAAAAAAABGYXZvcml0ZXMAR2VuZXJhbAA="/>
 				<Property Name="PropertyEditor\SelectionChannel_0\x64_ExpandedGroups" Type="string" Value="AAAAAAAAAAA="/>
 				<Property Name="PropertyEditor\SelectionChannel_0\x64_ExpandedGroupsAllMode" Type="string" Value="AAAAAAAAAAA="/>
 				<Property Name="PropertyEditor\SelectionChannel_0\x64_HiddenCategories" Type="string" Value="AgAAAAAAAABIRFIATUlESQA="/>
-				<Property Name="PropertyEditor\SelectionChannel_0\x64_InspectedObject" Type="string" Value="H0B2nQl/FU+TJ9bqE48OoQ=="/>
-				<Property Name="PropertyEditor\SelectionChannel_0\x64_RecentCategories" Type="string" Value="DAAAAAAAAABHZW5lcmFsAFJvdXRpbmcAQ29udmVyc2lvbgBFZmZlY3RzAABTb3VyY2VzAEFjdGlvbnMAQWxsAFJUUEMATWV0YWRhdGEAUG9zaXRpb25pbmcAQWR2YW5jZWQA"/>
+				<Property Name="PropertyEditor\SelectionChannel_0\x64_InspectedObject" Type="string" Value="7Y5BPnoD0EG0TfifQr3PoA=="/>
+				<Property Name="PropertyEditor\SelectionChannel_0\x64_RecentCategories" Type="string" Value="DAAAAAAAAABBbGwAR2VuZXJhbABSb3V0aW5nAENvbnZlcnNpb24ARWZmZWN0cwAAU291cmNlcwBBY3Rpb25zAFJUUEMATWV0YWRhdGEAUG9zaXRpb25pbmcAQWR2YW5jZWQA"/>
 				<Property Name="SchematicView\SearchText" Type="string" Value=""/>
 				<Property Name="SoundBank Manager\x64_Expand Folders Auto" Type="string" Value=""/>
 				<Property Name="SoundBank Manager\x64_Expand Folders User" Type="string" Value="BwAAAA=="/>

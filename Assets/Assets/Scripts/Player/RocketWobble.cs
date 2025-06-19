@@ -11,8 +11,7 @@ public class RocketWobble : MonoBehaviour
 
     public Vector2 inputDirection = Vector2.zero;
 
-    void Start()
-    {
+    void Start() {
         initialLocalPos = transform.localPosition;
     }
 
