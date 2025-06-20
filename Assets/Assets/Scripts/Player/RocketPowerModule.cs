@@ -38,12 +38,11 @@ public class RocketPowerModule : MonoBehaviour {
 
         int index = Mathf.Clamp(coinUI.GetActiveIndex(), 0, superCoins.Count - 1);
 
-        SuperCoin coin = superCoins[index];
-
         coinUI.PlayCoinDrain(index);
-        coinUI.RemoveAnimatorAt(index);
 
+        SuperCoin coin = superCoins[index];
         superCoins.RemoveAt(index);
+
         coinUI.UpdateCoinSlots(superCoins);
 
         StartCoroutine(SuperModeTimer(coin.duration, coin.type));
