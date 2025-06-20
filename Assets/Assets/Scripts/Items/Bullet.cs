@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour {
     public float speed = 10f;
     public float lifetime = 2f;
     public AK.Wwise.Event fireEvent;
+    public AK.Wwise.Event getHitEvent;
     public AK.Wwise.Event bulletHit;
 
     Rigidbody2D rb;
@@ -35,11 +36,11 @@ public class Bullet : MonoBehaviour {
             Rock rock = other.GetComponent<Rock>();
 
             if (rock != null) {
-                Rocket rocket = GameObject.FindFirstObjectByType<Rocket>();
+                RocketPowerModule powerModule = GameObject.FindFirstObjectByType<RocketPowerModule>();
 
                 bool destroyed = rock.TakeHit();
 
-                if (rocket != null && rocket.superModeActive && !destroyed) {
+                if (powerModule != null && powerModule.superModeActive && !destroyed) {
                     rock.TakeHit();
                 }
             }

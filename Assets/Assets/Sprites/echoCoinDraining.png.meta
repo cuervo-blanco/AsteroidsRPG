@@ -1,0 +1,1768 @@
+fileFormatVersion: 2
+guid: a98057f3168d14cf2bbdd4d56da25b70
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8191730930864193000
+    second: echoCoinDraining_0
+  - first:
+      213: 1755303794087181572
+    second: echoCoinDraining_1
+  - first:
+      213: 9148715421820509814
+    second: echoCoinDraining_2
+  - first:
+      213: 6015525819944258707
+    second: echoCoinDraining_3
+  - first:
+      213: 6200902017489880531
+    second: echoCoinDraining_4
+  - first:
+      213: -3120767550715078813
+    second: echoCoinDraining_5
+  - first:
+      213: -1575149790643206184
+    second: echoCoinDraining_6
+  - first:
+      213: -6130026667803324594
+    second: echoCoinDraining_7
+  - first:
+      213: 1938984258332622485
+    second: echoCoinDraining_8
+  - first:
+      213: 8568608109462583266
+    second: echoCoinDraining_9
+  - first:
+      213: -6524410965017915473
+    second: echoCoinDraining_10
+  - first:
+      213: 8872850074057694807
+    second: echoCoinDraining_11
+  - first:
+      213: -2135984626528826827
+    second: echoCoinDraining_12
+  - first:
+      213: -2361974543527521770
+    second: echoCoinDraining_13
+  - first:
+      213: -8465955289803586415
+    second: echoCoinDraining_14
+  - first:
+      213: -1562815900386768175
+    second: echoCoinDraining_15
+  - first:
+      213: -8109225503026995992
+    second: echoCoinDraining_16
+  - first:
+      213: 3396136272248356419
+    second: echoCoinDraining_17
+  - first:
+      213: -3881898910236355986
+    second: echoCoinDraining_18
+  - first:
+      213: -1830476191104125174
+    second: echoCoinDraining_19
+  - first:
+      213: 2976470468984876482
+    second: echoCoinDraining_20
+  - first:
+      213: -1239579673430914662
+    second: echoCoinDraining_21
+  - first:
+      213: 1662812485170494683
+    second: echoCoinDraining_22
+  - first:
+      213: -9181590569976357052
+    second: echoCoinDraining_23
+  - first:
+      213: 2224651305730602816
+    second: echoCoinDraining_24
+  - first:
+      213: 6882273385842984244
+    second: echoCoinDraining_25
+  - first:
+      213: -8163483343377677301
+    second: echoCoinDraining_26
+  - first:
+      213: -1003944934078374842
+    second: echoCoinDraining_27
+  - first:
+      213: 7766306625121639366
+    second: echoCoinDraining_28
+  - first:
+      213: -3853519427752885832
+    second: echoCoinDraining_29
+  - first:
+      213: 669451310627375199
+    second: echoCoinDraining_30
+  - first:
+      213: 6594939073943563230
+    second: echoCoinDraining_31
+  - first:
+      213: -5692841128446599393
+    second: echoCoinDraining_32
+  - first:
+      213: 6779789136898872311
+    second: echoCoinDraining_33
+  - first:
+      213: -3511447733524219047
+    second: echoCoinDraining_34
+  - first:
+      213: 4393589269959443789
+    second: echoCoinDraining_35
+  - first:
+      213: 2163217957934795258
+    second: echoCoinDraining_36
+  - first:
+      213: -3044042722591813512
+    second: echoCoinDraining_37
+  - first:
+      213: 7048533362034752234
+    second: echoCoinDraining_38
+  - first:
+      213: 7252092490837334635
+    second: echoCoinDraining_39
+  - first:
+      213: -6359532180692898666
+    second: echoCoinDraining_40
+  - first:
+      213: 8315129410159567361
+    second: echoCoinDraining_41
+  - first:
+      213: -266833989634061567
+    second: echoCoinDraining_42
+  - first:
+      213: -1049769257347360132
+    second: echoCoinDraining_43
+  - first:
+      213: 5841385120610207768
+    second: echoCoinDraining_44
+  - first:
+      213: -8823041862590519273
+    second: echoCoinDraining_45
+  - first:
+      213: -5920597348201313118
+    second: echoCoinDraining_46
+  - first:
+      213: 5155519697122241604
+    second: echoCoinDraining_47
+  - first:
+      213: 368550011992491372
+    second: echoCoinDraining_48
+  - first:
+      213: 1512930557028072268
+    second: echoCoinDraining_49
+  - first:
+      213: 4454085085719539051
+    second: echoCoinDraining_50
+  - first:
+      213: -7030473055041006917
+    second: echoCoinDraining_51
+  - first:
+      213: 7686125189370951089
+    second: echoCoinDraining_52
+  - first:
+      213: -7921556514621827884
+    second: echoCoinDraining_53
+  - first:
+      213: -8106044732683250517
+    second: echoCoinDraining_54
+  - first:
+      213: 3859369289573477326
+    second: echoCoinDraining_55
+  - first:
+      213: 7838739704118516560
+    second: echoCoinDraining_56
+  - first:
+      213: 953973646702522348
+    second: echoCoinDraining_57
+  - first:
+      213: 923755681858542306
+    second: echoCoinDraining_58
+  - first:
+      213: 8106636153220334902
+    second: echoCoinDraining_59
+  - first:
+      213: 1339387337082923532
+    second: echoCoinDraining_60
+  - first:
+      213: -7849473989957350386
+    second: echoCoinDraining_61
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: echoCoinDraining_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 495
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 812824abe10215e80800000000000000
+      internalID: -8191730930864193000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_1
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 495
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40d367f20871c5810800000000000000
+      internalID: 1755303794087181572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_2
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 495
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67edfb44434c6fe70800000000000000
+      internalID: 9148715421820509814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_3
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 495
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39cc7f29cd07b7350800000000000000
+      internalID: 6015525819944258707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_4
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 495
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d5cc77f7870e0650800000000000000
+      internalID: 6200902017489880531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_5
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 495
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 367df09727ec0b4d0800000000000000
+      internalID: -3120767550715078813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_6
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 495
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d74ea46c91f32ae0800000000000000
+      internalID: -1575149790643206184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_7
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 495
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4f49e15935cdeaa0800000000000000
+      internalID: -6130026667803324594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_8
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 425
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59e7df6e8e7a8ea10800000000000000
+      internalID: 1938984258332622485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_9
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 425
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e77c085dafc9e670800000000000000
+      internalID: 8568608109462583266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_10
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 425
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faf817d8bc2a475a0800000000000000
+      internalID: -6524410965017915473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_11
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 425
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75ed189c122b22b70800000000000000
+      internalID: 8872850074057694807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_12
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 425
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53acd029c457b52e0800000000000000
+      internalID: -2135984626528826827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_13
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 425
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 612d68cbaa4983fd0800000000000000
+      internalID: -2361974543527521770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_14
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 425
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1940beab482e28a80800000000000000
+      internalID: -8465955289803586415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_15
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 425
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1da4d100833cf4ae0800000000000000
+      internalID: -1562815900386768175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_16
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 355
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ec99889e5e367f80800000000000000
+      internalID: -8109225503026995992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_17
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 355
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34ebe2432ff712f20800000000000000
+      internalID: 3396136272248356419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_18
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 355
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e62d2612289b02ac0800000000000000
+      internalID: -3881898910236355986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_19
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 355
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a07bd6b3a97d896e0800000000000000
+      internalID: -1830476191104125174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_20
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 355
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cda84c1f1c8e4920800000000000000
+      internalID: 2976470468984876482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_21
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 355
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a990b56cad02ccee0800000000000000
+      internalID: -1239579673430914662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_22
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 355
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdcfba2352f731710800000000000000
+      internalID: 1662812485170494683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_23
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 355
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44f9b73d500749080800000000000000
+      internalID: -9181590569976357052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_24
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 285
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0477e2b639c8fde10800000000000000
+      internalID: 2224651305730602816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_25
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 285
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 435cb4a3e2fb28f50800000000000000
+      internalID: 6882273385842984244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_26
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 285
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b04c724b62b75be80800000000000000
+      internalID: -8163483343377677301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_27
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 285
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64c943ec6654112f0800000000000000
+      internalID: -1003944934078374842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_28
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 285
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cb53275ab677cb60800000000000000
+      internalID: 7766306625121639366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_29
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 285
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b109bd4f7c858ac0800000000000000
+      internalID: -3853519427752885832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_30
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 285
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f584d5c8b6e5a4900800000000000000
+      internalID: 669451310627375199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_31
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 285
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edbefb1752ee58b50800000000000000
+      internalID: 6594939073943563230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_32
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 215
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1fd438d727fef0b0800000000000000
+      internalID: -5692841128446599393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_33
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 215
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f3d8e49c46a61e50800000000000000
+      internalID: 6779789136898872311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_34
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 215
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95b30fb04e4d44fc0800000000000000
+      internalID: -3511447733524219047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_35
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 215
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4586eca92a29fc30800000000000000
+      internalID: 4393589269959443789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_36
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 215
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af90372854b450e10800000000000000
+      internalID: 2163217957934795258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_37
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 215
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8705dc6954361c5d0800000000000000
+      internalID: -3044042722591813512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_38
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 215
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aea329f7fbb61d160800000000000000
+      internalID: 7048533362034752234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_39
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 215
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6a13aa72bb94a460800000000000000
+      internalID: 7252092490837334635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_40
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 145
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69c62280d276eb7a0800000000000000
+      internalID: -6359532180692898666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_41
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 145
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 102e6f1a426456370800000000000000
+      internalID: 8315129410159567361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_42
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 145
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10b8cd176e30c4cf0800000000000000
+      internalID: -266833989634061567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_43
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 145
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7a5faf1c687e61f0800000000000000
+      internalID: -1049769257347360132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_44
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 145
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 818493671d4c01150800000000000000
+      internalID: 5841385120610207768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_45
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 145
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71824e52c224e8580800000000000000
+      internalID: -8823041862590519273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_46
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 145
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ac475a9410d5dda0800000000000000
+      internalID: -5920597348201313118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_47
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 145
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44c208379d51c8740800000000000000
+      internalID: 5155519697122241604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_48
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 75
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6547c2884a5d1500800000000000000
+      internalID: 368550011992491372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_49
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 75
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4bfd7563520ff410800000000000000
+      internalID: 1512930557028072268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_50
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 75
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6dada569c610dd30800000000000000
+      internalID: 4454085085719539051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_51
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 75
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb25357610ebe6e90800000000000000
+      internalID: -7030473055041006917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_52
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 75
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b533ab032a9aaa60800000000000000
+      internalID: 7686125189370951089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_53
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 75
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d4d8c5f15af01290800000000000000
+      internalID: -7921556514621827884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_54
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 75
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba41df6634b818f80800000000000000
+      internalID: -8106044732683250517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_55
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 75
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecb241acbeb3f8530800000000000000
+      internalID: 3859369289573477326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_56
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 5
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05b1cbeba3cc8cc60800000000000000
+      internalID: 7838739704118516560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_57
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 5
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cefa9c03af13d3d00800000000000000
+      internalID: 953973646702522348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_58
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 5
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ea5d6cf5e6d1dc00800000000000000
+      internalID: 923755681858542306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_59
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 5
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 635890c61ae808070800000000000000
+      internalID: 8106636153220334902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_60
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 5
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0aeb7bcfa5769210800000000000000
+      internalID: 1339387337082923532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: echoCoinDraining_61
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 5
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0c8ce29ef0111390800000000000000
+      internalID: -7849473989957350386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      echoCoinDraining_0: -8191730930864193000
+      echoCoinDraining_1: 1755303794087181572
+      echoCoinDraining_10: -6524410965017915473
+      echoCoinDraining_11: 8872850074057694807
+      echoCoinDraining_12: -2135984626528826827
+      echoCoinDraining_13: -2361974543527521770
+      echoCoinDraining_14: -8465955289803586415
+      echoCoinDraining_15: -1562815900386768175
+      echoCoinDraining_16: -8109225503026995992
+      echoCoinDraining_17: 3396136272248356419
+      echoCoinDraining_18: -3881898910236355986
+      echoCoinDraining_19: -1830476191104125174
+      echoCoinDraining_2: 9148715421820509814
+      echoCoinDraining_20: 2976470468984876482
+      echoCoinDraining_21: -1239579673430914662
+      echoCoinDraining_22: 1662812485170494683
+      echoCoinDraining_23: -9181590569976357052
+      echoCoinDraining_24: 2224651305730602816
+      echoCoinDraining_25: 6882273385842984244
+      echoCoinDraining_26: -8163483343377677301
+      echoCoinDraining_27: -1003944934078374842
+      echoCoinDraining_28: 7766306625121639366
+      echoCoinDraining_29: -3853519427752885832
+      echoCoinDraining_3: 6015525819944258707
+      echoCoinDraining_30: 669451310627375199
+      echoCoinDraining_31: 6594939073943563230
+      echoCoinDraining_32: -5692841128446599393
+      echoCoinDraining_33: 6779789136898872311
+      echoCoinDraining_34: -3511447733524219047
+      echoCoinDraining_35: 4393589269959443789
+      echoCoinDraining_36: 2163217957934795258
+      echoCoinDraining_37: -3044042722591813512
+      echoCoinDraining_38: 7048533362034752234
+      echoCoinDraining_39: 7252092490837334635
+      echoCoinDraining_4: 6200902017489880531
+      echoCoinDraining_40: -6359532180692898666
+      echoCoinDraining_41: 8315129410159567361
+      echoCoinDraining_42: -266833989634061567
+      echoCoinDraining_43: -1049769257347360132
+      echoCoinDraining_44: 5841385120610207768
+      echoCoinDraining_45: -8823041862590519273
+      echoCoinDraining_46: -5920597348201313118
+      echoCoinDraining_47: 5155519697122241604
+      echoCoinDraining_48: 368550011992491372
+      echoCoinDraining_49: 1512930557028072268
+      echoCoinDraining_5: -3120767550715078813
+      echoCoinDraining_50: 4454085085719539051
+      echoCoinDraining_51: -7030473055041006917
+      echoCoinDraining_52: 7686125189370951089
+      echoCoinDraining_53: -7921556514621827884
+      echoCoinDraining_54: -8106044732683250517
+      echoCoinDraining_55: 3859369289573477326
+      echoCoinDraining_56: 7838739704118516560
+      echoCoinDraining_57: 953973646702522348
+      echoCoinDraining_58: 923755681858542306
+      echoCoinDraining_59: 8106636153220334902
+      echoCoinDraining_6: -1575149790643206184
+      echoCoinDraining_60: 1339387337082923532
+      echoCoinDraining_61: -7849473989957350386
+      echoCoinDraining_7: -6130026667803324594
+      echoCoinDraining_8: 1938984258332622485
+      echoCoinDraining_9: 8568608109462583266
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

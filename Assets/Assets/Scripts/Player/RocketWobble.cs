@@ -1,7 +1,6 @@
 using UnityEngine;
 
-public class RocketWobble : MonoBehaviour
-{
+public class RocketWobble : MonoBehaviour {
     private Vector3 initialLocalPos;
 
     public float wobbleAmplitude = 0.05f;
@@ -15,13 +14,11 @@ public class RocketWobble : MonoBehaviour
         initialLocalPos = transform.localPosition;
     }
 
-    void Update()
-    {
+    void Update() {
         float wobbleOffset = Mathf.Sin(Time.time * wobbleFrequency * 2 * Mathf.PI) * wobbleAmplitude;
 
         Vector2 shakeOffset = Vector2.zero;
-        if (inputDirection != Vector2.zero)
-        {
+        if (inputDirection != Vector2.zero) {
             shakeOffset = Random.insideUnitCircle * shakeIntensity;
         }
 

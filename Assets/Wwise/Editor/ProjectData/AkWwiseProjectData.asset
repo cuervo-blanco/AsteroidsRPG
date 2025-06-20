@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks/Default Work Unit
     guid: 0fdfb59177128440a9dcf3fc66e80ad8
     GuidInternal: 
-    m_lastTime: -8584513349034537375
+    m_lastTime: -8584512587037041113
     List:
     - name: Main
       guid: 7cc11b9221610a42ae7af738912cdc55
@@ -94,8 +94,25 @@ MonoBehaviour:
     ParentPath: Events/Default Work Unit
     guid: 2fde586a43ce564895dc1f2931b60c5c
     GuidInternal: 
-    m_lastTime: -8584513349034412528
+    m_lastTime: -8584512587036839862
     List:
+    - name: Collisions
+      guid: d90cfb24fd581349921585470d981a8c
+      id: 824618274
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 2fde586a43ce564895dc1f2931b60c5c
+      - ElementName: Collisions
+        ObjectType: 4
+        guid: d90cfb24fd581349921585470d981a8c
+      Path: Events/Default Work Unit/Collisions
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Music
       guid: abe154cacba7064eb36c16e20b0a189e
       id: 3991942870
@@ -143,19 +160,19 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 2fde586a43ce564895dc1f2931b60c5c
-      - ElementName: Rocket
+      - ElementName: Collisions
         ObjectType: 4
-        guid: 17e39d9eea85a24382008051ccaeaa9a
+        guid: d90cfb24fd581349921585470d981a8c
       - ElementName: Play_Bullet_Hit_01
         ObjectType: 3
         guid: 21d350cc979dcb42a43691f97ffd333f
-      Path: Events/Default Work Unit/Rocket/Play_Bullet_Hit_01
+      Path: Events/Default Work Unit/Collisions/Play_Bullet_Hit_01
       maxAttenuation: 0
       maxDuration: 0.305093
       minDuration: 0.09891417
-    - name: Play_Explosion01
-      guid: 9487e506c9c9894f995a5686051280cb
-      id: 645797562
+    - name: Play_Bullet_Hit_Rock
+      guid: 8f8bfd6d2a2011409088f73ac70aa72e
+      id: 2869939732
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -163,16 +180,36 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 2fde586a43ce564895dc1f2931b60c5c
-      - ElementName: Rocket
+      - ElementName: Collisions
         ObjectType: 4
-        guid: 17e39d9eea85a24382008051ccaeaa9a
-      - ElementName: Play_Explosion01
+        guid: d90cfb24fd581349921585470d981a8c
+      - ElementName: Play_Bullet_Hit_Rock
         ObjectType: 3
-        guid: 9487e506c9c9894f995a5686051280cb
-      Path: Events/Default Work Unit/Rocket/Play_Explosion01
+        guid: 8f8bfd6d2a2011409088f73ac70aa72e
+      Path: Events/Default Work Unit/Collisions/Play_Bullet_Hit_Rock
       maxAttenuation: 0
-      maxDuration: 3.5119157
-      minDuration: 3.5119157
+      maxDuration: 2.7272213
+      minDuration: 1.5983669
+    - name: Play_CoinGrab_01
+      guid: 0b44f58ff660cf4e936f0c2c3029a8d2
+      id: 2971359875
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 2fde586a43ce564895dc1f2931b60c5c
+      - ElementName: Collisions
+        ObjectType: 4
+        guid: d90cfb24fd581349921585470d981a8c
+      - ElementName: Play_CoinGrab_01
+        ObjectType: 3
+        guid: 0b44f58ff660cf4e936f0c2c3029a8d2
+      Path: Events/Default Work Unit/Collisions/Play_CoinGrab_01
+      maxAttenuation: 0
+      maxDuration: 2
+      minDuration: 1.9152067
     - name: Play_MainTheme
       guid: 242877c704a729458904e40952ed5780
       id: 3009755888

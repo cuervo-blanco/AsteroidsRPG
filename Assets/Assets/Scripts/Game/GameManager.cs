@@ -81,10 +81,10 @@ public class GameManager : MonoBehaviour {
         UpdateRockValueUI();
         rocket.ResetLives();
 
-        Rocket rocketCore = rocket.GetComponent<Rocket>();
-        if (rocketCore != null) {
-            rocketCore.superModeCharges = 0;
-            rocketCore.superModeActive = false;
+        RocketPowerModule powerModule = rocket.GetComponent<RocketPowerModule>();
+        if (powerModule != null) {
+            powerModule.ResetSuperCoins();
+            powerModule.superModeActive = false;
         }
 
         rocket.EnableControl(true);

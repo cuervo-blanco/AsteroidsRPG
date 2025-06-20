@@ -17,7 +17,13 @@
 						</Event>
 						<Event Name="Play_Rocket_Explode" ID="{8BE853B0-4F85-463F-8C73-677928DEA94A}">
 							<ChildrenList>
-								<Action Name="" ID="{AD34CCA5-EFE5-45C2-81B8-BB09B6EAA7C7}" ShortID="808864570"/>
+								<Action Name="" ID="{AD34CCA5-EFE5-45C2-81B8-BB09B6EAA7C7}" ShortID="808864570">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="25Jun18-RocketExplosion_01" ID="{EF59F2F6-848F-47DA-9376-BF9B4EFC00A1}" WorkUnitID="{BE1BDE46-1535-495D-B3E5-1726CDE1AAFC}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="Play_Bullet_Fire" ID="{B7D2066C-9B09-4529-BA63-750CB6FB5B6B}">
@@ -51,17 +57,6 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Play_Bullet_Hit_01" ID="{CC50D321-9D97-42CB-A436-91F97FFD333F}">
-							<ChildrenList>
-								<Action Name="" ID="{515A932F-8461-4C6E-91A4-98FC365A3A8A}" ShortID="561550732">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="BulletsHit01" ID="{9D76401F-7F09-4F15-9327-D6EA138F0EA1}" WorkUnitID="{BE1BDE46-1535-495D-B3E5-1726CDE1AAFC}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
 						<Event Name="Play_Motor01_Active" ID="{44AF1694-81F7-4D73-8DD9-0A2617034849}">
 							<ChildrenList>
 								<Action Name="" ID="{FAFD6496-8A65-4AF8-99CB-5245F8A74427}" ShortID="92731084">
@@ -87,17 +82,6 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Play_Explosion01" ID="{06E58794-C9C9-4F89-995A-5686051280CB}">
-							<ChildrenList>
-								<Action Name="" ID="{BEF359A2-3568-4E65-89F7-F4040A7DF601}" ShortID="968875301">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="25Jun18-RocketExplosion_01" ID="{EF59F2F6-848F-47DA-9376-BF9B4EFC00A1}" WorkUnitID="{BE1BDE46-1535-495D-B3E5-1726CDE1AAFC}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Music" ID="{CA54E1AB-A7CB-4E06-B36C-16E20B0A189E}" ShortID="895360131">
@@ -108,6 +92,43 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="MainTheme" ID="{8067C65D-FA9C-4E6F-95E4-933DDF15964E}" WorkUnitID="{FA564B7D-2BF4-4E8C-ACA9-6B63564D0FEC}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Collisions" ID="{24FB0CD9-58FD-4913-9215-85470D981A8C}" ShortID="646966653">
+					<ChildrenList>
+						<Event Name="Play_Bullet_Hit_Rock" ID="{6DFD8B8F-202A-4011-9088-F73AC70AA72E}">
+							<ChildrenList>
+								<Action Name="" ID="{ECA46389-13A2-4F7B-858C-E994DE7C2B1B}" ShortID="108358302">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Bullet_Hit_Rock" ID="{C020E376-9480-475D-89A0-5BB851519B0D}" WorkUnitID="{BE1BDE46-1535-495D-B3E5-1726CDE1AAFC}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Bullet_Hit_01" ID="{CC50D321-9D97-42CB-A436-91F97FFD333F}">
+							<ChildrenList>
+								<Action Name="" ID="{515A932F-8461-4C6E-91A4-98FC365A3A8A}" ShortID="561550732">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="BulletsHit01" ID="{9D76401F-7F09-4F15-9327-D6EA138F0EA1}" WorkUnitID="{BE1BDE46-1535-495D-B3E5-1726CDE1AAFC}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_CoinGrab_01" ID="{8FF5440B-60F6-4ECF-936F-0C2C3029A8D2}">
+							<ChildrenList>
+								<Action Name="" ID="{01409FD5-0999-4523-A797-0B2577650E00}" ShortID="666879754">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="20250618-CoinGrab_01" ID="{10ECC9E1-7231-4527-9862-5A402DCEE76B}" WorkUnitID="{BE1BDE46-1535-495D-B3E5-1726CDE1AAFC}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

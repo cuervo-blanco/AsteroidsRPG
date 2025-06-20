@@ -35,6 +35,8 @@ public class RocketController : MonoBehaviour {
     private float currentThrustMultiplier = 0f;
     private float thrustAccelTimer = 0f;
 
+    private RocketPowerModule powerModule;
+
     [Header("Bullet")]
     public GameObject bulletPrefab;
     public Transform[] shootPoints;
@@ -54,8 +56,9 @@ public class RocketController : MonoBehaviour {
         rb  = GetComponent<Rigidbody2D>();
         renderers = GetComponentsInChildren<SpriteRenderer>(true);
         flameRenderer = fireAnimator.GetComponent<SpriteRenderer>();
-
         gm = GameManager.Instance;
+
+        powerModule = GetComponent<RocketPowerModule>();
     }
 
     void Update() {
@@ -92,17 +95,21 @@ public class RocketController : MonoBehaviour {
             wobbleScript.inputDirection = inputDirection;
         }
 
-        Rocket rocket = GameObject.FindFirstObjectByType<Rocket>();
+        ExecutePowerMode();
+    }
+
+    void ExecutePowerMode() {
+        bool shoot = Input.GetKey(KeyCode.Space);
         shootTimer -= Time.deltaTime;
 
         if (Input.GetKeyDown(KeyCode.Y)) {
-            rocket.TryActivateSuperMode();
+            powerModule.TryActivateSuperMode();
         }
 
-        if (shoot && shootTimer <= 0f && !rocket.superModeActive) {
+        if (shoot && shootTimer <= 0f && !powerModule.superModeActive) {
             Shoot();
             shootTimer = shootCooldown;
-        } else if (shoot && shootTimer <= 0f && rocket.superModeActive) {
+        } else if (shoot && shootTimer <= 0f && powerModule.superModeActive) {
             Shoot();
             shootTimer = shootCooldown - (shootCooldown * 0.5f);
         }
@@ -162,6 +169,10 @@ public class RocketController : MonoBehaviour {
     public void GiveLife() {
         currentLives = Mathf.Min(currentLives + 1, maxLives);
         gm?.SetLifeScore(currentLives);
+    }
+
+    public void SetDamageTolerance(float percentage) {
+        invincible = (percentage == 100.0f);
     }
 
     System.Collections.IEnumerator BlinkCoroutine() {
