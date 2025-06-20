@@ -31,14 +31,10 @@ public class CoinUI : MonoBehaviour {
     }
 
     public void UpdateCoinSlots(List<SuperCoin> coins) {
-        foreach (Transform child in coinSlotParent) Destroy(child.gameObject);
-        coinAnimators.Clear();
-
-        for (int i = 0; i < coins.Count; i++) {
+        while (coinAnimators.Count < coins.Count) {
             GameObject slot = Instantiate(coinSlotPrefab, coinSlotParent);
 
             Transform iconTransform = slot.transform.Find("Icon");
-
             if (iconTransform == null) {
                 Debug.LogWarning($"No 'Icon' child found in {slot.name}!");
                 continue;
@@ -47,18 +43,37 @@ public class CoinUI : MonoBehaviour {
             Image icon = iconTransform.GetComponent<Image>();
             Animator anim = iconTransform.GetComponent<Animator>();
 
-            if (icon != null) {
-                icon.sprite = GetIconForType(coins[i].type);
-            } else {
-                Debug.LogWarning($"No Image component found on 'Icon' in {slot.name}!");
+            if (icon != null)
+                icon.sprite = GetIconForType(coins[coinAnimators.Count].type);
+
+            if (anim != null)
+                coinAnimators.Add(anim);
+        }
+
+        for (int i = 0; i < coins.Count; i++) {
+            var iconTransform = coinAnimators[i].transform;
+            var icon = iconTransform.GetComponent<Image>();
+            var coinSlotScript = iconTransform.GetComponent<CoinSlotAnimator>();
+
+            if (!coinAnimators[i].gameObject.activeSelf) {
+                coinSlotScript?.ResetState();
             }
 
-            if (anim != null) {
-                coinAnimators.Add(anim); // Add to list for animation control
-            } else {
-                Debug.LogWarning($"No Animator found on 'Icon' in {slot.name}!");
+            if (icon != null) {
+                icon.sprite = GetIconForType(coins[i].type);
             }
+
+            coinAnimators[i].gameObject.SetActive(true);
         }
+
+        for (int i = 0; i < coinSlotParent.childCount; i++) {
+            GameObject child = coinSlotParent.GetChild(i).gameObject;
+            bool inUse = coinAnimators.Exists(a => a.transform.parent.gameObject == child);
+            child.SetActive(inUse);
+        }
+
+        activeIndex = Mathf.Clamp(activeIndex, 0, coins.Count - 1);
+        HighlightActive(activeIndex);
     }
 
     public void PlayCoinDrain(int index) {
@@ -90,9 +105,13 @@ public class CoinUI : MonoBehaviour {
         activeIndex = 0;
         foreach (var anim in coinAnimators) {
             anim.SetBool("Selected", false);
-            anim.gameObject.SetActive(false);
         }
 
     }
+    public void RemoveAnimatorAt(int index) {
+        if (index >= 0 && index < coinAnimators.Count)
+            coinAnimators.RemoveAt(index);
+    }
+
 }
 

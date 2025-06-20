@@ -34,14 +34,17 @@ public class RocketPowerModule : MonoBehaviour {
     }
 
     public void TryActivateSuperMode() {
-        if (superModeActive || superCoins.Count <= 0) return;
+        if (superModeActive || superCoins.Count == 0) return;
 
         int index = Mathf.Clamp(coinUI.GetActiveIndex(), 0, superCoins.Count - 1);
-        SuperCoin coin = superCoins[index];
-        superCoins.RemoveAt(index);
 
-        coinUI.UpdateCoinSlots(superCoins);
+        SuperCoin coin = superCoins[index];
+
         coinUI.PlayCoinDrain(index);
+        coinUI.RemoveAnimatorAt(index);
+
+        superCoins.RemoveAt(index);
+        coinUI.UpdateCoinSlots(superCoins);
 
         StartCoroutine(SuperModeTimer(coin.duration, coin.type));
     }
