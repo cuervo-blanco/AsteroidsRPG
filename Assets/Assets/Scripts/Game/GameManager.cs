@@ -2,6 +2,8 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using System.Globalization;
 
 public class GameManager : MonoBehaviour {
@@ -16,17 +18,22 @@ public class GameManager : MonoBehaviour {
     public Button startButton;
     public TMP_Text rockValueLabel;
 
+    [Header("Score")]
+    private int rockValue = 0;
+    public GameObject scoreBoard;
+    public Transform scoreRowParent;
+    public GameObject scoreRowPrefab;
+    public int maxRows = 5;
+    List<ScoreEntry> hiScores = new();
+    float score;
+    int lives;
+
     [Header("RockControl")]
     public RockSpawner spawner;
     public RocketController rocket;
 
     enum State { Waiting, Playing, GameOver }
     State state = State.Waiting;
-
-    private int rockValue = 0;
-
-    float score;
-    int lives;
 
     void Start() {
         AkUnitySoundEngine.PostEvent("Play_MainTheme", gameObject);
@@ -54,6 +61,7 @@ public class GameManager : MonoBehaviour {
 
         startPanel.SetActive(true);
         gameOverPanel.SetActive(false);
+        scoreBoard.SetActive(false);
 
         scoreUI.SetScore(0);
         rockValue = 0;
@@ -107,9 +115,19 @@ public class GameManager : MonoBehaviour {
         spawner.Stop();
         state = State.GameOver;
 
+        float kms = score / pointsPerSecond;
+        int total = CombinedScore(rockValue, kms);
+
+        var entry = new ScoreEntry(rockValue, kms, total);
+        hiScores.Add(entry);
+        hiScores = hiScores.OrderByDescending(e => e.combined).Take(maxRows).ToList();
+        SaveScores();
+
+        BuildScoreBoard();
+        scoreBoard.SetActive(true);
         gameOverPanel.SetActive(true);
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(10f);
 
         ShowStartScreen();
     }
@@ -124,6 +142,46 @@ public class GameManager : MonoBehaviour {
 
         rockValueLabel.text = rockValue
         .ToString("C0", CultureInfo.GetCultureInfo("en-US"));
+    }
+
+    void LoadScores() {
+        hiScores.Clear();
+        string json = PlayerPrefs.GetString("HiScores", "");
+        if (!string.IsNullOrEmpty(json)) {
+            hiScores = JsonUtility.FromJson<ScoreList>(json).list;
+        }
+    }
+
+    void SaveScores() {
+        var listWrap = new ScoreList { list = hiScores };
+        string json = JsonUtility.ToJson(listWrap);
+        PlayerPrefs.SetString("HiScores", json);
+    }
+
+    void BuildScoreBoard() {
+        foreach (Transform c in scoreRowParent) Destroy(c.gameObject);
+
+        foreach (var s in hiScores.Take(maxRows)) {
+            var row= Instantiate(scoreRowPrefab, scoreRowParent);
+
+            TMP_Text[] cells = row.GetComponentsInChildren<TMP_Text>();
+            cells[0].text = "$" + s.money.ToString("N0");
+            cells[1].text = s.kms.ToString("F1") + " km";
+            cells[2].text = s.combined.ToString("D5");
+        }
+    }
+
+    float NormalisedMoney(float money) => Mathf.Clamp01(money/1000f);
+    float NormalisedKms(float kms) => Mathf.Clamp01(kms/100f);
+
+    int CombinedScore(float money, float kms) {
+        float m = NormalisedMoney(money);
+        float d = NormalisedKms(kms);
+        return Mathf.RoundToInt((m * .5f + d * .5f) * 10_000f);
+    }
+
+    private class ScoreList {
+        public List<ScoreEntry> list;
     }
 }
 

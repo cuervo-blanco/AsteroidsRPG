@@ -509,8 +509,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   magicCoinPrefab: {fileID: 6514504702411670144, guid: 1d635f0e3117948c7bbe5af1eecf66fa, type: 3}
-  minDelay: 10
-  maxDelay: 30
+  minDelay: 1
+  maxDelay: 10
   spawnMin: {x: -5, y: 5}
   spawnMax: {x: 5, y: 10}
   maxCoinsOnScreen: 1
@@ -538,10 +538,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 470753064}
-  - component: {fileID: 470753066}
-  - component: {fileID: 470753065}
+  - component: {fileID: 470753067}
+  - component: {fileID: 470753068}
   m_Layer: 5
-  m_Name: CoinPanel
+  m_Name: CoinUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -558,16 +558,15 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1324923380}
+  m_Children: []
   m_Father: {fileID: 1256021045}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 770.9194, y: -489.6042}
-  m_SizeDelta: {x: 378.1624, y: 100.7981}
+  m_AnchoredPosition: {x: -0.000061035, y: -513.6464}
+  m_SizeDelta: {x: 1920, y: 50.5373}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &470753065
+--- !u!114 &470753067
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -579,13 +578,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e28fce9d6e8f04f9aa7800c755f44b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinAnimators: []
+  coinSlotParent: {fileID: 470753064}
+  coinSlotPrefab: {fileID: 2570784983492386083, guid: 530f53d2c2f9b45b29ea79de3e152f59, type: 3}
   iconDisplay: {fileID: 0}
   defaultIcon: {fileID: 0}
   shieldIcon: {fileID: 0}
-  fireRateIcon: {fileID: -8792552521280591940, guid: c827fe6a3e29946cb97df3bb75f3b885, type: 3}
+  fireRateIcon: {fileID: 0}
   speedBoostIcon: {fileID: 0}
---- !u!114 &470753066
+--- !u!114 &470753068
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -598,13 +598,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
+    m_Left: 8
+    m_Right: 4
+    m_Top: -9
     m_Bottom: 0
   m_ChildAlignment: 0
   m_Spacing: 0
-  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
@@ -2048,7 +2048,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -22.27771, z: 0, w: 0}
+  m_margin: {x: 0, y: 3.1938477, z: 0, w: 17.979858}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2076,10 +2076,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1256021045}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 955.8133, y: -47.575012}
-  m_SizeDelta: {x: 309.0138, y: 54.85}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 999, y: 1030}
+  m_SizeDelta: {x: 309.0138, y: 71.171}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &912490074
 GameObject:
@@ -2500,7 +2500,7 @@ MonoBehaviour:
   superModeActive: 0
   superModeDuration: 10
   maxSuperCoins: 3
-  coinUI: {fileID: 470753065}
+  coinUI: {fileID: 470753067}
 --- !u!1 &1040422561
 GameObject:
   m_ObjectHideFlags: 0
@@ -2902,104 +2902,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1324923379
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1324923380}
-  - component: {fileID: 1324923383}
-  - component: {fileID: 1324923382}
-  - component: {fileID: 1324923381}
-  m_Layer: 5
-  m_Name: CoinSlot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1324923380
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1324923379}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 470753064}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 103.12501, y: 103.66035}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &1324923381
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1324923379}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1324923382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1324923379}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: -8191730930864193000, guid: a98057f3168d14cf2bbdd4d56da25b70, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1324923383
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1324923379}
-  m_CullTransparentMesh: 1
 --- !u!1 &1484136197
 GameObject:
   m_ObjectHideFlags: 0
