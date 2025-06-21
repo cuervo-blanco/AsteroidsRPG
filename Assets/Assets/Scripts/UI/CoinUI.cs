@@ -74,7 +74,11 @@ public class CoinUI : MonoBehaviour {
 
     public void ResetUI() {
         activeIndex = 0;
-        foreach (var s in slots) s.gameObject.SetActive(false);
+        foreach (var s in slots) {
+            s.gameObject.SetActive(false);
+            Transform highlight = s.transform.parent.Find("Highlight");
+            if (highlight) highlight.gameObject.SetActive(false);
+        }
     }
 
     public void RemoveSlot(CoinSlotAnimator slot) => slots.Remove(slot);

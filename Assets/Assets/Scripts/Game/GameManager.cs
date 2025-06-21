@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
     public static GameManager Instance { get; private set; }
 
     [Header("UI")]
+    public CoinUI coinUI;
     public ScoreUI scoreUI;
     public LivesUI livesUI;
     public GameObject startPanel;
@@ -81,6 +82,10 @@ public class GameManager : MonoBehaviour {
     }
 
     void StartGame() {
+        scoreUI.gameObject.SetActive(true);
+        livesUI.gameObject.SetActive(true);
+        SetLifeScore(3);
+        rockValueLabel.gameObject.SetActive(true);
         state = State.Playing;
 
         score = 0f;
@@ -113,6 +118,10 @@ public class GameManager : MonoBehaviour {
 
     IEnumerator GameOverRoutine() {
         spawner.Stop();
+        coinUI.ResetUI();
+        scoreUI.gameObject.SetActive(false);
+        livesUI.gameObject.SetActive(false);
+        rockValueLabel.gameObject.SetActive(false);
         state = State.GameOver;
 
         float kms = score / pointsPerSecond;
@@ -162,7 +171,7 @@ public class GameManager : MonoBehaviour {
         foreach (Transform c in scoreRowParent) Destroy(c.gameObject);
 
         foreach (var s in hiScores.Take(maxRows)) {
-            var row= Instantiate(scoreRowPrefab, scoreRowParent);
+            var row = Instantiate(scoreRowPrefab, scoreRowParent);
 
             TMP_Text[] cells = row.GetComponentsInChildren<TMP_Text>();
             cells[0].text = "$" + s.money.ToString("N0");
