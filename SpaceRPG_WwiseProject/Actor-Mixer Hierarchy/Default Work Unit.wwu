@@ -638,6 +638,32 @@
 								<ActiveSource Name="20250618-CoinGrab_01" ID="{FCAE02FB-B3A2-46BD-8CE9-3756D91E2343}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Folder Name="UI" ID="{7494979C-7BD4-414A-A4D4-42FBB25EA7D0}" ShortID="839122571">
+							<ChildrenList>
+								<Sound Name="20250621-RingSound_bip" ID="{8CB60B3F-7039-4776-835D-77F84DE87534}" ShortID="1022370053">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A87074CA-4376-4AED-A7F7-874BCE19FD25}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{001A9098-37A9-4A65-803D-397B086C22BA}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="20250621-RingSound_bip" ID="{9E3D08F3-DDBF-4876-9F37-86FF4C2E3B5B}">
+											<Language>SFX</Language>
+											<AudioFile>20250621-RingSound_bip.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="266952768"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="20250621-RingSound_bip" ID="{9E3D08F3-DDBF-4876-9F37-86FF4C2E3B5B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

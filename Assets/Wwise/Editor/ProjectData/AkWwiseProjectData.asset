@@ -94,7 +94,7 @@ MonoBehaviour:
     ParentPath: Events/Default Work Unit
     guid: 2fde586a43ce564895dc1f2931b60c5c
     GuidInternal: 
-    m_lastTime: -8584512587036839862
+    m_lastTime: -8584510889555188985
     List:
     - name: Collisions
       guid: d90cfb24fd581349921585470d981a8c
@@ -250,6 +250,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Play_RingSound
+      guid: f51f3951e690e3408a7165ab80209d80
+      id: 4014067137
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 2fde586a43ce564895dc1f2931b60c5c
+      - ElementName: UI
+        ObjectType: 4
+        guid: c2229ef6e464c949a79d60307b53abd6
+      - ElementName: Play_RingSound
+        ObjectType: 3
+        guid: f51f3951e690e3408a7165ab80209d80
+      Path: Events/Default Work Unit/UI/Play_RingSound
+      maxAttenuation: 0
+      maxDuration: 1.6050568
+      minDuration: 1.6050568
     - name: Play_Rock_Hit
       guid: 4a6ec1cbbc5ebe449b50bc8c60a2e81a
       id: 1435751831
@@ -347,6 +367,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: UI
+      guid: c2229ef6e464c949a79d60307b53abd6
+      id: 1551306167
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 2fde586a43ce564895dc1f2931b60c5c
+      - ElementName: UI
+        ObjectType: 4
+        guid: c2229ef6e464c949a79d60307b53abd6
+      Path: Events/Default Work Unit/UI
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters/Default Work Unit.wwu
     PathAndIcons:

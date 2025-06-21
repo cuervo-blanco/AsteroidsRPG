@@ -14,12 +14,16 @@ public class GameManager : MonoBehaviour {
     public CoinUI coinUI;
     public ScoreUI scoreUI;
     public LivesUI livesUI;
+    [Header("Start Panel")]
     public GameObject startPanel;
     public GameObject gameOverPanel;
     public Button startButton;
-    public TMP_Text rockValueLabel;
+    [Header("GameOver Panel")]
+    public Button gameOverButton;
+
 
     [Header("Score")]
+    public TMP_Text rockValueLabel;
     private int rockValue = 0;
     public GameObject scoreBoard;
     public Transform scoreRowParent;
@@ -32,6 +36,7 @@ public class GameManager : MonoBehaviour {
     [Header("RockControl")]
     public RockSpawner spawner;
     public RocketController rocket;
+    public AK.Wwise.Event ringSound;
 
     enum State { Waiting, Playing, GameOver }
     State state = State.Waiting;
@@ -49,6 +54,7 @@ public class GameManager : MonoBehaviour {
 
         if (!rocket) rocket = FindFirstObjectByType<RocketController>();
         startButton.onClick.AddListener(StartGame);
+        startButton.onClick.AddListener(RingSound);
         ShowStartScreen();
     }
 
@@ -81,7 +87,16 @@ public class GameManager : MonoBehaviour {
         if (amountOfLives <= 0) StartCoroutine(GameOverRoutine());
     }
 
+    void RingSound() {
+         if (ringSound != null) {
+            ringSound.Post(gameObject);
+         } else {
+            Debug.LogWarning("Wwise Event not assigned!");
+        }
+    }
+
     void StartGame() {
+        gameOverButton.gameObject.SetActive(false);
         scoreUI.gameObject.SetActive(true);
         livesUI.gameObject.SetActive(true);
         SetLifeScore(3);
@@ -136,8 +151,17 @@ public class GameManager : MonoBehaviour {
         scoreBoard.SetActive(true);
         gameOverPanel.SetActive(true);
 
-        yield return new WaitForSeconds(10f);
+        gameOverButton.onClick.RemoveAllListeners();
+        gameOverButton.onClick.AddListener(() => StartCoroutine(HideGameOverAndShowStart()));
+        gameOverButton.gameObject.SetActive(true);
 
+        yield break;
+    }
+
+    IEnumerator HideGameOverAndShowStart() {
+        gameOverButton.gameObject.SetActive(false);
+        gameOverPanel.SetActive(false);
+        yield return new WaitForSeconds(0.1f);
         ShowStartScreen();
     }
 

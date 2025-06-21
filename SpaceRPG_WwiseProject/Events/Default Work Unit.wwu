@@ -136,6 +136,21 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="UI" ID="{F69E22C2-64E4-49C9-A79D-60307B53ABD6}" ShortID="67773493">
+					<ChildrenList>
+						<Event Name="Play_RingSound" ID="{51391FF5-90E6-40E3-8A71-65AB80209D80}">
+							<ChildrenList>
+								<Action Name="" ID="{5FF304B3-80AB-454E-AD63-2F1E4C02325E}" ShortID="898422734">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="20250621-RingSound_bip" ID="{8CB60B3F-7039-4776-835D-77F84DE87534}" WorkUnitID="{BE1BDE46-1535-495D-B3E5-1726CDE1AAFC}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

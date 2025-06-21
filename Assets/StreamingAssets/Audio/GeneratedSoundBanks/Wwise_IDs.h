@@ -19,6 +19,7 @@ namespace AK
         static const AkUniqueID PLAY_COINGRAB_01 = 2971359875U;
         static const AkUniqueID PLAY_MAINTHEME = 3009755888U;
         static const AkUniqueID PLAY_MOTOR01_ACTIVE = 1663870953U;
+        static const AkUniqueID PLAY_RINGSOUND = 4014067137U;
         static const AkUniqueID PLAY_ROCKET_EXPLODE = 3260675324U;
         static const AkUniqueID STOP_MOTOR01_ACTIVE = 137544727U;
     } // namespace EVENTS

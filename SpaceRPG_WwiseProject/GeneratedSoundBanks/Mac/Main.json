@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{921BC17C-6121-420A-AE7A-F738912CDC55}",
     "Language": "SFX",
-    "Hash": "{4204BC43-2F8E-1D7E-CEED-A2DC5D334ED8}",
+    "Hash": "{2A5FAA3A-C0DB-9E41-B179-EDD49FAB4F44}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -21,7 +21,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "20250618-BulletHit_Attack_01.wav",
-      "CachePath": "54/{5476F11F-2911-10A8-5064-4CA3A92BE8FD}.wem"
+      "CachePath": "9E/{9E531E54-2EE7-0129-EB83-6D070AC0B53B}.wem"
      },
      {
       "Id": "161551668",
@@ -32,12 +32,20 @@
       "CachePath": "DC/{DCAD96A0-1781-7AD6-DA76-70D1AA5F529A}.wem"
      },
      {
+      "Id": "266952768",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "20250621-RingSound_bip.wav",
+      "CachePath": "5B/{5B0F5175-D278-01A0-D204-638CB7FCAE45}.wem"
+     },
+     {
       "Id": "353022840",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "25Jun18-RocketExplosion_01.wav",
-      "CachePath": "59/{591DD4A6-8F43-FB81-EB23-6A1EC3C87138}.wem"
+      "CachePath": "44/{445A83DA-88B9-C482-C63C-7A6EE2286362}.wem"
      },
      {
       "Id": "383064900",
@@ -247,6 +255,20 @@
       ]
      },
      {
+      "Id": "4014067137",
+      "Name": "Play_RingSound",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\Play_RingSound",
+      "GUID": "{51391FF5-90E6-40E3-8A71-65AB80209D80}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.6050568",
+      "DurationMax": "1.6050568",
+      "MediaRefs": [
+       {
+        "Id": "266952768"
+       }
+      ]
+     },
+     {
       "Id": "3260675324",
       "Name": "Play_Rocket_Explode",
       "ObjectPath": "\\Events\\Default Work Unit\\Rocket\\Play_Rocket_Explode",
@@ -273,6 +295,6 @@
     ]
    }
   ],
-  "FileHash": "{8275A292-0374-803C-7314-184F18300572}"
+  "FileHash": "{2F6ECE87-5F58-3636-E43E-C8D89CF7E25F}"
  }
 }
