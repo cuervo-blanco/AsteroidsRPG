@@ -5,9 +5,9 @@ The content of this file may not be used without valid licenses to the
 AUDIOKINETIC Wwise Technology.
 Note that the use of the game engine is subject to the Unity(R) Terms of
 Service at https://unity3d.com/legal/terms-of-service
-
+ 
 License Usage
-
+ 
 Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
@@ -61,7 +61,7 @@ public class AkWwiseInitializationSettings : AkCommonPlatformSettings
 	{
 		return CommsSettings;
 	}
-
+	
 	//Deprecated
 	public void ResetSoundEngine(bool _)
 	{
@@ -371,7 +371,7 @@ public class AkWwiseInitializationSettings : AkCommonPlatformSettings
 	private static System.Collections.Generic.Dictionary<string, string> m_PlatformSettingsClassNames
 		= new System.Collections.Generic.Dictionary<string, string>();
 
-	private const System.Reflection.BindingFlags BindingFlags
+	private const System.Reflection.BindingFlags BindingFlags 
 		= System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic;
 
 	private static string GetHashOfActiveSettingsField(string name, object obj)
@@ -442,15 +442,7 @@ public class AkWwiseInitializationSettings : AkCommonPlatformSettings
 		}
 
 		var updated = false;
-
-        if (!m_PlatformSettingsClassNames.ContainsKey("Linux"))
-        {
-#if UNITY_EDITOR || UNITY_STANDALONE_LINUX
-        m_PlatformSettingsClassNames["Linux"] = typeof(AkLinuxPlatformInitializationSettings).FullName;
-#endif
-        }
-
-        var allCustomPlatforms = new System.Collections.Generic.List<string>();
+		var allCustomPlatforms = new System.Collections.Generic.List<string>();
 		foreach (var pair in AkUtilities.PlatformMapping)
 		{
 			var referencePlatform = pair.Key;

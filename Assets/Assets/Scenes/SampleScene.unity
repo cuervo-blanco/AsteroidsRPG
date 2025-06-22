@@ -281,6 +281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 161450579}
   - component: {fileID: 161450580}
+  - component: {fileID: 161450581}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -337,6 +338,18 @@ MonoBehaviour:
   pauseMenu: {fileID: 1639252579}
   continueButton: {fileID: 574274823}
   quitButton: {fileID: 973154673}
+--- !u!114 &161450581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161450577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef3e5cdc77bf44648a45dca6a4c516ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &171431614
 GameObject:
   m_ObjectHideFlags: 0
