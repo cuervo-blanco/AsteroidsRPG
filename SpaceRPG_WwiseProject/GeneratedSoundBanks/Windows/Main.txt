@@ -15,7 +15,7 @@ Effect plug-ins	ID	Name	Type				Notes
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	18020292	20250618-BulletHit_Attack_01	Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\.cache\9E\{9E531E54-2EE7-0129-EB83-6D070AC0B53B}.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Bullet_Hit_Rock\20250618-BulletHit_Attack_01		365048
 	161551668	Maarten Schellekens - Sax and Piano (free track)	Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\.cache\DC\{DCAD96A0-1781-7AD6-DA76-70D1AA5F529A}.wem		\Interactive Music Hierarchy\Default Work Unit\MainTheme\Maarten Schellekens - Sax and Piano (free track)		16612124
-	266952768	20250621-RingSound_bip	Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\.cache\5B\{5B0F5175-D278-01A0-D204-638CB7FCAE45}.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\UI\20250621-RingSound_bip		308268
+	266952768	20250621-RingSound_bip	Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\.cache\27\{27BF1D48-6FA0-C9CD-3506-2DEE63DA3BEF}.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\UI\20250621-RingSound_bip		308268
 	353022840	25Jun18-RocketExplosion_01	Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\.cache\44\{445A83DA-88B9-C482-C63C-7A6EE2286362}.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\25Jun18-RocketExplosion_01		550960
 	383064900	Rocket_Shot_05	Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\.cache\0F\{0F0EB971-819C-D0C3-CB6B-FEEB54423376}.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Bullet_Fire_Random\Rocket_Shot_05		303544
 	501377398	Rocket_Shot_02	Y:\Documents\Games\SpaceRPG\SpaceRPG_WwiseProject\.cache\9E\{9EF59922-BBA3-A00B-D4C4-66EA5B62288F}.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Bullet_Fire_Random\Rocket_Shot_02		344004

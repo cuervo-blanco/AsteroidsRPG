@@ -651,6 +651,16 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="20250621-RingSound_bip" ID="{9E3D08F3-DDBF-4876-9F37-86FF4C2E3B5B}">
+											<PropertyList>
+												<Property Name="LoopBegin" Type="Real64" Value="0.0276099217650318"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.0276099217650318"/>
+												<Property Name="VolumeOffset" Type="Real64">
+													<ValueList>
+														<Value>-3</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>20250621-RingSound_bip.wav</AudioFile>
 											<MediaIDList>

@@ -8,6 +8,13 @@
   "CacheRoot": "../../../../SpaceRPG_WwiseProject/.cache",
   "Platforms": [
    {
+    "Name": "Linux",
+    "GUID": "{239FCCF9-E17C-4B0C-B9DD-0D971618B8EF}",
+    "BasePlatform": "Linux",
+    "BasePlatformGUID": "{BD0BDF13-3125-454F-8BFD-319537169F81}",
+    "Path": "../../../../SpaceRPG_WwiseProject/GeneratedSoundBanks/Linux"
+   },
+   {
     "Name": "Mac",
     "GUID": "{C2B3B293-7ADC-49BA-B561-B13781CB45AA}",
     "BasePlatform": "Mac",
@@ -31,6 +38,6 @@
     "UseAsStandIn": "true"
    }
   ],
-  "FileHash": "{035F1F74-9391-F927-B111-48727FABAE0A}"
+  "FileHash": "{AC114D86-A9FA-AFA2-FA2F-02CBAA33EBDB}"
  }
 }

@@ -38,6 +38,13 @@ public class GameManager : MonoBehaviour {
     public RocketController rocket;
     public AK.Wwise.Event ringSound;
 
+    [Header("Pause Menu")]
+    public GameObject pauseMenu;
+    public Button continueButton;
+    public Button quitButton;
+
+    private bool isPaused = false;
+
     enum State { Waiting, Playing, GameOver }
     State state = State.Waiting;
 
@@ -53,8 +60,12 @@ public class GameManager : MonoBehaviour {
         Instance = this;
 
         if (!rocket) rocket = FindFirstObjectByType<RocketController>();
+
+        continueButton.onClick.AddListener(ResumeGame);
+        quitButton.onClick.AddListener(QuitGame);
         startButton.onClick.AddListener(StartGame);
         startButton.onClick.AddListener(RingSound);
+
         ShowStartScreen();
     }
 
@@ -76,10 +87,40 @@ public class GameManager : MonoBehaviour {
     }
 
     void Update() {
-        if (state != State.Playing) return;
+        if (state == State.Playing) {
+            score += pointsPerSecond * Time.deltaTime;
+            scoreUI.SetScore(Mathf.FloorToInt(score));
 
-        score += pointsPerSecond * Time.deltaTime;
-        scoreUI.SetScore(Mathf.FloorToInt(score));
+            if (Input.GetKeyDown(KeyCode.Escape)) {
+                if (!isPaused) {
+                    PauseGame();
+                } else {
+                    ResumeGame();
+                }
+            }
+        }
+    }
+
+    void PauseGame() {
+        isPaused = true;
+        Time.timeScale = 0f;
+        pauseMenu.SetActive(true);
+        rocket.EnableControl(false);
+    }
+
+    void ResumeGame() {
+        isPaused = false;
+        Time.timeScale = 1f;
+        pauseMenu.SetActive(false);
+        rocket.EnableControl(true);
+    }
+
+    void QuitGame() {
+        Time.timeScale = 1f;
+        Application.Quit();
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
     }
 
     public void SetLifeScore(int amountOfLives) {

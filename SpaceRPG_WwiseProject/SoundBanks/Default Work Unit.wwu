@@ -6,11 +6,13 @@
 				<SoundBank Name="Main" ID="{921BC17C-6121-420A-AE7A-F738912CDC55}">
 					<ObjectInclusionList>
 						<ObjectRef Name="Play_Bullet_Hit_Rock" ID="{6DFD8B8F-202A-4011-9088-F73AC70AA72E}" WorkUnitID="{6A58DE2F-CE43-4856-95DC-1F2931B60C5C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_RingSound" ID="{51391FF5-90E6-40E3-8A71-65AB80209D80}" WorkUnitID="{6A58DE2F-CE43-4856-95DC-1F2931B60C5C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Bullet_Hit_01" ID="{CC50D321-9D97-42CB-A436-91F97FFD333F}" WorkUnitID="{6A58DE2F-CE43-4856-95DC-1F2931B60C5C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Bullet_Fire" ID="{B7D2066C-9B09-4529-BA63-750CB6FB5B6B}" WorkUnitID="{6A58DE2F-CE43-4856-95DC-1F2931B60C5C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_MainTheme" ID="{C7772824-A704-4529-8904-E40952ED5780}" WorkUnitID="{6A58DE2F-CE43-4856-95DC-1F2931B60C5C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Rocket_Explode" ID="{8BE853B0-4F85-463F-8C73-677928DEA94A}" WorkUnitID="{6A58DE2F-CE43-4856-95DC-1F2931B60C5C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_Motor01_Active" ID="{C25677F1-57F0-4876-ABA7-19A0F7C1B04A}" WorkUnitID="{6A58DE2F-CE43-4856-95DC-1F2931B60C5C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="UI" ID="{F69E22C2-64E4-49C9-A79D-60307B53ABD6}" WorkUnitID="{6A58DE2F-CE43-4856-95DC-1F2931B60C5C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Motor01_Active" ID="{44AF1694-81F7-4D73-8DD9-0A2617034849}" WorkUnitID="{6A58DE2F-CE43-4856-95DC-1F2931B60C5C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_CoinGrab_01" ID="{8FF5440B-60F6-4ECF-936F-0C2C3029A8D2}" WorkUnitID="{6A58DE2F-CE43-4856-95DC-1F2931B60C5C}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>

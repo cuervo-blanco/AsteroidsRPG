@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{921BC17C-6121-420A-AE7A-F738912CDC55}",
     "Language": "SFX",
-    "Hash": "{2A5FAA3A-C0DB-9E41-B179-EDD49FAB4F44}",
+    "Hash": "{B4BF26F6-230B-5CE6-CF23-76856BFA2D91}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -37,7 +37,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "20250621-RingSound_bip.wav",
-      "CachePath": "5B/{5B0F5175-D278-01A0-D204-638CB7FCAE45}.wem"
+      "CachePath": "27/{27BF1D48-6FA0-C9CD-3506-2DEE63DA3BEF}.wem"
      },
      {
       "Id": "353022840",
@@ -295,6 +295,6 @@
     ]
    }
   ],
-  "FileHash": "{62B1731D-AA1D-4959-914C-BCEA28871CBA}"
+  "FileHash": "{49456160-8CFF-B4EC-DD44-4D72D7DBC3EE}"
  }
 }
