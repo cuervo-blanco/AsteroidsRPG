@@ -42,6 +42,15 @@ mono_crash.*
 *.dll
 *.zip
 
+# Wwise dSYM files
+*.dSYM/
+
+# Wwise static libraries
+*.a
+
+# Zipped builds
+*.zip
+
 # --- Unity Visual Scripting ---
 Assets/Unity.VisualScripting.Generated/**
 
