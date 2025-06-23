@@ -13,6 +13,7 @@
 /.vs/
 /.vscode/
 SpaceRPG_Windows.zip
+SpaceRPG_Windows/
 *.csproj
 *.unityproj
 *.sln
