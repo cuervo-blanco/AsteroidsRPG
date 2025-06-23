@@ -7,6 +7,8 @@
 					<PropertyList>
 						<Property Name="Channels" Type="int32">
 							<ValueList>
+								<Value Platform="Android">4</Value>
+								<Value Platform="iOS">4</Value>
 								<Value Platform="Windows">4</Value>
 								<Value Platform="Mac">4</Value>
 								<Value Platform="Linux">4</Value>
@@ -14,6 +16,8 @@
 						</Property>
 						<Property Name="LRMix" Type="Real64">
 							<ValueList>
+								<Value Platform="Android">0</Value>
+								<Value Platform="iOS">0</Value>
 								<Value Platform="Windows">0</Value>
 								<Value Platform="Mac">0</Value>
 								<Value Platform="Linux">0</Value>
@@ -21,6 +25,8 @@
 						</Property>
 						<Property Name="MaxSampleRate" Type="int32">
 							<ValueList>
+								<Value Platform="Android">48000</Value>
+								<Value Platform="iOS">48000</Value>
 								<Value Platform="Windows">48000</Value>
 								<Value Platform="Mac">48000</Value>
 								<Value Platform="Linux">48000</Value>
@@ -28,6 +34,8 @@
 						</Property>
 						<Property Name="MinSampleRate" Type="int32">
 							<ValueList>
+								<Value Platform="Android">0</Value>
+								<Value Platform="iOS">0</Value>
 								<Value Platform="Windows">0</Value>
 								<Value Platform="Mac">0</Value>
 								<Value Platform="Linux">0</Value>
@@ -35,6 +43,8 @@
 						</Property>
 						<Property Name="SampleRate" Type="int32">
 							<ValueList>
+								<Value Platform="Android">0</Value>
+								<Value Platform="iOS">0</Value>
 								<Value Platform="Windows">0</Value>
 								<Value Platform="Mac">0</Value>
 								<Value Platform="Linux">0</Value>
@@ -42,6 +52,12 @@
 						</Property>
 					</PropertyList>
 					<ConversionPluginInfoList>
+						<ConversionPluginInfo Platform="Android">
+							<ConversionPlugin Name="" ID="{50CF7E84-5BCF-4D94-BCFC-04C3E123265B}" PluginName="PCM" CompanyID="0" PluginID="1"/>
+						</ConversionPluginInfo>
+						<ConversionPluginInfo Platform="iOS">
+							<ConversionPlugin Name="" ID="{ED3245A5-23AA-4E90-969C-ED3C622B5BFC}" PluginName="PCM" CompanyID="0" PluginID="1"/>
+						</ConversionPluginInfo>
 						<ConversionPluginInfo Platform="Windows">
 							<ConversionPlugin Name="" ID="{875740EF-3A60-4105-8429-6F95B8688D26}" PluginName="PCM" CompanyID="0" PluginID="1"/>
 						</ConversionPluginInfo>

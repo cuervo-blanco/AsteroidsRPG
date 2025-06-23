@@ -2,25 +2,28 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class CoinSlotAnimator : MonoBehaviour {
-    [SerializeField] Animator animator;
-    [SerializeField] Image iconImage;
+    [SerializeField] private Image iconImage;
 
     void Awake() {
-        if (!animator) animator = GetComponent<Animator>();
-        if (!iconImage) iconImage = GetComponent<Image>();
+        if (!iconImage) iconImage = GetComponentInChildren<Image>();
     }
 
-    public void SetIcon(Sprite s) => iconImage.sprite = s;
-
-    public void PlayDrain() => animator.SetTrigger("Drain");
+    public void SetIcon(Sprite sprite) {
+        if (iconImage != null) {
+            iconImage.sprite = sprite;
+            iconImage.enabled = true;
+        }
+    }
 
     public void ResetState() {
-        animator.Rebind();
-        iconImage.enabled = true;
+        if (iconImage != null) {
+            iconImage.enabled = true;
+        }
+
         gameObject.SetActive(true);
     }
 
-    public void OnDrainFinished() {
+    public void ClearSlot() {
         GetComponentInParent<CoinUI>()?.RemoveSlot(this);
         gameObject.SetActive(false);
     }

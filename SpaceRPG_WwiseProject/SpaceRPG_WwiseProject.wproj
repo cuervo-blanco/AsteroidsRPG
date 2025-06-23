@@ -3,6 +3,8 @@
 	<ProjectInfo>
 		<Project Name="SpaceRPG_WwiseProject" ID="{6BD52496-405A-4EB2-94A0-F08F335E54E1}">
 			<Platforms>
+				<Platform Name="Android" ReferencePlatform="Android" ID="{A0C3A0F5-7D74-4217-82A8-1A67AD97FB4F}" />
+				<Platform Name="iOS" ReferencePlatform="iOS" ID="{ED0CE70F-117C-437C-8F74-9CA2A041AEA9}" />
 				<Platform Name="Linux" ReferencePlatform="Linux" ID="{239FCCF9-E17C-4B0C-B9DD-0D971618B8EF}" />
 				<Platform Name="Mac" ReferencePlatform="Mac" ID="{C2B3B293-7ADC-49BA-B561-B13781CB45AA}" />
 				<Platform Name="Windows" ReferencePlatform="Windows" ID="{1651FFCC-E621-476A-B247-13DE65E1D3FA}" />
@@ -16,6 +18,8 @@
 			<PropertyList>
 				<Property Name="ExternalSourcesInputPath" Type="string">
 					<ValueList>
+						<Value Platform="Android"></Value>
+						<Value Platform="iOS"></Value>
 						<Value Platform="Windows"></Value>
 						<Value Platform="Mac"></Value>
 						<Value Platform="Linux"></Value>
@@ -23,6 +27,8 @@
 				</Property>
 				<Property Name="ExternalSourcesOutputPath" Type="string">
 					<ValueList>
+						<Value Platform="Android">GeneratedSoundBanks\Android</Value>
+						<Value Platform="iOS">GeneratedSoundBanks\iOS</Value>
 						<Value Platform="Windows">GeneratedSoundBanks\Windows</Value>
 						<Value Platform="Mac">GeneratedSoundBanks\Mac</Value>
 						<Value Platform="Linux">GeneratedSoundBanks\Linux</Value>
@@ -30,6 +36,8 @@
 				</Property>
 				<Property Name="GlobalVoiceInstancesLimit" Type="int16">
 					<ValueList>
+						<Value Platform="Android">256</Value>
+						<Value Platform="iOS">256</Value>
 						<Value Platform="Windows">256</Value>
 						<Value Platform="Mac">256</Value>
 						<Value Platform="Linux">256</Value>
@@ -39,13 +47,17 @@
 				<Property Name="SoundBankGenerateEstimatedDuration" Type="bool" Value="True" /><Property Name="SoundBankHeaderFilePath" Type="string" Value="..\Assets\StreamingAssets\Audio\GeneratedSoundBanks" />
 				<Property Name="SoundBankPaths" Type="string">
 					<ValueList>
+						<Value Platform="Android">GeneratedSoundBanks\Android\</Value>
+						<Value Platform="iOS">GeneratedSoundBanks\iOS\</Value>
 						<Value Platform="Windows">GeneratedSoundBanks\Windows\</Value>
 						<Value Platform="Mac">GeneratedSoundBanks\Mac\</Value>
-						<Value Platform="Linux">GeneratedSoundBanks\Linux\</Value>
+						<Value Platform="Linux">GeneratedSoundBanks\StandaloneLinux64\</Value>
 					</ValueList>
 				</Property>
 				<Property Name="SoundBankPostGenerateCustomCmdDescription" Type="string">
 					<ValueList>
+						<Value Platform="Android"></Value>
+						<Value Platform="iOS"></Value>
 						<Value Platform="Windows"></Value>
 						<Value Platform="Mac"></Value>
 						<Value Platform="Linux"></Value>
@@ -53,6 +65,8 @@
 				</Property>
 				<Property Name="SoundBankPostGenerateCustomCmdLines" Type="string">
 					<ValueList>
+						<Value Platform="Android"></Value>
+						<Value Platform="iOS"></Value>
 						<Value Platform="Windows"></Value>
 						<Value Platform="Mac"></Value>
 						<Value Platform="Linux"></Value>
@@ -60,6 +74,8 @@
 				</Property>
 				<Property Name="SoundBankPreGenerateCustomCmdDescription" Type="string">
 					<ValueList>
+						<Value Platform="Android"></Value>
+						<Value Platform="iOS"></Value>
 						<Value Platform="Windows"></Value>
 						<Value Platform="Mac"></Value>
 						<Value Platform="Linux"></Value>
@@ -67,6 +83,8 @@
 				</Property>
 				<Property Name="SoundBankPreGenerateCustomCmdLines" Type="string">
 					<ValueList>
+						<Value Platform="Android"></Value>
+						<Value Platform="iOS"></Value>
 						<Value Platform="Windows"></Value>
 						<Value Platform="Mac"></Value>
 						<Value Platform="Linux"></Value>
@@ -74,6 +92,8 @@
 				</Property>
 				<Property Name="VolumeThreshold" Type="Real64">
 					<ValueList>
+						<Value Platform="Android">-80</Value>
+						<Value Platform="iOS">-80</Value>
 						<Value Platform="Windows">-80</Value>
 						<Value Platform="Mac">-80</Value>
 						<Value Platform="Linux">-80</Value>

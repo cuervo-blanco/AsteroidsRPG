@@ -18,9 +18,9 @@ public class GameManager : MonoBehaviour {
     public GameObject startPanel;
     public GameObject gameOverPanel;
     public Button startButton;
+
     [Header("GameOver Panel")]
     public Button gameOverButton;
-
 
     [Header("Score")]
     public TMP_Text rockValueLabel;
@@ -47,6 +47,15 @@ public class GameManager : MonoBehaviour {
 
     enum State { Waiting, Playing, GameOver }
     State state = State.Waiting;
+
+    [Header("Name Prompt")]
+    public GameObject namePromptPanel;
+    public TMP_InputField nameInput;
+    public Button submitButton;
+
+    private ScoreEntry pendingEntry;
+    private string lastPlayerName = "";
+
 
     void Start() {
         AkUnitySoundEngine.PostEvent("Play_MainTheme", gameObject);
@@ -81,7 +90,7 @@ public class GameManager : MonoBehaviour {
         gameOverPanel.SetActive(false);
         scoreBoard.SetActive(false);
 
-        scoreUI.SetScore(0);
+        scoreUI.SetScore(0, pointsPerSecond);
         rockValue = 0;
         UpdateRockValueUI();
     }
@@ -89,7 +98,7 @@ public class GameManager : MonoBehaviour {
     void Update() {
         if (state == State.Playing) {
             score += pointsPerSecond * Time.deltaTime;
-            scoreUI.SetScore(Mathf.FloorToInt(score));
+            scoreUI.SetScore(Mathf.FloorToInt(score), pointsPerSecond);
 
             if (Input.GetKeyDown(KeyCode.Escape)) {
                 if (!isPaused) {
@@ -146,7 +155,7 @@ public class GameManager : MonoBehaviour {
 
         score = 0f;
         rockValue = 0;
-        scoreUI.SetScore(0);
+        scoreUI.SetScore(0, pointsPerSecond);
         UpdateRockValueUI();
         rocket.ResetLives();
 
@@ -184,17 +193,8 @@ public class GameManager : MonoBehaviour {
         int total = CombinedScore(rockValue, kms);
 
         var entry = new ScoreEntry(rockValue, kms, total);
-        hiScores.Add(entry);
-        hiScores = hiScores.OrderByDescending(e => e.combined).Take(maxRows).ToList();
-        SaveScores();
-
-        BuildScoreBoard();
-        scoreBoard.SetActive(true);
-        gameOverPanel.SetActive(true);
-
-        gameOverButton.onClick.RemoveAllListeners();
-        gameOverButton.onClick.AddListener(() => StartCoroutine(HideGameOverAndShowStart()));
-        gameOverButton.gameObject.SetActive(true);
+        pendingEntry = new ScoreEntry(rockValue, kms, total);
+        ShowNamePrompt();
 
         yield break;
     }
@@ -232,16 +232,33 @@ public class GameManager : MonoBehaviour {
         PlayerPrefs.SetString("HiScores", json);
     }
 
-    void BuildScoreBoard() {
+    void BuildScoreBoard(ScoreEntry highlightEntry = null) {
         foreach (Transform c in scoreRowParent) Destroy(c.gameObject);
 
-        foreach (var s in hiScores.Take(maxRows)) {
-            var row = Instantiate(scoreRowPrefab, scoreRowParent);
+        var displayScores = hiScores.Take(10).ToList();
+        bool highlightShown = false;
 
-            TMP_Text[] cells = row.GetComponentsInChildren<TMP_Text>();
-            cells[0].text = "$" + s.money.ToString("N0");
-            cells[1].text = s.kms.ToString("F1") + " km";
-            cells[2].text = s.combined.ToString("D5");
+        for (int i = 0; i < displayScores.Count; i++) {
+            var entry = displayScores[i];
+            var row = Instantiate(scoreRowPrefab, scoreRowParent);
+            var rowUI = row.GetComponent<ScoreRowUI>();
+
+            if (rowUI != null) {
+                bool highlight = entry == highlightEntry && !highlightShown;
+                rowUI.Set(i + 1, entry, highlight);
+                if (highlight) highlightShown = true;
+            } else {
+                Debug.LogWarning("ScoreRowUI component missing on prefab");
+            }
+        }
+
+        if (!displayScores.Contains(highlightEntry) && highlightEntry != null) {
+            var row = Instantiate(scoreRowPrefab, scoreRowParent);
+            var rowUI = row.GetComponent<ScoreRowUI>();
+            if (rowUI != null) {
+                int actualRank = hiScores.IndexOf(highlightEntry) + 1;
+                rowUI.Set(actualRank, highlightEntry, true);
+            }
         }
     }
 
@@ -256,6 +273,34 @@ public class GameManager : MonoBehaviour {
 
     private class ScoreList {
         public List<ScoreEntry> list;
+    }
+
+    void ShowNamePrompt() {
+        namePromptPanel.SetActive(true);
+        nameInput.text = lastPlayerName;
+        submitButton.onClick.RemoveAllListeners();
+        submitButton.onClick.AddListener(SubmitScore);
+    }
+
+    void SubmitScore() {
+        string playerName = nameInput.text.Trim();
+        if (string.IsNullOrEmpty(playerName)) return;
+
+        namePromptPanel.SetActive(false);
+        lastPlayerName = playerName;
+
+        pendingEntry.name = playerName;
+        hiScores.Add(pendingEntry);
+        hiScores = hiScores.OrderByDescending(e => e.combined).ToList();
+
+        SaveScores();
+        BuildScoreBoard(pendingEntry);
+        scoreBoard.SetActive(true);
+        gameOverPanel.SetActive(true);
+
+        gameOverButton.onClick.RemoveAllListeners();
+        gameOverButton.onClick.AddListener(() => StartCoroutine(HideGameOverAndShowStart()));
+        gameOverButton.gameObject.SetActive(true);
     }
 }
 

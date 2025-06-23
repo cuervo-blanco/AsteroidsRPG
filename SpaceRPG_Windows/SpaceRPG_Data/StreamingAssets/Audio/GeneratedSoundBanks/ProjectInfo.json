@@ -8,6 +8,27 @@
   "CacheRoot": "../../../../SpaceRPG_WwiseProject/.cache",
   "Platforms": [
    {
+    "Name": "Android",
+    "GUID": "{A0C3A0F5-7D74-4217-82A8-1A67AD97FB4F}",
+    "BasePlatform": "Android",
+    "BasePlatformGUID": "{A2D401DE-B8B6-4FEB-8142-137C34D507CA}",
+    "Path": "../../../../SpaceRPG_WwiseProject/GeneratedSoundBanks/Android"
+   },
+   {
+    "Name": "iOS",
+    "GUID": "{ED0CE70F-117C-437C-8F74-9CA2A041AEA9}",
+    "BasePlatform": "iOS",
+    "BasePlatformGUID": "{ECE03DB4-F948-462D-B2BB-A9173012B1F8}",
+    "Path": "../../../../SpaceRPG_WwiseProject/GeneratedSoundBanks/iOS"
+   },
+   {
+    "Name": "Linux",
+    "GUID": "{239FCCF9-E17C-4B0C-B9DD-0D971618B8EF}",
+    "BasePlatform": "Linux",
+    "BasePlatformGUID": "{BD0BDF13-3125-454F-8BFD-319537169F81}",
+    "Path": "../../../../SpaceRPG_WwiseProject/GeneratedSoundBanks/StandaloneLinux64"
+   },
+   {
     "Name": "Mac",
     "GUID": "{C2B3B293-7ADC-49BA-B561-B13781CB45AA}",
     "BasePlatform": "Mac",
@@ -31,6 +52,6 @@
     "UseAsStandIn": "true"
    }
   ],
-  "FileHash": "{035F1F74-9391-F927-B111-48727FABAE0A}"
+  "FileHash": "{02CDB296-3F05-8ADE-E4BB-ACE1A6CEBDE9}"
  }
 }

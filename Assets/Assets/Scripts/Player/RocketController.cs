@@ -8,6 +8,7 @@ public class RocketController : MonoBehaviour {
     public float blinkDuration  = 1.0f;
     public float blinkInterval  = 0.05f;
     bool  invincible = false;
+    private bool isGhost = false;
 
     [Header("Lives / Health")]
     public AK.Wwise.Event explosionSound;
@@ -25,6 +26,7 @@ public class RocketController : MonoBehaviour {
     [Header("Movement")]
     public float moveSpeed = 5f;
     public float backwardSpeedMultiplier = 0.5f;
+    private bool controlsInverted = false;
 
     private Rigidbody2D rb;
     private Vector3 initialLocalPos;
@@ -42,6 +44,7 @@ public class RocketController : MonoBehaviour {
     public Transform[] shootPoints;
     public float shootCooldown = 0.2f;
     private float shootTimer = 0f;
+
 
     void Start() {
         initialLocalPos = transform.localPosition;
@@ -62,12 +65,47 @@ public class RocketController : MonoBehaviour {
     }
 
     void Update() {
+#if UNITY_ANDROID || UNITY_IOS
+    Vector3 accel = Input.acceleration;
+
+    float tiltX = Mathf.Clamp(accel.x, -1f, 1f);
+    float tiltY = Mathf.Clamp(accel.y, -1f, 1f);
+
+    if (controlsInverted) {
+        tiltX *= -1f;
+        tiltY *= -1f;
+    }
+
+    if (Mathf.Abs(tiltX) < 0.1f) tiltX = 0f;
+    if (Mathf.Abs(tiltY) < 0.1f) tiltY = 0f;
+
+    tiltY = Mathf.Clamp(tiltY, -0.5f, 1f);
+
+    Vector2 rawTilt = new Vector2(tiltX, tiltY);
+    inputDirection = Vector2.Lerp(inputDirection, rawTilt, Time.deltaTime * 5f);
+
+    if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) {
+        TryShoot();
+    }
+
+    if (Input.touchCount == 2 && Input.GetTouch(1).phase == TouchPhase.Began) {
+        powerModule.TryActivateSuperMode();
+    }
+#else
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
+        if (controlsInverted) {
+            moveX *= -1f;
+            moveY *= -1f;
+        }
         inputDirection = new Vector2(moveX, moveY).normalized;
 
+        if (Input.GetKeyDown(KeyCode.Y)) {
+            powerModule.TryActivateSuperMode();
+        }
+#endif
         bool thrust = inputDirection.y > 0;
-        if (inputDirection.y > 0) {
+        if (thrust) {
             thrustAccelTimer += Time.deltaTime;
             float t = Mathf.Clamp01(thrustAccelTimer / thrustAccelerationTime);
             currentThrustMultiplier = Mathf.SmoothStep(0f, 1f, t);
@@ -76,15 +114,14 @@ public class RocketController : MonoBehaviour {
             currentThrustMultiplier = 1f;
         }
 
-        bool shoot = Input.GetKey(KeyCode.Space);
-
         rocketAnimator.SetBool("isThrusting", thrust);
-        rocketAnimator.SetBool("isShooting", shoot);
-        rocketAnimator.SetFloat("horizontal", moveX);
+        rocketAnimator.SetBool("isShooting", shootTimer <= 0f);
+        rocketAnimator.SetFloat("horizontal", inputDirection.x);
 
         if (thrust && !previousThrust) {
             fireAnimator.SetTrigger("startThrust");
-        } else if (!thrust && previousThrust) {
+        }
+        else if (!thrust && previousThrust) {
             fireAnimator.SetTrigger("stopThrust");
         }
 
@@ -99,19 +136,43 @@ public class RocketController : MonoBehaviour {
     }
 
     void ExecutePowerMode() {
-        bool shoot = Input.GetKey(KeyCode.Space);
+        bool shoot = false;
+
+#if UNITY_EDITOR || UNITY_STANDALONE
+        shoot = Input.GetKey(KeyCode.Space);
+#elif UNITY_ANDROID || UNITY_IOS
+        shoot = Input.touchCount > 0;
+#endif
+
         shootTimer -= Time.deltaTime;
 
+#if UNITY_EDITOR || UNITY_STANDALONE
         if (Input.GetKeyDown(KeyCode.Y)) {
             powerModule.TryActivateSuperMode();
         }
+#elif UNITY_ANDROID || UNITY_IOS
+        // TODO: Add a touch gesture or button to activate super mode on mobile.
+#endif
+        if (shoot && shootTimer <= 0f) {
+            Shoot();
 
-        if (shoot && shootTimer <= 0f && !powerModule.superModeActive) {
-            Shoot();
+            if (powerModule.superModeActive && powerModule.currentCoinType == MagicCoinType.FireRate) {
+                shootTimer = shootCooldown * 0.5f;
+            } else {
+                shootTimer = shootCooldown;
+            }
+        }
+    }
+
+    void TryShoot() {
+        if (shootTimer > 0f || isGhost) return;
+
+        Shoot();
+
+        if (powerModule.superModeActive && powerModule.currentCoinType == MagicCoinType.FireRate) {
+            shootTimer = shootCooldown * 0.5f;
+        } else {
             shootTimer = shootCooldown;
-        } else if (shoot && shootTimer <= 0f && powerModule.superModeActive) {
-            Shoot();
-            shootTimer = shootCooldown - (shootCooldown * 0.5f);
         }
     }
 
@@ -132,6 +193,7 @@ public class RocketController : MonoBehaviour {
     }
 
     void Shoot() {
+        if (isGhost == true) return;
         foreach (Transform sp in shootPoints) {
             GameObject go = Instantiate(bulletPrefab, sp.position, Quaternion.identity);
             go.GetComponent<Bullet>().Initialise(sp.up);
@@ -248,6 +310,30 @@ public class RocketController : MonoBehaviour {
 
         foreach (var r in renderers) r.enabled = false;
         gameObject.SetActive(false);
+    }
+
+    public void InvertControls(bool enabled) {
+        controlsInverted = enabled;
+    }
+    public void SetGhostMode(bool enabled) {
+        isGhost = enabled;
+
+        Collider2D col = GetComponent<Collider2D>();
+        if (col) col.enabled = !enabled;
+
+        if (enabled) {
+            foreach (var r in renderers) r.color = new Color(1f, 1f, 1f, 0.3f);
+        } else {
+            foreach (var r in renderers) r.color = new Color(1f, 1f, 1f, 1f);
+        }
+    }
+
+    public void SetScale(float scale) {
+        transform.localScale = new Vector3(scale, scale, 1f);
+    }
+
+    public void ResetShootTimer() {
+        shootTimer = 0f;
     }
 }
 

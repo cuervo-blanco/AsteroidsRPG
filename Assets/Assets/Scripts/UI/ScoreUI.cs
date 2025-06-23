@@ -6,18 +6,19 @@ public class ScoreUI : MonoBehaviour {
 
     void Awake() {
         label = GetComponent<TMP_Text>();
-        if (label == null)
+        if (label == null) {
             Debug.LogWarning("ScoreUI: TMP_Text not found!");
+        }
     }
 
-    public void SetScore(int value) {
+    public void SetScore(int rawScore, int pointsPerSecond) {
         if (label == null) {
             Debug.LogWarning("ScoreUI: Cannot set score, TMP_Text is null");
             return;
         }
 
-        Debug.Log($"ScoreUI: Setting score to {value}");
-        label.text = value.ToString("D5");
+        float kms = (float)rawScore / pointsPerSecond;
+        label.text = kms.ToString("F1") + " km";
     }
 }
 

@@ -75,6 +75,26 @@
         {
             "id": "DeploymentPlatforms",
             "valueId": "Linux"
+        },
+        {
+            "id": "Packages",
+            "valueId": "Unity"
+        },
+        {
+            "id": "DeploymentPlatforms",
+            "valueId": "Mac"
+        },
+        {
+            "id": "DeploymentPlatforms",
+            "valueId": "Windows"
+        },
+        {
+            "id": "DeploymentPlatforms",
+            "valueId": "Android"
+        },
+        {
+            "id": "DeploymentPlatforms",
+            "valueId": "iOS"
         }
     ]
 }

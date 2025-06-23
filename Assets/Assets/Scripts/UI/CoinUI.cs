@@ -1,33 +1,58 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
-using System.Linq;
 
 public class CoinUI : MonoBehaviour {
-    [SerializeField] Transform coinSlotParent;
-    [SerializeField] GameObject coinSlotPrefab;
+    [SerializeField] private Transform coinSlotParent;
+    [SerializeField] private GameObject coinSlotPrefab;
 
-    readonly List<CoinSlotAnimator> slots = new();
-    int activeIndex = 0;
+    private readonly List<CoinSlotAnimator> slots = new();
+    private int activeIndex = 0;
 
     [SerializeField] private Image iconDisplay;
 
+    [Header("Coin Type Sprites")]
     [SerializeField] private Sprite defaultIcon;
     [SerializeField] private Sprite shieldIcon;
     [SerializeField] private Sprite fireRateIcon;
     [SerializeField] private Sprite speedBoostIcon;
+    [SerializeField] private Sprite heavyShotIcon;
+    [SerializeField] private Sprite slipperyBoostIcon;
+    [SerializeField] private Sprite confusionIcon;
+    [SerializeField] private Sprite goldFrenzyIcon;
+    [SerializeField] private Sprite ghostIcon;
+    [SerializeField] private Sprite miniModeIcon;
+    [SerializeField] private Sprite overheatIcon;
+    [SerializeField] private Sprite randomIcon;
+
+    private Dictionary<MagicCoinType, Sprite> iconMap;
+
+    void Awake() {
+        iconMap = new() {
+            { MagicCoinType.Default, defaultIcon },
+            { MagicCoinType.Shield, shieldIcon },
+            { MagicCoinType.FireRate, fireRateIcon },
+            { MagicCoinType.SpeedBoost, speedBoostIcon },
+            { MagicCoinType.HeavyShot, heavyShotIcon },
+            { MagicCoinType.SlipperyBoost, slipperyBoostIcon },
+            { MagicCoinType.Confusion, confusionIcon },
+            { MagicCoinType.GoldFrenzy, goldFrenzyIcon },
+            { MagicCoinType.Ghost, ghostIcon },
+            { MagicCoinType.MiniMode, miniModeIcon },
+            { MagicCoinType.Overheat, overheatIcon },
+            { MagicCoinType.Random, randomIcon },
+        };
+    }
 
     public void SetCoinIcon(MagicCoinType type) {
         iconDisplay.sprite = GetIconForType(type);
     }
 
     private Sprite GetIconForType(MagicCoinType type) {
-        switch (type) {
-            case MagicCoinType.Shield: return shieldIcon;
-            case MagicCoinType.FireRate: return fireRateIcon;
-            case MagicCoinType.SpeedBoost: return speedBoostIcon;
-            default: return defaultIcon;
+        if (iconMap != null && iconMap.TryGetValue(type, out var sprite)) {
+            return sprite != null ? sprite : defaultIcon;
         }
+        return defaultIcon;
     }
 
     public void UpdateCoinSlots(List<SuperCoin> coins) {
@@ -42,19 +67,12 @@ public class CoinUI : MonoBehaviour {
             slots[i].gameObject.SetActive(needed);
             if (needed) {
                 slots[i].SetIcon(GetIconForType(coins[i].type));
-                if (!slots[i].enabled) {
-                    slots[i].ResetState();
-                }
+                slots[i].ResetState();
             }
         }
 
         activeIndex = Mathf.Clamp(activeIndex, 0, coins.Count - 1);
         HighlightActive(activeIndex);
-    }
-
-    public void PlayCoinDrain(int index) {
-        if (index >= 0 && index < slots.Count)
-            slots[index].PlayDrain();
     }
 
     public void HighlightActive(int index) {
@@ -74,9 +92,9 @@ public class CoinUI : MonoBehaviour {
 
     public void ResetUI() {
         activeIndex = 0;
-        foreach (var s in slots) {
-            s.gameObject.SetActive(false);
-            Transform highlight = s.transform.parent.Find("Highlight");
+        foreach (var slot in slots) {
+            slot.gameObject.SetActive(false);
+            Transform highlight = slot.transform.parent.Find("Highlight");
             if (highlight) highlight.gameObject.SetActive(false);
         }
     }
