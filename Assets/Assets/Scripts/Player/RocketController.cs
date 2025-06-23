@@ -44,7 +44,9 @@ public class RocketController : MonoBehaviour {
     public Transform[] shootPoints;
     public float shootCooldown = 0.2f;
     private float shootTimer = 0f;
-
+    float baseShootCooldown;
+    float baseMoveSpeed;
+    float baseScale;
 
     void Start() {
         initialLocalPos = transform.localPosition;
@@ -56,6 +58,10 @@ public class RocketController : MonoBehaviour {
     }
 
     void Awake() {
+        baseShootCooldown = shootCooldown;
+        baseMoveSpeed = moveSpeed;
+        baseScale = transform.localScale.x;
+
         rb  = GetComponent<Rigidbody2D>();
         renderers = GetComponentsInChildren<SpriteRenderer>(true);
         flameRenderer = fireAnimator.GetComponent<SpriteRenderer>();
@@ -88,9 +94,6 @@ public class RocketController : MonoBehaviour {
         TryShoot();
     }
 
-    if (Input.touchCount == 2 && Input.GetTouch(1).phase == TouchPhase.Began) {
-        powerModule.TryActivateSuperMode();
-    }
 #else
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
@@ -99,10 +102,6 @@ public class RocketController : MonoBehaviour {
             moveY *= -1f;
         }
         inputDirection = new Vector2(moveX, moveY).normalized;
-
-        if (Input.GetKeyDown(KeyCode.Y)) {
-            powerModule.TryActivateSuperMode();
-        }
 #endif
         bool thrust = inputDirection.y > 0;
         if (thrust) {
@@ -132,35 +131,50 @@ public class RocketController : MonoBehaviour {
             wobbleScript.inputDirection = inputDirection;
         }
 
+        ApplyPowerModifiers();
         ExecutePowerMode();
     }
 
-    void ExecutePowerMode() {
-        bool shoot = false;
+    void ApplyPowerModifiers() {
+        float finalShootCooldown = baseShootCooldown;
+        float finalMoveSpeed = baseMoveSpeed;
+        float finalScale = baseScale;
 
-#if UNITY_EDITOR || UNITY_STANDALONE
-        shoot = Input.GetKey(KeyCode.Space);
-#elif UNITY_ANDROID || UNITY_IOS
-        shoot = Input.touchCount > 0;
-#endif
-
-        shootTimer -= Time.deltaTime;
-
-#if UNITY_EDITOR || UNITY_STANDALONE
-        if (Input.GetKeyDown(KeyCode.Y)) {
-            powerModule.TryActivateSuperMode();
+        if (powerModule.superModeActive) {
+            if (powerModule.activePowers.Contains(MagicCoinType.FireRate)) {
+                finalShootCooldown *= 0.5f;
+            }
+            if (powerModule.activePowers.Contains(MagicCoinType.Overheat)) {
+                finalShootCooldown *= 2f;
+            }
+            if (powerModule.activePowers.Contains(MagicCoinType.SpeedBoost)) {
+                finalMoveSpeed *= 2f;
+            }
+            if (powerModule.activePowers.Contains(MagicCoinType.MiniMode)) {
+                finalScale *= 0.5f;
+            }
+            invincible = powerModule.activePowers.Contains(MagicCoinType.Shield);
+            InvertControls(powerModule.activePowers.Contains(MagicCoinType.Confusion));
+        } else {
+            invincible = false;
+            InvertControls(false);
         }
+
+        shootCooldown = finalShootCooldown;
+        moveSpeed = finalMoveSpeed;
+        SetScale(finalScale);
+    }
+
+
+    void ExecutePowerMode() {
+        shootTimer -= Time.deltaTime;
+#if UNITY_EDITOR || UNITY_STANDALONE
+        bool shoot = Input.GetKey(KeyCode.Space);
 #elif UNITY_ANDROID || UNITY_IOS
-        // TODO: Add a touch gesture or button to activate super mode on mobile.
+        bool shoot = Input.touchCount > 0;
 #endif
         if (shoot && shootTimer <= 0f) {
-            Shoot();
-
-            if (powerModule.superModeActive && powerModule.currentCoinType == MagicCoinType.FireRate) {
-                shootTimer = shootCooldown * 0.5f;
-            } else {
-                shootTimer = shootCooldown;
-            }
+            TryShoot(); // centralize logic
         }
     }
 
@@ -169,7 +183,7 @@ public class RocketController : MonoBehaviour {
 
         Shoot();
 
-        if (powerModule.superModeActive && powerModule.currentCoinType == MagicCoinType.FireRate) {
+        if (powerModule.superModeActive && powerModule.activePowers.Contains(MagicCoinType.FireRate)) {
             shootTimer = shootCooldown * 0.5f;
         } else {
             shootTimer = shootCooldown;
@@ -315,6 +329,7 @@ public class RocketController : MonoBehaviour {
     public void InvertControls(bool enabled) {
         controlsInverted = enabled;
     }
+
     public void SetGhostMode(bool enabled) {
         isGhost = enabled;
 
