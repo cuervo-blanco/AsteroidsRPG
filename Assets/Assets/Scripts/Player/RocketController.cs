@@ -59,6 +59,12 @@ public class RocketController : MonoBehaviour {
 
     public PlayerStats stats;
 
+    [Header("Damage")]
+    public float damageMultiplier = 1f;
+    [Header("Economy")]
+    public float goldMultiplier = 1f;
+
+
     void Start() {
         initialLocalPos = transform.localPosition;
         currentLives = maxLives;
@@ -181,11 +187,14 @@ public class RocketController : MonoBehaviour {
             if (powerModule.activePowers.Contains(MagicCoinType.Ghost)) {
                 SetGhostMode(true);
             }
-            if (powerModule.activePowers.Contains(MagicCoinType.Ghost)) {
-                SetGhostMode(true);
-            }
             if (powerModule.activePowers.Contains(MagicCoinType.SlipperyBoost)) {
                 SetSlipperyMode(true);
+            }
+            if (powerModule.activePowers.Contains(MagicCoinType.HeavyShot)) {
+                damageMultiplier = 1.5f;
+            }
+            if (powerModule.activePowers.Contains(MagicCoinType.GoldFrenzy)) {
+                goldMultiplier = 2f;
             }
             invincible = powerModule.activePowers.Contains(MagicCoinType.Shield);
             InvertControls(powerModule.activePowers.Contains(MagicCoinType.Confusion));
@@ -194,6 +203,8 @@ public class RocketController : MonoBehaviour {
             InvertControls(false);
             SetGhostMode(false);
             SetSlipperyMode(false);
+            damageMultiplier = 1f;
+            goldMultiplier = 1f;
         }
 
         shootCooldown = finalShootCooldown;
@@ -250,7 +261,7 @@ public class RocketController : MonoBehaviour {
             GameObject go = Instantiate(bulletPrefab, sp.position, Quaternion.identity);
             Bullet bullet = go.GetComponent<Bullet>();
             bullet.Initialise(sp.up);
-            bullet.damage = stats.GetPlayerBulletDamage();
+            bullet.damage = Mathf.CeilToInt(stats.GetPlayerBulletDamage() * damageMultiplier);
         }
     }
 

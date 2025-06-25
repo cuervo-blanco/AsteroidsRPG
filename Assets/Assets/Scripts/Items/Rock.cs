@@ -113,6 +113,12 @@ public class Rock : MonoBehaviour {
 
     void AwardValue() {
         int value = baseValue * (maxGenerations - generation + 1);
+
+        RocketController rocket = GameObject.FindFirstObjectByType<RocketController>();
+        if (rocket != null) {
+            value = Mathf.CeilToInt(value * rocket.goldMultiplier);
+        }
+
         GameManager.Instance.AddRockValue(value);
     }
 
@@ -124,6 +130,7 @@ public class Rock : MonoBehaviour {
             Invoke(nameof(RevertToNormal), 0.2f);
         }
     }
+
     void RevertToNormal() => sr.sprite = rockSpritesNormal[
         System.Array.IndexOf(rockSpritesGlow, sr.sprite)];
 
