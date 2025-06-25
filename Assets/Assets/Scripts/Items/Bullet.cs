@@ -5,10 +5,13 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour {
     public float speed = 10f;
-    public float lifetime = 2f;
+    public float lifetime = 1f;
     public AK.Wwise.Event fireEvent;
     public AK.Wwise.Event getHitEvent;
     public AK.Wwise.Event bulletHit;
+
+    [Header("Bullet Stats")]
+    public int damage = 1;
 
     Rigidbody2D rb;
 
@@ -38,10 +41,10 @@ public class Bullet : MonoBehaviour {
             if (rock != null) {
                 RocketPowerModule powerModule = GameObject.FindFirstObjectByType<RocketPowerModule>();
 
-                bool destroyed = rock.TakeHit();
+                bool destroyed = rock.TakeHit(damage);
 
                 if (powerModule != null && powerModule.superModeActive && !destroyed) {
-                    rock.TakeHit();
+                    rock.TakeHit(damage);
                 }
             }
 

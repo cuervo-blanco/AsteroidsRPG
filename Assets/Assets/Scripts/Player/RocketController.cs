@@ -57,6 +57,8 @@ public class RocketController : MonoBehaviour {
     private BoxCollider2D boxCollider;
     private Vector2 baseColliderSize;
 
+    public PlayerStats stats;
+
     void Start() {
         initialLocalPos = transform.localPosition;
         currentLives = maxLives;
@@ -246,7 +248,9 @@ public class RocketController : MonoBehaviour {
         if (isGhost == true) return;
         foreach (Transform sp in shootPoints) {
             GameObject go = Instantiate(bulletPrefab, sp.position, Quaternion.identity);
-            go.GetComponent<Bullet>().Initialise(sp.up);
+            Bullet bullet = go.GetComponent<Bullet>();
+            bullet.Initialise(sp.up);
+            bullet.damage = stats.GetPlayerBulletDamage();
         }
     }
 

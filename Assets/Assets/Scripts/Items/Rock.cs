@@ -93,19 +93,21 @@ public class Rock : MonoBehaviour {
         }
     }
 
-    public bool TakeHit() {
-        hitsLeft--;
+    public bool TakeHit(int damageAmount) {
+        hitsLeft -= damageAmount;
+
         if (hitsLeft > 0) {
             Glow();
             return false;
         }
 
         if (generation >= maxGenerations) {
-        AwardValue();
-        Destroy(gameObject);
+            AwardValue();
+            Destroy(gameObject);
         } else {
             Split();
         }
+
         return true;
     }
 

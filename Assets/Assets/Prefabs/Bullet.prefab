@@ -178,15 +178,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  lifetime: 2
+  lifetime: 1
   fireEvent:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: e6b7da40332834bc694220bdbf53ec2c, type: 2}
+  getHitEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
   bulletHit:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 3269cbb8710a240e1bf8a3bc0c474f60, type: 2}
+  strayDistance: 0.1
+  gravityAfterStray: 1
+  randomTorque: 50
 --- !u!114 &222642469084128795
 MonoBehaviour:
   m_ObjectHideFlags: 0

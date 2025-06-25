@@ -1,8 +1,14 @@
-public class PlayerStats {
-    public float MovementLevel { get; private set; }
+using UnityEngine;
 
-    public float GetAcceleration() => 10f + MovementLevel * 1.5f;
-    public float GetDrag() => 2f + MovementLevel * 0.2f;
+public class PlayerStats : MonoBehaviour {
+    [SerializeField] private int baseBulletDamage = 1;
 
-    public void UpgradeMovement() => MovementLevel += 1f;
+    public int GetPlayerBulletDamage() {
+        return baseBulletDamage;
+    }
+
+    public void UpgradeBulletDamage(int amount) {
+        baseBulletDamage += amount;
+    }
 }
+
