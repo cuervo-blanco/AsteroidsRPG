@@ -21,13 +21,14 @@ public class RockSpawner : MonoBehaviour
     public float spawnRadiusBuffer = 2f;
     Camera cam;
 
-    [Header("Difficulty")]
+    [Header("Wave setup")]
     [Tooltip("Rocks per second at t = 0")]
-    public float startRate  = 0.5f;
-    [Tooltip("Rocks per second after difficultyDuration seconds")]
-    public float finalRate  = 3f;
-    [Tooltip("How long it takes to reach finalRate (seconds)")]
-    public float difficultyDuration = 120f;
+    public float startRate = 0.5f;
+    public float attackDuration = 20f;
+    public float sustainDuration = 20f;
+    public float releaseDuration = 20f;
+    public float peakRate = 10f;
+    public float endRate = 5f;
 
     [Header("Launch Speed")]
     public float minLaunchSpeed = 0.5f;
@@ -55,10 +56,21 @@ public class RockSpawner : MonoBehaviour
 
         while (true) {
             float elapsed = Time.time - startTime;
-            float t = Mathf.Clamp01(elapsed / difficultyDuration);
-            float rate = Mathf.Lerp(startRate, finalRate, t);
-            float wait = 1f / rate;
+            float rate;
 
+            if (elapsed < attackDuration) {
+                float t = elapsed / attackDuration;
+                rate = Mathf.Lerp(startRate, peakRate, t);
+            } else if (elapsed < attackDuration + sustainDuration) {
+                rate = peakRate;
+            } else if (elapsed < attackDuration + sustainDuration + releaseDuration) {
+                float t = (elapsed - attackDuration - sustainDuration) / releaseDuration;
+                rate = Mathf.Lerp(peakRate, endRate, t);
+            } else {
+                rate = endRate;
+            }
+
+            float wait = 1f / rate;
             SpawnOneRock();
             yield return new WaitForSeconds(wait);
         }
