@@ -438,7 +438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsPerSecond: 10
-  coinUI: {fileID: 470753067}
+  coinUI: {fileID: 398169319803128608}
   scoreUI: {fileID: 711546915}
   livesUI: {fileID: 552714110}
   startPanel: {fileID: 287596693}
@@ -450,7 +450,7 @@ MonoBehaviour:
   scoreRowParent: {fileID: 52596892}
   scoreRowPrefab: {fileID: 8335855683880234747, guid: ffe345b61f45642ff8ae3e9d57e42332, type: 3}
   maxRows: 5
-  spawner: {fileID: 924199120}
+  spawner: {fileID: 924199122}
   rocket: {fileID: 989917668}
   ringSound:
     idInternal: 0
@@ -458,7 +458,8 @@ MonoBehaviour:
     WwiseObjectReference: {fileID: 11400000, guid: 817c2834ef3c74a73853181b2dbad3e2, type: 2}
   pauseMenu: {fileID: 1639252579}
   continueButton: {fileID: 574274823}
-  quitButton: {fileID: 973154673}
+  quitButtonInPause: {fileID: 973154673}
+  quitButtonInGameOver: {fileID: 1288399007}
   namePromptPanel: {fileID: 1498533474}
   nameInput: {fileID: 1355733429}
   submitButton: {fileID: 89012098}
@@ -629,8 +630,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -911.69995}
-  m_SizeDelta: {x: 1620.8, y: 85.5199}
+  m_AnchoredPosition: {x: 0, y: -911.7}
+  m_SizeDelta: {x: 1620.8, y: 83.5215}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &256115620
 MonoBehaviour:
@@ -1108,96 +1109,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &470753063
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 470753064}
-  - component: {fileID: 470753067}
-  - component: {fileID: 470753068}
-  m_Layer: 5
-  m_Name: CoinUI
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &470753064
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 470753063}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1256021045}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 814.7, y: 42.76}
-  m_SizeDelta: {x: 1629.4, y: 85.519}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &470753067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 470753063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e28fce9d6e8f04f9aa7800c755f44b71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinSlotParent: {fileID: 470753064}
-  coinSlotPrefab: {fileID: 2570784983492386083, guid: 530f53d2c2f9b45b29ea79de3e152f59, type: 3}
-  iconDisplay: {fileID: 0}
-  defaultIcon: {fileID: -95123124397090588, guid: e0c7cfcd4c6614f1991fa9f1a5000de9, type: 3}
-  shieldIcon: {fileID: 7235106158535314675, guid: e0c7cfcd4c6614f1991fa9f1a5000de9, type: 3}
-  fireRateIcon: {fileID: -8028871635212675217, guid: e0c7cfcd4c6614f1991fa9f1a5000de9, type: 3}
-  speedBoostIcon: {fileID: -2442081280143191652, guid: e0c7cfcd4c6614f1991fa9f1a5000de9, type: 3}
-  heavyShotIcon: {fileID: -8311422658577463480, guid: e0c7cfcd4c6614f1991fa9f1a5000de9, type: 3}
-  slipperyBoostIcon: {fileID: -1377141854840249156, guid: e0c7cfcd4c6614f1991fa9f1a5000de9, type: 3}
-  confusionIcon: {fileID: -4281742309085633443, guid: 767f4050c658c4048aeec9852c24ac62, type: 3}
-  goldFrenzyIcon: {fileID: -3327629364109917968, guid: e0c7cfcd4c6614f1991fa9f1a5000de9, type: 3}
-  ghostIcon: {fileID: 8702569905929468494, guid: e0c7cfcd4c6614f1991fa9f1a5000de9, type: 3}
-  miniModeIcon: {fileID: 7660920565143313606, guid: e0c7cfcd4c6614f1991fa9f1a5000de9, type: 3}
-  overheatIcon: {fileID: 6247034740950440497, guid: e0c7cfcd4c6614f1991fa9f1a5000de9, type: 3}
-  randomIcon: {fileID: 7068199878913183592, guid: e0c7cfcd4c6614f1991fa9f1a5000de9, type: 3}
---- !u!114 &470753068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 470753063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 8
-    m_Right: 4
-    m_Top: 5
-    m_Bottom: 0
-  m_ChildAlignment: 0
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 0
-  m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
 --- !u!1 &474817399
 GameObject:
   m_ObjectHideFlags: 0
@@ -3458,7 +3369,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 924199121}
-  - component: {fileID: 924199120}
+  - component: {fileID: 924199122}
   m_Layer: 0
   m_Name: RockSpawner
   m_TagString: Untagged
@@ -3466,29 +3377,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &924199120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 924199119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4ad17b6042074ac09ceb36205ff6e58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rockPrefab: {fileID: 895137748161458017, guid: 1d001520796b6472e8eca95bd1ef02b7, type: 3}
-  zones:
-  - pointA: {fileID: 686107267}
-    pointB: {fileID: 925274857}
-    launchDir: {x: -0.7, y: -1}
-  spawnRadiusBuffer: 6.75
-  startRate: 1
-  finalRate: 15
-  difficultyDuration: 22.09
-  minLaunchSpeed: 0.5
-  maxLaunchSpeed: 20
 --- !u!4 &924199121
 Transform:
   m_ObjectHideFlags: 0
@@ -3506,6 +3394,29 @@ Transform:
   - {fileID: 925274857}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &924199122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924199119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4ad17b6042074ac09ceb36205ff6e58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rockPrefab: {fileID: 895137748161458017, guid: 1d001520796b6472e8eca95bd1ef02b7, type: 3}
+  zones:
+  - pointA: {fileID: 686107267}
+    pointB: {fileID: 925274857}
+    launchDir: {x: 0, y: -1}
+  spawnRadiusBuffer: 2
+  startRate: 5
+  finalRate: 20
+  difficultyDuration: 60
+  minLaunchSpeed: 0.5
+  maxLaunchSpeed: 2.5
 --- !u!1 &925274856
 GameObject:
   m_ObjectHideFlags: 0
@@ -3907,11 +3818,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98408a9d2e1b64a46aaa2ace08a0794e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activePowers: 
   superModeActive: 0
   superModeDuration: 10
-  currentCoinType: 0
   maxSuperCoins: 3
-  coinUI: {fileID: 470753067}
+  coinUI: {fileID: 398169319803128608}
 --- !u!1 &1016317304
 GameObject:
   m_ObjectHideFlags: 0
@@ -4517,7 +4428,7 @@ RectTransform:
   - {fileID: 1484136198}
   - {fileID: 889771665}
   - {fileID: 256115619}
-  - {fileID: 470753064}
+  - {fileID: 3411641691976816452}
   - {fileID: 52596892}
   - {fileID: 1639252583}
   - {fileID: 1498533475}
@@ -5248,7 +5159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.20784314, g: 0.21176471, b: 0.34509805, a: 0.6117647}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.14901961}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6519,6 +6430,96 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2056671725}
   m_CullTransparentMesh: 1
+--- !u!114 &398169319803128608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3790089753653672087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e28fce9d6e8f04f9aa7800c755f44b71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinSlotParent: {fileID: 3411641691976816452}
+  coinSlotPrefab: {fileID: 768130080482529332, guid: 530f53d2c2f9b45b29ea79de3e152f59, type: 3}
+  iconDisplay: {fileID: 0}
+  defaultIcon: {fileID: -95123124397090588, guid: e0c7cfcd4c6614f1991fa9f1a5000de9, type: 3}
+  shieldIcon: {fileID: 7235106158535314675, guid: e0c7cfcd4c6614f1991fa9f1a5000de9, type: 3}
+  fireRateIcon: {fileID: -8028871635212675217, guid: e0c7cfcd4c6614f1991fa9f1a5000de9, type: 3}
+  speedBoostIcon: {fileID: -2442081280143191652, guid: e0c7cfcd4c6614f1991fa9f1a5000de9, type: 3}
+  heavyShotIcon: {fileID: -8311422658577463480, guid: e0c7cfcd4c6614f1991fa9f1a5000de9, type: 3}
+  slipperyBoostIcon: {fileID: -1377141854840249156, guid: e0c7cfcd4c6614f1991fa9f1a5000de9, type: 3}
+  confusionIcon: {fileID: -4281742309085633443, guid: 767f4050c658c4048aeec9852c24ac62, type: 3}
+  goldFrenzyIcon: {fileID: -3327629364109917968, guid: e0c7cfcd4c6614f1991fa9f1a5000de9, type: 3}
+  ghostIcon: {fileID: 8702569905929468494, guid: e0c7cfcd4c6614f1991fa9f1a5000de9, type: 3}
+  miniModeIcon: {fileID: 7660920565143313606, guid: e0c7cfcd4c6614f1991fa9f1a5000de9, type: 3}
+  overheatIcon: {fileID: 6247034740950440497, guid: e0c7cfcd4c6614f1991fa9f1a5000de9, type: 3}
+  randomIcon: {fileID: 7068199878913183592, guid: e0c7cfcd4c6614f1991fa9f1a5000de9, type: 3}
+--- !u!114 &2186313144727266021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3790089753653672087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 8
+    m_Right: 4
+    m_Top: 5
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
+--- !u!224 &3411641691976816452
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3790089753653672087}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1256021045}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 814.7, y: 42.76}
+  m_SizeDelta: {x: 1629.4, y: 85.519}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &3790089753653672087
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3411641691976816452}
+  - component: {fileID: 398169319803128608}
+  - component: {fileID: 2186313144727266021}
+  m_Layer: 5
+  m_Name: CoinUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

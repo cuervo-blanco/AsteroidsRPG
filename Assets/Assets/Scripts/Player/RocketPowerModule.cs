@@ -36,8 +36,11 @@ public class RocketPowerModule : MonoBehaviour {
 
     public void TryActivateSuperMode() {
         if (superCoins.Count > 0) {
-            var nextCoin = superCoins[0];
-            superCoins.RemoveAt(0);
+            int selectedIndex = coinUI.GetActiveIndex();
+            if (selectedIndex < 0 || selectedIndex >= superCoins.Count) return;
+
+            var nextCoin = superCoins[selectedIndex];
+            superCoins.RemoveAt(selectedIndex);
 
             activePowers.Add(nextCoin.type);
             coinUI.UpdateCoinSlots(superCoins);

@@ -41,7 +41,8 @@ public class GameManager : MonoBehaviour {
     [Header("Pause Menu")]
     public GameObject pauseMenu;
     public Button continueButton;
-    public Button quitButton;
+    public Button quitButtonInPause;
+    public Button quitButtonInGameOver;
 
     private bool isPaused = false;
 
@@ -71,7 +72,8 @@ public class GameManager : MonoBehaviour {
         if (!rocket) rocket = FindFirstObjectByType<RocketController>();
 
         continueButton.onClick.AddListener(ResumeGame);
-        quitButton.onClick.AddListener(QuitGame);
+        quitButtonInPause.onClick.AddListener(QuitGame);
+        quitButtonInGameOver.onClick.AddListener(QuitGame);
         startButton.onClick.AddListener(StartGame);
         startButton.onClick.AddListener(RingSound);
 
@@ -124,7 +126,7 @@ public class GameManager : MonoBehaviour {
         rocket.EnableControl(true);
     }
 
-    void QuitGame() {
+    public void QuitGame() {
         Time.timeScale = 1f;
         Application.Quit();
 #if UNITY_EDITOR
@@ -146,6 +148,7 @@ public class GameManager : MonoBehaviour {
     }
 
     void StartGame() {
+        coinUI.ResetUI();
         gameOverButton.gameObject.SetActive(false);
         scoreUI.gameObject.SetActive(true);
         livesUI.gameObject.SetActive(true);

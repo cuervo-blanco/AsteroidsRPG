@@ -56,28 +56,27 @@ public class CoinUI : MonoBehaviour {
     }
 
     public void UpdateCoinSlots(List<SuperCoin> coins) {
-        while (slots.Count < coins.Count) {
-            GameObject slotGO = Instantiate(coinSlotPrefab, coinSlotParent);
-            var slot = slotGO.GetComponentInChildren<CoinSlotAnimator>();
-            slots.Add(slot);
+        foreach (var slot in slots) {
+            Destroy(slot.gameObject);
+        }
+        slots.Clear();
+
+        activeIndex = 0;
+
+        for (int i = 0; i < coins.Count; i++) {
+            var slotGO = Instantiate(coinSlotPrefab, coinSlotParent);
+            var anim = slotGO.GetComponent<CoinSlotAnimator>();
+            anim.SetIcon(GetIconForType(coins[i].type));
+            anim.SetLabel(coins[i].type.ToString());
+            slots.Add(anim);
         }
 
-        for (int i = 0; i < slots.Count; ++i) {
-            bool needed = i < coins.Count;
-            slots[i].gameObject.SetActive(needed);
-            if (needed) {
-                slots[i].SetIcon(GetIconForType(coins[i].type));
-                slots[i].ResetState();
-            }
-        }
-
-        activeIndex = Mathf.Clamp(activeIndex, 0, coins.Count - 1);
         HighlightActive(activeIndex);
     }
 
     public void HighlightActive(int index) {
         for (int i = 0; i < slots.Count; ++i) {
-            Transform highlight = slots[i].transform.parent.Find("Highlight");
+            Transform highlight = slots[i].transform.Find("Highlight");
             if (highlight) highlight.gameObject.SetActive(i == index);
         }
     }
@@ -92,10 +91,17 @@ public class CoinUI : MonoBehaviour {
 
     public void ResetUI() {
         activeIndex = 0;
+
         foreach (var slot in slots) {
-            slot.gameObject.SetActive(false);
-            Transform highlight = slot.transform.parent.Find("Highlight");
-            if (highlight) highlight.gameObject.SetActive(false);
+            if (slot != null && slot.gameObject != null) {
+                Destroy(slot.gameObject);
+            }
+        }
+
+        slots.Clear();
+
+        if (iconDisplay != null) {
+            iconDisplay.sprite = defaultIcon;
         }
     }
 

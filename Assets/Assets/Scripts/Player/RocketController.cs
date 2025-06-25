@@ -48,6 +48,9 @@ public class RocketController : MonoBehaviour {
     float baseMoveSpeed;
     float baseScale;
 
+    private BoxCollider2D boxCollider;
+    private Vector2 baseColliderSize;
+
     void Start() {
         initialLocalPos = transform.localPosition;
         currentLives = maxLives;
@@ -65,43 +68,22 @@ public class RocketController : MonoBehaviour {
         rb  = GetComponent<Rigidbody2D>();
         renderers = GetComponentsInChildren<SpriteRenderer>(true);
         flameRenderer = fireAnimator.GetComponent<SpriteRenderer>();
+        boxCollider = GetComponent<BoxCollider2D>();
+
+        if (boxCollider != null) {
+            baseColliderSize = boxCollider.size;
+        }
+
         gm = GameManager.Instance;
 
         powerModule = GetComponent<RocketPowerModule>();
     }
 
-    void Update() {
-#if UNITY_ANDROID || UNITY_IOS
-    Vector3 accel = Input.acceleration;
-
-    float tiltX = Mathf.Clamp(accel.x, -1f, 1f);
-    float tiltY = Mathf.Clamp(accel.y, -1f, 1f);
-
-    if (controlsInverted) {
-        tiltX *= -1f;
-        tiltY *= -1f;
-    }
-
-    if (Mathf.Abs(tiltX) < 0.1f) tiltX = 0f;
-    if (Mathf.Abs(tiltY) < 0.1f) tiltY = 0f;
-
-    tiltY = Mathf.Clamp(tiltY, -0.5f, 1f);
-
-    Vector2 rawTilt = new Vector2(tiltX, tiltY);
-    inputDirection = Vector2.Lerp(inputDirection, rawTilt, Time.deltaTime * 5f);
-
-    if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) {
-        TryShoot();
-    }
-
+    void Update () {
+#if (UNITY_ANDROID || UNITY_IOS) && !UNITY_EDITOR
+        ReadTouch();
 #else
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
-        if (controlsInverted) {
-            moveX *= -1f;
-            moveY *= -1f;
-        }
-        inputDirection = new Vector2(moveX, moveY).normalized;
+        ReadKeyboard();
 #endif
         bool thrust = inputDirection.y > 0;
         if (thrust) {
@@ -134,6 +116,41 @@ public class RocketController : MonoBehaviour {
         ApplyPowerModifiers();
         ExecutePowerMode();
     }
+
+    void ReadKeyboard() {
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
+
+        if (controlsInverted) { moveX *= -1f; moveY *= -1f; }
+
+        inputDirection = new Vector2(moveX, moveY).normalized;
+
+        if (Input.GetKeyDown(KeyCode.Space)) TryShoot();
+    }
+
+    void ReadTouch() {
+        inputDirection = Vector2.zero;
+
+        if (Input.touchCount == 0) return;
+
+        Touch t = Input.GetTouch(0);
+
+        float halfW = Screen.width  * 0.5f;
+        float halfH = Screen.height * 0.5f;
+
+        float xDir = t.position.x < halfW ? -1f : 1f;
+        float yDir = t.position.y < halfH ? -1f : 1f;
+
+        if (Mathf.Abs(t.position.x - halfW) < 20f) xDir = 0f;   // dead-zone
+        if (Mathf.Abs(t.position.y - halfH) < 20f) yDir = 0f;
+
+        inputDirection = new Vector2(xDir, yDir);
+
+        if (controlsInverted) inputDirection = -inputDirection;
+
+        if (t.phase == TouchPhase.Began) TryShoot();
+    }
+
 
     void ApplyPowerModifiers() {
         float finalShootCooldown = baseShootCooldown;
@@ -345,6 +362,9 @@ public class RocketController : MonoBehaviour {
 
     public void SetScale(float scale) {
         transform.localScale = new Vector3(scale, scale, 1f);
+        if (boxCollider != null) {
+            boxCollider.size = baseColliderSize * scale;
+        }
     }
 
     public void ResetShootTimer() {
