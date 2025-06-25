@@ -30,7 +30,8 @@ public class RocketPowerModule : MonoBehaviour {
     public void AddSuperCharge(MagicCoinType type) {
         if (superCoins.Count >= maxSuperCoins) return;
 
-        superCoins.Add(new SuperCoin(type, superModeDuration));
+        float duration = PowerDurations.GetDuration(type);
+        superCoins.Add(new SuperCoin(type, duration));
         coinUI.UpdateCoinSlots(superCoins);
     }
 

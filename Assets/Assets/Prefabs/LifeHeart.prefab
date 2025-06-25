@@ -47,9 +47,9 @@ MonoBehaviour:
   m_ComponentVersion: 2
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.342
+  m_FalloffIntensity: 0.331
   m_Color: {r: 1, g: 0.589617, b: 0, a: 1}
-  m_Intensity: 10.16
+  m_Intensity: 9.65
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -73,7 +73,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 0.27
+  m_PointLightOuterRadius: 0.3
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -115,7 +115,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.11172468, y: -2.735001, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7192275179453469158}
@@ -186,7 +186,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.578125, y: 2.515625}
+    oldSize: {x: 0.953125, y: 0.921875}
     newSize: {x: 1.65, y: 1.61}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -194,26 +194,36 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.2884238, y: 0.46764326}
-      - {x: 1.2505289, y: 0.8874055}
-      - {x: 1.0047307, y: 1.1151721}
-      - {x: 0.75136656, y: 1.225049}
-      - {x: 0.45868438, y: 1.216379}
-      - {x: 0.22329322, y: 1.1162696}
-      - {x: 0.025665402, y: 0.8802273}
-      - {x: -0.24020222, y: 1.1176311}
-      - {x: -0.62676775, y: 1.257069}
-      - {x: -0.9952208, y: 1.108581}
-      - {x: -1.2430532, y: 0.8709531}
-      - {x: -1.2795013, y: 0.18131518}
-      - {x: -1.062274, y: -0.10163209}
-      - {x: -0.754752, y: -0.42835426}
-      - {x: -0.442347, y: -0.7149104}
-      - {x: -0.007651143, y: -1.2087862}
-      - {x: 0.45945752, y: -0.74057555}
-      - {x: 0.82539177, y: -0.39419866}
-      - {x: 1.2082952, y: 0.06945014}
-      - {x: 1.2761536, y: 0.27479643}
+    - - {x: 0.41485357, y: 0.17005336}
+      - {x: 0.38655853, y: 0.23942792}
+      - {x: 0.34235334, y: 0.30400002}
+      - {x: 0.22338462, y: 0.2842815}
+      - {x: 0.12269589, y: 0.40040696}
+      - {x: 0.040899456, y: 0.44429278}
+      - {x: -0.012733288, y: 0.4434421}
+      - {x: -0.07179324, y: 0.42868483}
+      - {x: -0.13685083, y: 0.37419784}
+      - {x: -0.17444885, y: 0.25421035}
+      - {x: -0.25908697, y: 0.34777093}
+      - {x: -0.30033487, y: 0.32530987}
+      - {x: -0.3647739, y: 0.26582456}
+      - {x: -0.3927159, y: 0.122478366}
+      - {x: -0.3720289, y: -0.0008722544}
+      - {x: -0.46229452, y: -0.0056352317}
+      - {x: -0.45716217, y: -0.13556433}
+      - {x: -0.38013053, y: -0.23891711}
+      - {x: -0.24425134, y: -0.34680688}
+      - {x: -0.16746955, y: -0.4432317}
+      - {x: -0.12900041, y: -0.44531548}
+      - {x: -0.061538264, y: -0.39288247}
+      - {x: 0.06776965, y: -0.38626575}
+      - {x: 0.11107177, y: -0.41368032}
+      - {x: 0.19123131, y: -0.4173205}
+      - {x: 0.47233242, y: -0.13842273}
+      - {x: 0.445058, y: -0.08299804}
+      - {x: 0.48460343, y: -0.03421104}
+      - {x: 0.4547211, y: -0.012147427}
+      - {x: 0.34498537, y: 0.0012057424}
   m_UseDelaunayMesh: 0
 --- !u!212 &7659814013800849610
 SpriteRenderer:
@@ -259,7 +269,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3136276477690752437, guid: 66f4b481c91834209b01711349dfbe99, type: 3}
+  m_Sprite: {fileID: 7483058075453410329, guid: 49be7ba94822745c8aca521239ac43cb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
