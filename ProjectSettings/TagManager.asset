@@ -8,6 +8,7 @@ TagManager:
   - Rock
   - Life
   - Coin
+  - FloatingText
   layers:
   - Default
   - TransparentFX

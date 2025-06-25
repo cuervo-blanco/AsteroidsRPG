@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class Rock : MonoBehaviour {
     [Header("Sprites")]
-
     public Sprite[] rockSpritesNormal;
     public Sprite[] rockSpritesGlow;
 
@@ -22,6 +21,8 @@ public class Rock : MonoBehaviour {
     public float minSpeed = 0.5f;
     public float maxSpeed = 2.0f;
     public float maxSpin = 100f;
+
+    public GameObject floatingTextPrefab;
 
     SpriteRenderer sr;
 
@@ -113,19 +114,20 @@ public class Rock : MonoBehaviour {
 
     void AwardValue() {
         int value = baseValue * (maxGenerations - generation + 1);
-
-        RocketController rocket = GameObject.FindFirstObjectByType<RocketController>();
-        if (rocket != null) {
-            value = Mathf.CeilToInt(value * rocket.goldMultiplier);
-        }
-
+        RocketController rc = GameObject.FindFirstObjectByType<RocketController>();
+        if (rc) value = Mathf.CeilToInt(value * rc.goldMultiplier);
         GameManager.Instance.AddRockValue(value);
+
+        Vector3 pos = transform.position + Vector3.up * 0.5f;
+        GameObject ft = Instantiate(floatingTextPrefab, pos, Quaternion.identity);
+
+        ft.transform.localScale = Vector3.one;
+        ft.GetComponent<FloatingText>().Show($"${value}", 1f);
     }
 
     public void Glow() {
         int idx = System.Array.IndexOf(rockSpritesNormal, sr.sprite);
-        if (idx >= 0 && idx < rockSpritesGlow.Length)
-        {
+        if (idx >= 0 && idx < rockSpritesGlow.Length) {
             sr.sprite = rockSpritesGlow[idx];
             Invoke(nameof(RevertToNormal), 0.2f);
         }

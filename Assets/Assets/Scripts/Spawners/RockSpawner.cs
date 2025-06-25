@@ -1,8 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class RockSpawner : MonoBehaviour
-{
+public class RockSpawner : MonoBehaviour {
     [Header("Rock prefab")]
     public GameObject rockPrefab;
 
@@ -30,6 +29,9 @@ public class RockSpawner : MonoBehaviour
     public float peakRate = 10f;
     public float endRate = 5f;
 
+    [Header("Rest Settings")]
+    public float restDuration = 10f;
+
     [Header("Launch Speed")]
     public float minLaunchSpeed = 0.5f;
     public float maxLaunchSpeed = 2.5f;
@@ -52,27 +54,31 @@ public class RockSpawner : MonoBehaviour
     }
 
     IEnumerator SpawnLoop() {
-        float startTime = Time.time;
-
         while (true) {
-            float elapsed = Time.time - startTime;
-            float rate;
+            float waveStartTime = Time.time;
+            float waveDuration = attackDuration + sustainDuration + releaseDuration;
 
-            if (elapsed < attackDuration) {
-                float t = elapsed / attackDuration;
-                rate = Mathf.Lerp(startRate, peakRate, t);
-            } else if (elapsed < attackDuration + sustainDuration) {
-                rate = peakRate;
-            } else if (elapsed < attackDuration + sustainDuration + releaseDuration) {
-                float t = (elapsed - attackDuration - sustainDuration) / releaseDuration;
-                rate = Mathf.Lerp(peakRate, endRate, t);
-            } else {
-                rate = endRate;
+            while (Time.time - waveStartTime < waveDuration) {
+                float elapsed = Time.time - waveStartTime;
+                float rate;
+                if (startRate == 0) startRate = 0.5f;
+
+                if (elapsed < attackDuration) {
+                    float t = elapsed / attackDuration;
+                    rate = Mathf.Lerp(startRate, peakRate, t);
+                } else if (elapsed < attackDuration + sustainDuration) {
+                    rate = peakRate;
+                } else {
+                    float t = (elapsed - attackDuration - sustainDuration) / releaseDuration;
+                    rate = Mathf.Lerp(peakRate, endRate, t);
+                }
+
+                float wait = 1f / Mathf.Max(rate, 0.01f);
+                SpawnOneRock();
+                yield return new WaitForSeconds(wait);
             }
 
-            float wait = 1f / rate;
-            SpawnOneRock();
-            yield return new WaitForSeconds(wait);
+            yield return new WaitForSeconds(restDuration);
         }
     }
 
