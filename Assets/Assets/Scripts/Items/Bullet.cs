@@ -39,13 +39,7 @@ public class Bullet : MonoBehaviour {
             Rock rock = other.GetComponent<Rock>();
 
             if (rock != null) {
-                RocketPowerModule powerModule = GameObject.FindFirstObjectByType<RocketPowerModule>();
-
-                bool destroyed = rock.TakeHit(damage);
-
-                if (powerModule != null && powerModule.superModeActive && !destroyed) {
-                    rock.TakeHit(damage);
-                }
+                rock.TakeHit(damage);
             }
 
             Destroy(gameObject);
