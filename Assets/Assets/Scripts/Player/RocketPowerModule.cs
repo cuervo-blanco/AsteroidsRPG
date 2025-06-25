@@ -78,6 +78,7 @@ public class RocketPowerModule : MonoBehaviour {
         controller.SetDamageTolerance(0f);
         controller.InvertControls(false);
         controller.SetGhostMode(false);
+        controller.SetSlipperyMode(false);
         controller.SetScale(1f);
         controller.Invoke("ResetShootTimer", 0.05f);
     }

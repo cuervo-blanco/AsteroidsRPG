@@ -38,6 +38,12 @@ public class RocketController : MonoBehaviour {
     private float thrustAccelTimer = 0f;
 
     private RocketPowerModule powerModule;
+    private Vector2 momentumVelocity = Vector2.zero;
+
+    [SerializeField] private float defaultAcceleration = 20f;
+    [SerializeField] private float defaultDrag = 2f;
+    public float slipperyAcceleration = 20f;
+    public float slipperyDrag = 2f;
 
     [Header("Bullet")]
     public GameObject bulletPrefab;
@@ -170,11 +176,22 @@ public class RocketController : MonoBehaviour {
             if (powerModule.activePowers.Contains(MagicCoinType.MiniMode)) {
                 finalScale *= 0.5f;
             }
+            if (powerModule.activePowers.Contains(MagicCoinType.Ghost)) {
+                SetGhostMode(true);
+            }
+            if (powerModule.activePowers.Contains(MagicCoinType.Ghost)) {
+                SetGhostMode(true);
+            }
+            if (powerModule.activePowers.Contains(MagicCoinType.SlipperyBoost)) {
+                SetSlipperyMode(true);
+            }
             invincible = powerModule.activePowers.Contains(MagicCoinType.Shield);
             InvertControls(powerModule.activePowers.Contains(MagicCoinType.Confusion));
         } else {
             invincible = false;
             InvertControls(false);
+            SetGhostMode(false);
+            SetSlipperyMode(false);
         }
 
         shootCooldown = finalShootCooldown;
@@ -182,6 +199,15 @@ public class RocketController : MonoBehaviour {
         SetScale(finalScale);
     }
 
+    public void SetSlipperyMode(bool enable) {
+        if (enable) {
+            slipperyAcceleration = 25f;
+            slipperyDrag = 0.5f;
+        } else {
+            slipperyAcceleration = defaultAcceleration;
+            slipperyDrag = defaultDrag;
+        }
+    }
 
     void ExecutePowerMode() {
         shootTimer -= Time.deltaTime;
@@ -208,19 +234,12 @@ public class RocketController : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        Vector2 velocity = inputDirection * moveSpeed;
+        Vector2 push = inputDirection * slipperyAcceleration * Time.fixedDeltaTime;
+        momentumVelocity += push;
 
-        if (inputDirection.y > 0) {
-            velocity.y *= currentThrustMultiplier;
-        } else if (inputDirection.y < 0) {
-            velocity.y *= backwardSpeedMultiplier;
-        }
+        momentumVelocity = Vector2.Lerp(momentumVelocity, Vector2.zero, slipperyDrag * Time.fixedDeltaTime);
 
-        if (inputDirection.y < 0) {
-            velocity.y *= backwardSpeedMultiplier;
-        }
-
-        rb.linearVelocity = velocity;
+        rb.linearVelocity = momentumVelocity;
     }
 
     void Shoot() {
