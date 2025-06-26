@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class RockSpawner : MonoBehaviour {
@@ -45,10 +46,23 @@ public class RockSpawner : MonoBehaviour {
     public float minLaunchSpeed = 0.5f;
     public float maxLaunchSpeed = 2.5f;
 
+    [Header("Wave Patterns")]
+    public PatternType[] availableAtWave;
+    public enum PatternType { Random, LineRain, DiagonalSweep /* add more */ }
+    Dictionary<PatternType, IRockPattern> patternMap;
+
     Coroutine loop;
     Camera cam;
 
-    void Awake() => cam = Camera.main;
+    void Awake() {
+        cam = Camera.main;
+
+        patternMap = new() {
+            { PatternType.Random, new RandomPattern()},
+            { PatternType.LineRain, new LineRainPattern()},
+            { PatternType.DiagonalSweep, new DiagonalSweepPattern()}
+        };
+    }
 
     public void Begin() { if (loop == null) loop = StartCoroutine(SpawnLoop()); }
     public void Stop() { if (loop != null) { StopCoroutine(loop); loop = null; } }
@@ -75,33 +89,17 @@ public class RockSpawner : MonoBehaviour {
             float waveStartTime = Time.time;
             float waveDuration  = attackDuration + sustainDuration + releaseDuration;
 
-            while (Time.time - waveStartTime < waveDuration) {
-                float tWave = Time.time - waveStartTime;
+            PatternType patType = availableAtWave[
+                Mathf.Min(waveIndex - 1, availableAtWave.Length - 1)];
+            IRockPattern pattern = patternMap[patType];
 
-                float rate;
-                if (tWave < attackDuration) {
-                    rate = Mathf.Lerp(thisStart, thisPeak, tWave / attackDuration);
-                } else if (tWave < attackDuration + sustainDuration) {
-                    rate = thisPeak;
-                } else {
-                    rate = Mathf.Lerp(thisPeak, thisEnd,
-                             (tWave - attackDuration - sustainDuration) / releaseDuration);
-                }
-
-                if (willBurst && tWave >= burstStartTime && tWave <= burstEndTime) {
-                    rate *= burstMultiplier;
-                }
-
-                float wait = 1f / Mathf.Max(rate, 0.01f);
-                SpawnOneRock();
-                yield return new WaitForSeconds(wait);
-            }
+            yield return StartCoroutine(pattern.Execute(this, waveDuration, thisPeak));
 
             yield return new WaitForSeconds(restDuration);
         }
     }
 
-    void SpawnOneRock() {
+    public void SpawnOneRock() {
         if (zones == null || zones.Length == 0) return;
 
         var z   = zones[Random.Range(0, zones.Length)];
@@ -113,5 +111,11 @@ public class RockSpawner : MonoBehaviour {
         float   spd = Random.Range(minLaunchSpeed, maxLaunchSpeed);
         rock.GetComponent<Rigidbody2D>().linearVelocity = dir * spd;
     }
+
+    public void SpawnRockAt(Vector3 pos, Vector2 launchDir, float speed) {
+        Rock r = Instantiate(rockPrefab, pos, Quaternion.identity).GetComponent<Rock>();
+        r.GetComponent<Rigidbody2D>().linearVelocity = launchDir.normalized * speed;
+    }
+
 }
 
