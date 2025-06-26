@@ -157,6 +157,8 @@ MonoBehaviour:
   maxSpeed: 4
   maxSpin: 100
   floatingTextPrefab: {fileID: 6631711385723205322, guid: 89a98040b0b3f443a8c6e54ff9f0c61b, type: 3}
+  coinDropChance: 0.25
+  magicCoinPrefab: {fileID: 402391990133168506, guid: 1678fdc74db9b4df88896685c6b60de0, type: 3}
 --- !u!60 &5358445706568848757
 PolygonCollider2D:
   m_ObjectHideFlags: 0

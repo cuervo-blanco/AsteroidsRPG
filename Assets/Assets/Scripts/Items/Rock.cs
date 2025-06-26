@@ -29,6 +29,12 @@ public class Rock : MonoBehaviour {
     bool hasEnteredView = false;
     int baseValue = 1;
 
+    [Header("Magic Coin Drop")]
+    [Tooltip("Chance that a coin spawns when the rock is first hit (0 = never, 1 = always)")]
+    [Range(0f, 1f)] public float coinDropChance = 0.25f;
+    public GameObject magicCoinPrefab;
+    private bool attemptedCoinDrop = false;
+
     void OnBecameVisible() {
         hasEnteredView = true;
     }
@@ -96,6 +102,11 @@ public class Rock : MonoBehaviour {
 
     public bool TakeHit(int damageAmount) {
         hitsLeft -= damageAmount;
+
+        if (!attemptedCoinDrop) {
+            attemptedCoinDrop = true;
+            TrySpawnMagicCoin();
+        }
 
         if (hitsLeft > 0) {
             Glow();
@@ -177,5 +188,12 @@ public class Rock : MonoBehaviour {
         if (v.x < -0.2f || v.x > 1.2f || v.y < -0.2f || v.y > 1.2f)
             Destroy(gameObject);
     }
+
+    void TrySpawnMagicCoin() {
+        if (Random.value < coinDropChance && magicCoinPrefab != null) {
+            Instantiate(magicCoinPrefab, transform.position, Quaternion.identity);
+        }
+    }
+
 }
 

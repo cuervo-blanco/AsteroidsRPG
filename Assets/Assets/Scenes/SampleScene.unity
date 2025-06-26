@@ -3458,14 +3458,14 @@ MonoBehaviour:
     launchDir: {x: 0, y: -1}
   spawnRadiusBuffer: 2
   startRate: 0
-  attackDuration: 20
-  sustainDuration: 10
-  releaseDuration: 10
-  peakRate: 20
+  attackDuration: 60
+  sustainDuration: 20
+  releaseDuration: 20
+  peakRate: 15
   endRate: 0
   restDuration: 30
   minLaunchSpeed: 0.5
-  maxLaunchSpeed: 2.5
+  maxLaunchSpeed: 10
 --- !u!1 &925274856
 GameObject:
   m_ObjectHideFlags: 0
