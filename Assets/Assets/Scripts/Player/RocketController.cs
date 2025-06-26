@@ -5,9 +5,9 @@ public class RocketController : MonoBehaviour {
     GameManager gm;
 
     [Header("Hit / Invincibility")]
-    public float blinkDuration  = 1.0f;
-    public float blinkInterval  = 0.05f;
-    bool  invincible = false;
+    public float blinkDuration = 2.0f;
+    public float blinkInterval = 0.1f;
+    bool invincible = false;
     private bool isGhost = false;
 
     [Header("Lives / Health")]
@@ -305,7 +305,7 @@ public class RocketController : MonoBehaviour {
     System.Collections.IEnumerator BlinkCoroutine() {
         invincible = true;
         float timer = 0f;
-        bool  on    = false;
+        bool on = false;
 
         while (timer < blinkDuration) {
             on = !on;
